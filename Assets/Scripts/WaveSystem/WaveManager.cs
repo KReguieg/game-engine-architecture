@@ -21,7 +21,7 @@ public class WaveManager : MonoBehaviour {
 	private bool loopWaves = true;
 
 	float waitForNextWave;
-	float waveDuration;
+	public float waveWaitDuration ;
 	bool waveFinished;
 
 	// Use this for initialization
@@ -34,7 +34,7 @@ public class WaveManager : MonoBehaviour {
 		
 		if (waveFinished) {
 			waitForNextWave += Time.deltaTime;
-			if (waitForNextWave >= waveDuration) {
+			if (waitForNextWave >= waveWaitDuration) {
 				waitForNextWave = 0;
 				waveFinished = false;
 				currentWave++;

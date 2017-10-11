@@ -1118,8 +1118,15 @@ MonoBehaviour:
       amount: 1
       EnemyPrefab: {fileID: 1534805995129474, guid: d8a2d32f40331471a86bb91d10a31595,
         type: 2}
+  - waveType: 2
+    EnemiesToSpawn:
+    - type: 1
+      amount: 10
+      EnemyPrefab: {fileID: 1534805995129474, guid: d8a2d32f40331471a86bb91d10a31595,
+        type: 2}
   currentWave: 0
   loopWaves: 1
+  waveWaitDuration: 5
 --- !u!1 &1036982539
 GameObject:
   m_ObjectHideFlags: 0
