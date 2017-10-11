@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour {
+public class EnemyBehavior : MonoBehaviour {
 	[Header("Link to Scene and Prefabs")]
 	[SerializeField]
 	private GameObject MetalPrefab;
@@ -14,16 +15,23 @@ public class Enemy : MonoBehaviour {
 	[SerializeField]
 	private int carryMetalAmount = 1;
 	[SerializeField]
-	private float health, maxHealth = 5;
+	private float speed, health, maxHealth = 5;
 
+	[SerializeField]
+	private EnemyData enemyData;
 
+	public void SetEnemyData(EnemyData data){
+		enemyData = data;
 
+		health = data.health;
+		maxHealth = data.health;
+		carryMetalAmount = data.carryMetal;
+		speed = data.speed;
 
-
-
+	}
 	// Use this for initialization
 	void Start () {
-		health = maxHealth;
+		GetComponent<NavMeshAgent> ().speed = speed;
 
 	}
 	

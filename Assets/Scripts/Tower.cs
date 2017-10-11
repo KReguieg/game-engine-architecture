@@ -30,7 +30,7 @@ public class Tower : MonoBehaviour {
 			{
 				
 				GetComponent<LineRenderer>().SetPositions(new Vector3[2]{ activeTarget.transform.position , towerHead.transform.position}); // Shoot interface to implement shotvarients
-				activeTarget.GetComponent<Enemy>().TakeDamage(damage);
+				activeTarget.GetComponent<EnemyBehavior>().TakeDamage(damage);
 			}
 		}
 		if (attacktimer >= 0.1f) {

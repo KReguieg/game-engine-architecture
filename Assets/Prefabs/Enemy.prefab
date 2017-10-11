@@ -378,7 +378,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1534805995129474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55636e4c1031745e39637c818d4fb64a, type: 3}
+  m_Script: {fileID: 11500000, guid: 980c72cac21f741f4ace9b769f3fccd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MetalPrefab: {fileID: 1797250336094384, guid: b24065330b298486b8961f6a5273cab4,
@@ -386,6 +386,7 @@ MonoBehaviour:
   MetalCollector: {fileID: 0}
   Healthbar: {fileID: 1642267551197548}
   carryMetalAmount: 10
+  speed: 0
   health: 0
   maxHealth: 5
 --- !u!114 &114941448809004670

@@ -26,7 +26,7 @@ public class SpawnEnemy : MonoBehaviour {
 			GameObject obj = Instantiate (EnemyPrefab,EnemyCollector.transform,true);
 			obj.GetComponent<StartSearch> ().target = target;
 			obj.transform.position = transform.position;
-			obj.GetComponent<Enemy> ().MetalCollector = MetalCollector;
+			obj.GetComponent<EnemyBehavior> ().MetalCollector = MetalCollector;
 		}
 	}
 }
