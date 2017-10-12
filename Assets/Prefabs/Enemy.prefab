@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114271846025702862}
   - component: {fileID: 195994585391004002}
   - component: {fileID: 114781998195062580}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534805995129474}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -305,7 +305,7 @@ MonoBehaviour:
   target: {fileID: 0}
   mask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1
   Controlleble: 0
 --- !u!114 &114406237536011820
 MonoBehaviour:
@@ -400,9 +400,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6be6d806aeed44ad94b90151695f508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedRenderToSeeInSight:
-  - {fileID: 23672690307987644}
-  - {fileID: 23718268670669482}
+  connectedObjectToSeeInSight:
+  - {fileID: 1642267551197548}
+  - {fileID: 1534805995129474}
+  onEnterLayer: Default
+  onLeaveLayer: VROnly
 --- !u!135 &135539788613650512
 SphereCollider:
   m_ObjectHideFlags: 1

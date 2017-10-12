@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class VisbilyCheck : MonoBehaviour {
 
-	public Renderer[] connectedRenderToSeeInSight;
+	public GameObject[] connectedObjectToSeeInSight;
+	[SerializeField]
+	string onEnterLayer = "Default";
+	[SerializeField]
+	string onLeaveLayer = "VROnly";
+
+	int counter = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,15 +22,21 @@ public class VisbilyCheck : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(){
-		foreach (Renderer render in connectedRenderToSeeInSight) {
-			render.enabled = true;
+		counter++;
+
+		foreach (GameObject obj in connectedObjectToSeeInSight) {
+			obj.layer = LayerMask.NameToLayer(onEnterLayer);
 		}
 		//transform.parent.gameObject.GetComponent<Renderer> ().enabled = true;
 	}
 	void OnTriggerExit(){
-		foreach (Renderer render in connectedRenderToSeeInSight) {
-			render.enabled = false;
+		counter--;
+
+		if (counter == 0) {
+			foreach (GameObject obj in connectedObjectToSeeInSight) {
+				obj.layer = LayerMask.NameToLayer (onLeaveLayer);
+			}
 		}
-		transform.parent.gameObject.GetComponent<Renderer> ().enabled = false;
+		//transform.parent.gameObject.GetComponent<Renderer> ().enabled = false;
 	}
 }
