@@ -1177,6 +1177,8 @@ MonoBehaviour:
       amount: 2
       EnemyPrefab: {fileID: 1534805995129474, guid: d8a2d32f40331471a86bb91d10a31595,
         type: 2}
+    spawnType: 0
+    SpawnActive: 00000000
   - waveType: 15
     EnemiesToSpawn:
     - type: 2
@@ -1184,20 +1186,26 @@ MonoBehaviour:
       amount: 1
       EnemyPrefab: {fileID: 1534805995129474, guid: d8a2d32f40331471a86bb91d10a31595,
         type: 2}
+    spawnType: 0
+    SpawnActive: 00000000
   - waveType: 15
     EnemiesToSpawn:
-    - type: 2
+    - type: 3
       size: 15
       amount: 1
       EnemyPrefab: {fileID: 1534805995129474, guid: d8a2d32f40331471a86bb91d10a31595,
         type: 2}
-  - waveType: 2
+    spawnType: 0
+    SpawnActive: 00000000
+  - waveType: 1
     EnemiesToSpawn:
     - type: 1
       size: 5
-      amount: 10
+      amount: 30
       EnemyPrefab: {fileID: 1534805995129474, guid: d8a2d32f40331471a86bb91d10a31595,
         type: 2}
+    spawnType: 1
+    SpawnActive: 01010100
   currentWave: 0
   loopWaves: 1
   waveWaitDuration: 5
