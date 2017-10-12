@@ -168,6 +168,7 @@ namespace RTS_Cam
         private void Start()
         {
             m_Transform = transform;
+			zoomPos = 0.5f;
         }
 
         private void Update()
