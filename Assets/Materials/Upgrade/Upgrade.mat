@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FogOfWar
-  m_Shader: {fileID: 4800000, guid: cf2d94a29bcdd4e13a2d2e30a62ac702, type: 3}
+  m_Name: Upgrade
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -59,12 +59,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FogMaxRadius: 1.04
-    - _FogRadius: 7
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _InvFade: 1.31
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -75,11 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.2205882, g: 0.21734427, b: 0.21734427, a: 0.028}
+    - _Color: {r: 0.19669119, g: 0.24959418, b: 0.78676474, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Player: {r: 1.0032188, g: 0.88307697, b: 0.58947796, a: 0}
-    - _Player1_Pos: {r: -0.7363167, g: 4.8047895, b: -13.951742, a: 0}
-    - _Player2_Pos: {r: 0, g: 0, b: 0, a: 1}
-    - _Player3_Pos: {r: 0, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 0.4852941, g: 0.4852941, b: 0.4852941, a: 0.5}
-    - _color: {r: 0.2827587, g: 0, b: 1, a: 1}
