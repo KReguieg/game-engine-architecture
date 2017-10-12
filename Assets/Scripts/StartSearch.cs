@@ -21,7 +21,8 @@ public class StartSearch : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 			if (Physics.Raycast (ray, out hit, 1000, mask)) {
-				GetComponent<NavMeshAgent> ().SetDestination(hit.point);
+				if(hit.collider.gameObject.tag != "player")
+					GetComponent<NavMeshAgent> ().SetDestination(hit.point);
 			}
 		}
 	}

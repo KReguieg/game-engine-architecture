@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum EnemyType{
+public enum EnemyTypeData{ 
 	Normal,
 	Small,
 	Fast,
 	Strong
+}
+
+public enum SizeModificator{
+	Normal = 10,
+	Small = 5,
+	Big = 15
 }
 
 public struct EnemyData{
@@ -24,20 +30,21 @@ public struct EnemyData{
 
 [System.Serializable]
 public class Enemy  {
-	public EnemyType type;
+	public EnemyTypeData type;
+	public SizeModificator size = SizeModificator.Normal;
 	public int amount;
 	public GameObject EnemyPrefab;
 
 	public EnemyData Data{
 		get{ 
 			switch (type) {
-			case EnemyType.Normal:
+			case EnemyTypeData.Normal:
 				return new EnemyData(5	,2.5f	,1);
-			case EnemyType.Small:
+			case EnemyTypeData.Small:
 				return new EnemyData(2	,3f		,1);
-			case EnemyType.Fast:
+			case EnemyTypeData.Fast:
 				return new EnemyData(3	,4f		,3);
-			case EnemyType.Strong:
+			case EnemyTypeData.Strong:
 				return new EnemyData(20	,1f		,5);
 			default:
 				return new EnemyData(1	,1f		,1);;

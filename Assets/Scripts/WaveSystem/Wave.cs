@@ -16,6 +16,7 @@ public enum WaveType{
 public class Wave{
 
 	public WaveType waveType;
+	[Header("Number of Different Enemies in Wave")]
 	public List<Enemy> EnemiesToSpawn = new List<Enemy>();
 
 	float time;
@@ -45,6 +46,8 @@ public class Wave{
 		if (amountCounter <= EnemiesToSpawn [spawnCounter].amount) {
 			GameObject enemy = GameObject.Instantiate (EnemiesToSpawn [spawnCounter].EnemyPrefab);
 			enemy.GetComponent<EnemyBehavior> ().SetEnemyData (EnemiesToSpawn [spawnCounter].Data);
+			 
+			enemy.transform.localScale =  Vector3.one * ((int)EnemiesToSpawn [spawnCounter].size / 10f);
 			enemy.GetComponent<StartSearch> ().target = manager.target;
 			enemy.transform.position = manager.Spawns [spawnCounter].transform.position; //TODO: Spawn on diffrent locations
 			enemy.GetComponent<EnemyBehavior> ().MetalCollector = manager.MetalCollector;
