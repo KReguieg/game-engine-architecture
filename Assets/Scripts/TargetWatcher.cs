@@ -5,16 +5,15 @@ using UnityEngine.Events;
 using System;
 
 [System.Serializable]
-public class TrigerWithMultiTag : UnityEvent<GameObject> {}
+public class TrigerWithTag : UnityEvent<GameObject> {}
 
-
-[RequireComponent(typeof(MultiTags))]
 public class TargetWatcher : MonoBehaviour {
-
-	[Header("Trigger with Multitag On Enter")]
-	public TrigerWithMultiTag methodToTriggerOnEnter;
-	[Header("Trigger with Multitag On Leave")]
-	public TrigerWithMultiTag methodToTriggerOnLeave;
+	[SerializeField]
+	private string triggerOnTagName;
+	[Header("Trigger with Tag On Enter")]
+	public TrigerWithTag methodToTriggerOnEnter;
+	[Header("Trigger with Tag On Leave")]
+	public TrigerWithTag methodToTriggerOnLeave;
 
 	// Use this for initialization
 	void Start () {
@@ -28,26 +27,14 @@ public class TargetWatcher : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other){
+		if (other.tag == triggerOnTagName)
+			methodToTriggerOnEnter.Invoke (other.transform.parent.gameObject);
 		
-		foreach (MT s in GetComponent<MultiTags>().localTagList) {
-			if (s.Name == "Untagged")
-				continue;
-
-			if (other.gameObject.HasTag (s.Name)) {
-				methodToTriggerOnEnter.Invoke (other.transform.parent.gameObject);
-				break;
-			}
-		}
 	}
 
 	void OnTriggerExit(Collider other){
-		foreach (MT s in GetComponent<MultiTags>().localTagList) {
-			if (s.Name == "Untagged")
-				continue;
-			if (other.gameObject.HasTag (s.Name)) {
-				methodToTriggerOnLeave.Invoke (other.transform.parent.gameObject);
-				break;
-			}
-		}
+		if (other.tag == triggerOnTagName)
+			methodToTriggerOnLeave.Invoke (other.transform.parent.gameObject);
+		
 	}
 }

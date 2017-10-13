@@ -61,7 +61,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4865101863756490}
   - component: {fileID: 135115923858144446}
-  - component: {fileID: 114692160936176432}
   - component: {fileID: 114542448922223028}
   - component: {fileID: 54217128572297396}
   m_Layer: 10
@@ -124,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1185623140287904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.66, z: -8.87}
+  m_LocalPosition: {x: -0.06, y: 0.66, z: -3.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4865101863756490}
@@ -170,7 +169,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2049
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 1
@@ -328,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6866ed25133b14a1a935190f9e21c34c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerOnTagName: Metal
   methodToTriggerOnEnter:
     m_PersistentCalls:
       m_Calls:
@@ -342,7 +342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: TrigerWithMultiTag, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: TrigerWithTag, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   methodToTriggerOnLeave:
     m_PersistentCalls:
@@ -358,7 +358,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: TrigerWithMultiTag, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: TrigerWithTag, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114634328317829630
 MonoBehaviour:
@@ -376,20 +376,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   Controlleble: 1
---- !u!114 &114692160936176432
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1549333857159704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5812814b7685642dbad1c7b3dd6e5abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localTagList:
-  - Name: Metal
-    ID: 0
 --- !u!114 &114763750243946124
 MonoBehaviour:
   m_ObjectHideFlags: 1

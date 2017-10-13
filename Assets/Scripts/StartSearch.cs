@@ -11,7 +11,6 @@ public class StartSearch : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GetComponent<NavMeshAgent> ().SetDestination(target.transform.position);
-
 	}
 	
 	// Update is called once per frame
