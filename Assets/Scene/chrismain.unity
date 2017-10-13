@@ -1014,23 +1014,7 @@ Prefab:
       propertyPath: FogOfWarPlane
       value: 
       objectReference: {fileID: 1154819553}
-    - target: {fileID: 114634328317829630, guid: 59f3c32b432594064a0334b723942443,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1399635852}
-    - target: {fileID: 20225150279964080, guid: 59f3c32b432594064a0334b723942443,
-        type: 2}
-      propertyPath: m_CullingMask.m_Bits
-      value: 2049
-      objectReference: {fileID: 0}
-    - target: {fileID: 1864801582854062, guid: 59f3c32b432594064a0334b723942443, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114634328317829630, guid: 59f3c32b432594064a0334b723942443, type: 2}
-    - {fileID: 195237509148081756, guid: 59f3c32b432594064a0334b723942443, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59f3c32b432594064a0334b723942443, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &653868580
@@ -2494,6 +2478,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1399635852}
+    - target: {fileID: 1534805995129474, guid: d8a2d32f40331471a86bb91d10a31595, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8a2d32f40331471a86bb91d10a31595, type: 2}
   m_IsPrefabParent: 0
@@ -3324,7 +3312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 198.7, y: -4.6900024}
+  m_AnchoredPosition: {x: 198.68, y: -4.6900024}
   m_SizeDelta: {x: 148.8, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1565770031
@@ -3495,25 +3483,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 407bd5cbe8c43334bb1b25c0f3826974, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1593794908 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1185623140287904, guid: 59f3c32b432594064a0334b723942443,
-    type: 2}
-  m_PrefabInternal: {fileID: 636393710}
---- !u!114 &1593794911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1593794908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b4323e753026434bba4eba1f76f1f78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &1629334418
 GameObject:
   m_ObjectHideFlags: 0

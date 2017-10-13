@@ -400,7 +400,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1
-  TakeMetalOverDistance: 5
+  TakeMetalOverDistance: 1.5
 --- !u!124 &124131552733610460
 Behaviour:
   m_ObjectHideFlags: 1
