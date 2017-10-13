@@ -44,7 +44,7 @@ public class EnemyBehavior : MonoBehaviour {
 	}
 
 	public void Die(){
-		Destroy (gameObject);
+		
 		for (int i = 0; i < carryMetalAmount; i++) {
 			GameObject metalpiece = Instantiate (MetalPrefab);
 			metalpiece.transform.position = transform.position  + Random.insideUnitSphere;
