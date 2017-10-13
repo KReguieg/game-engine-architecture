@@ -10,7 +10,8 @@ public class EnemyBehavior : MonoBehaviour {
 	public GameObject MetalCollector;
 	[SerializeField]
 	private GameObject Healthbar;
-
+	[SerializeField]
+	private GameObject AnimatorObject;
 	[Header("Attributes")]
 	[SerializeField]
 	private int carryMetalAmount = 1;
@@ -44,7 +45,8 @@ public class EnemyBehavior : MonoBehaviour {
 	}
 
 	public void Die(){
-		
+		AnimatorObject.GetComponent<Animator> ().SetTrigger ("Death");
+		gameObject.tag = "Dead";
 		for (int i = 0; i < carryMetalAmount; i++) {
 			GameObject metalpiece = Instantiate (MetalPrefab);
 			metalpiece.transform.position = transform.position  + Random.insideUnitSphere;

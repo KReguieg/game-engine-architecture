@@ -39,7 +39,10 @@ public class Tower : MonoBehaviour {
 	}
 
 	GameObject GetTarget (){
-		EnemiesInRange.ForEach(o => {if(o == null) EmemyLeaveRange(o);});
+		EnemiesInRange.ForEach(o => {
+			if(o == null || o.tag == "Dead") 
+				EmemyLeaveRange(o);
+		});
 		if (EnemiesInRange.Count > 0) {
 			return EnemiesInRange [0];
 		}
