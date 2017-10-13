@@ -213,6 +213,7 @@ namespace RTS_Cam
 
                 desiredMove *= keyboardMovementSpeed;
                 desiredMove *= Time.deltaTime;
+				desiredMove *= 1 + zoomPos;
                 desiredMove = Quaternion.Euler(new Vector3(0f, transform.eulerAngles.y, 0f)) * desiredMove;
                 desiredMove = m_Transform.InverseTransformDirection(desiredMove);
 
@@ -233,6 +234,8 @@ namespace RTS_Cam
 
                 desiredMove *= screenEdgeMovementSpeed;
                 desiredMove *= Time.deltaTime;
+				desiredMove *= 1 + zoomPos;
+
                 desiredMove = Quaternion.Euler(new Vector3(0f, transform.eulerAngles.y, 0f)) * desiredMove;
                 desiredMove = m_Transform.InverseTransformDirection(desiredMove);
 
