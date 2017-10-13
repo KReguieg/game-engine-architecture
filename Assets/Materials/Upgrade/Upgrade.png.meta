@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3b33efdddf80a4cd0af43a2d9b90880e
-timeCreated: 1507892788
+timeCreated: 1507900900
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -42,7 +42,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 10
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -70,16 +70,12 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline:
-    - - {x: 0, y: 2}
-      - {x: -0.10284817, y: 1.6308541}
-      - {x: 1.4275188, y: 0.5051923}
-      - {x: 0.97612953, y: -1.1375194}
-      - {x: -0.9258996, y: -1.1734729}
-      - {x: -1.5093837, y: 0.71516466}
-      - {x: -1.9021131, y: 0.61803395}
-      - {x: -1.1755704, y: -1.6180341}
-      - {x: 1.1755707, y: -1.6180339}
-      - {x: 1.902113, y: 0.61803424}
+    - - {x: 1.2921107, y: 0.7686932}
+      - {x: 0, y: 2}
+      - {x: -1.4219998, y: 1.190927}
+      - {x: -1.7320508, y: -1.0000001}
+      - {x: -0.22138476, y: 1.0444443}
+      - {x: 1.7320509, y: -0.9999998}
   spritePackingTag: 
   userData: 
   assetBundleName: 

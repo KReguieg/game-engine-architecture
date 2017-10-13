@@ -5,6 +5,7 @@
         _Color ("Main Color", Color) = (1,1,1,1)
     	_FogRadius ("FogRadius", Float) = 1.0
     	_FogMaxRadius ("FogMaxRadius", Float) = 0.5
+    	_ZLayer ("RenderOnZLayer", Float) = 0.5
 		_Player ("Player", Vector) = (0,0,0,1)
 	}
 	SubShader
@@ -24,6 +25,7 @@
 			half4 _Player;
 			half _FogRadius;
 			half _FogMaxRadius;
+			half _ZLayer;
 
 			struct appdata
 			{
@@ -50,7 +52,7 @@
 				
 				half2 posVertex = mul (unity_ObjectToWorld, v.vertex).xz;
 				outData._vertex = UnityObjectToClipPos(v.vertex);
-				outData._vertex.z = 0.5;
+				outData._vertex.z = _ZLayer;
 				outData._color = _Color;
 		    	outData._color.a = (1.0 - clamp(_Color.a + powerForPos(_Player, posVertex) + powerForPos(half4(0,0,0,0), posVertex), 0, 1.0));
 		    	return outData;
