@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 4548136472884936}
   - component: {fileID: 33585759413130732}
   - component: {fileID: 65125526216225266}
-  - component: {fileID: 114687916106755714}
   m_Layer: 10
   m_Name: RangeCheck
   m_TagString: Metal
@@ -54,9 +53,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1797250336094384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.79, y: 0.57934046, z: -16.09}
-  m_LocalScale: {x: 0.38640007, y: 0.042514004, z: 0.38640007}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.11, y: 1.99, z: -9.46}
+  m_LocalScale: {x: 0.38639998, y: 0.04251, z: 0.38639998}
   m_Children:
   - {fileID: 4548136472884936}
   m_Father: {fileID: 0}
@@ -160,17 +159,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114687916106755714
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1946849316985640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5812814b7685642dbad1c7b3dd6e5abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localTagList:
-  - Name: Metal
-    ID: 0
