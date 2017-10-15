@@ -6,15 +6,19 @@ public class GrindMetal : MonoBehaviour {
 	public List<GameObject> MetalinFirstStage;
 	public List<GameObject> MetalinSecondStage;
 
+	[Header("Link to Scene")]
 	public GameObject StageOneTarget;
 	public GameObject StageTwoTarget;
 	public GameObject ParticelSystemObject;
+	public GameObject DataCollector;
 
+	[Header("Gravitanional Setup")]
 	public float FirstStageForce;
 	//public float FirstStageDistance;
 	public float SecondStageForce;
 	public float MaxSpeed = 2, MaxSpeedSecond;
 	public float SpeedDamp = 0.2f;
+
 	[Header("PartikelSystem")]
 	public AnimationCurve BurstEmitAtDestroy;
 	public int maxBurstAmount;
@@ -104,7 +108,6 @@ public class GrindMetal : MonoBehaviour {
 		Destroy (metal);
 
 		triggerdBurstEmmits.Add (0);
-		//TODO: Increment Resources
-
+		DataCollector.GetComponent<DataCollector> ().ModifieMetal (1);
 	}
 }

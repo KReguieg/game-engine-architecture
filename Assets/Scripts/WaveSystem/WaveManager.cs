@@ -47,14 +47,15 @@ public class WaveManager : MonoBehaviour {
 			if (waitForNextWave >= waveWaitDuration) {
 				waitForNextWave = 0;
 				waveFinished = false;
-				if (loopWaves)
-					currentWave %= Waves.Length;
+
 			}
 		} else {
 			waveFinished = Waves [currentWave].Update (this);
 
 			if(waveFinished)
 				currentWave++;
+			if (loopWaves)
+				currentWave %= Waves.Length;
 		}
 	}
 }
