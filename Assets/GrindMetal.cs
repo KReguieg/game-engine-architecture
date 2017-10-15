@@ -8,22 +8,40 @@ public class GrindMetal : MonoBehaviour {
 
 	public GameObject StageOneTarget;
 	public GameObject StageTwoTarget;
+	public GameObject ParticelSystemObject;
 
 	public float FirstStageForce;
 	//public float FirstStageDistance;
 	public float SecondStageForce;
 	public float MaxSpeed = 2, MaxSpeedSecond;
 	public float SpeedDamp = 0.2f;
+	[Header("PartikelSystem")]
+	public AnimationCurve BurstEmitAtDestroy;
+	public int maxBurstAmount;
+	List<float> triggerdBurstEmmits;
 	// Use this for initialization
 	void Start () {
 		MetalinFirstStage = new List<GameObject> ();
 		MetalinSecondStage  = new List<GameObject> (); 
+		triggerdBurstEmmits = new List<float> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		FistStageUpdate ();
 		SecondStageUpdate ();
+		for (int i = 0; i < triggerdBurstEmmits.Count; i++) {
+			if (triggerdBurstEmmits [i] >= BurstEmitAtDestroy.length)
+				triggerdBurstEmmits.RemoveAt (i--);
+			else {
+				triggerdBurstEmmits [i] += Time.deltaTime;
+				ParticelSystemObject.GetComponent<ParticleSystem> ().Emit ((int)(BurstEmitAtDestroy.Evaluate (triggerdBurstEmmits [i]) * maxBurstAmount));
+			}
+		}
+
+		triggerdBurstEmmits.RemoveAll (f => {
+			return f >= 1;
+		});
 	}
 
 	public void MetalEnterRange(GameObject metal){
@@ -50,7 +68,7 @@ public class GrindMetal : MonoBehaviour {
 		MetalinFirstStage.Remove (metal);
 		MetalinSecondStage.Add (metal);
 
-		metal.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+		//metal.GetComponent<Rigidbody> ().velocity = Vector3.zero;
 
 	}
 
@@ -84,6 +102,8 @@ public class GrindMetal : MonoBehaviour {
 		MetalinSecondStage.Remove (metal);
 		MetalinFirstStage.Remove (metal);
 		Destroy (metal);
+
+		triggerdBurstEmmits.Add (0);
 		//TODO: Increment Resources
 
 	}
