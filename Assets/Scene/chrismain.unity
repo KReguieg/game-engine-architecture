@@ -2152,42 +2152,43 @@ MonoBehaviour:
   MaxSpeed: 4.85
   MaxSpeedSecond: 2.5
   SpeedDamp: 0.6
-  BurstEmitAtDestroy:
+  BurstEmitAtDestroyCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
-      inSlope: -0.044776116
-      outSlope: -0.044776116
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.66711175
-      value: 0.76560813
-      inSlope: 4.1319203
-      outSlope: 4.1319203
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.8744017
-      value: 0.9705967
-      inSlope: 0.06617009
-      outSlope: 0.06617009
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1.3132526
-      value: 0.45035246
-      inSlope: -1.1467934
-      outSlope: -1.1467934
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 2.1051373
-      value: -0.02128999
+      value: 0.003875969
       inSlope: 0
       outSlope: 0
+      tangentMode: 136
+    - serializedVersion: 2
+      time: 0.16304804
+      value: 0.5010471
+      inSlope: 10.443138
+      outSlope: 10.443138
       tangentMode: 0
+    - serializedVersion: 2
+      time: 0.31226242
+      value: 1.007258
+      inSlope: -0.047582045
+      outSlope: -0.047582045
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.516261
+      value: 0.2613592
+      inSlope: -2.988577
+      outSlope: -2.988577
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.6516989
+      value: -0.005860282
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
     m_PreInfinity: 2
-    m_PostInfinity: 1
+    m_PostInfinity: 2
     m_RotationOrder: 0
+  minBurstAmount: 4
   maxBurstAmount: 7
 --- !u!4 &595639000 stripped
 Transform:

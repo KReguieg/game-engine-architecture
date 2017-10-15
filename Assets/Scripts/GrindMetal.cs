@@ -20,7 +20,8 @@ public class GrindMetal : MonoBehaviour {
 	public float SpeedDamp = 0.2f;
 
 	[Header("PartikelSystem")]
-	public AnimationCurve BurstEmitAtDestroy;
+	public AnimationCurve BurstEmitAtDestroyCurve;
+	public int minBurstAmount;
 	public int maxBurstAmount;
 	List<float> triggerdBurstEmmits;
 	// Use this for initialization
@@ -35,17 +36,15 @@ public class GrindMetal : MonoBehaviour {
 		FistStageUpdate ();
 		SecondStageUpdate ();
 		for (int i = 0; i < triggerdBurstEmmits.Count; i++) {
-			if (triggerdBurstEmmits [i] >= BurstEmitAtDestroy.length)
+			if (triggerdBurstEmmits [i] >= BurstEmitAtDestroyCurve.length) // longer than the animation Curve
 				triggerdBurstEmmits.RemoveAt (i--);
 			else {
 				triggerdBurstEmmits [i] += Time.deltaTime;
-				ParticelSystemObject.GetComponent<ParticleSystem> ().Emit ((int)(BurstEmitAtDestroy.Evaluate (triggerdBurstEmmits [i]) * maxBurstAmount));
+				float emitstrength = BurstEmitAtDestroyCurve.Evaluate (triggerdBurstEmmits [i]);
+				ParticelSystemObject.GetComponent<ParticleSystem> ().Emit ((int)(emitstrength * Random.Range(minBurstAmount, maxBurstAmount)));
 			}
 		}
 
-		triggerdBurstEmmits.RemoveAll (f => {
-			return f >= 1;
-		});
 	}
 
 	public void MetalEnterRange(GameObject metal){
