@@ -46,7 +46,7 @@ public class GrindMetal : MonoBehaviour {
 	void Update () {
 		FistStageUpdate ();
 		SecondStageUpdate ();
-		TriggerPartikelSystem ();
+
 	}
 
 	void TriggerPartikelSystem(){
@@ -62,6 +62,8 @@ public class GrindMetal : MonoBehaviour {
 	}
 
 	public void FixedUpdate(){
+		TriggerPartikelSystem ();
+
 		if (metalMined != 0) {
 			gainTimer += Time.fixedDeltaTime;
 			if (gainTimer >= showAfterTimer) {
@@ -77,7 +79,10 @@ public class GrindMetal : MonoBehaviour {
 	public void MetalEnterRange(GameObject metal){
 		metal.transform.GetChild(0).tag = "Untagged";
 		metal.GetComponent<Rigidbody> ().useGravity = false;
+
+		metal.GetComponent<Rigidbody> ().velocity.Normalize();
 		MetalinFirstStage.Add (metal);
+
 	} 
 
 	void FistStageUpdate(){
