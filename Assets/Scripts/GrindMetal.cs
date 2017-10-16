@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrindMetal : MonoBehaviour {
 	public List<GameObject> MetalinFirstStage;
@@ -11,6 +12,8 @@ public class GrindMetal : MonoBehaviour {
 	public GameObject StageTwoTarget;
 	public GameObject ParticelSystemObject;
 	public GameObject DataCollector;
+
+
 
 	[Header("Gravitanional Setup")]
 	public float FirstStageForce;
@@ -24,6 +27,14 @@ public class GrindMetal : MonoBehaviour {
 	public int minBurstAmount;
 	public int maxBurstAmount;
 	List<float> triggerdBurstEmmits;
+
+	[Header("Show Metal Gain")]
+	public GameObject MetalGainedPrefab;
+	[SerializeField]
+	public float showAfterTimer;
+	int metalMined;
+	float gainTimer;
+
 	// Use this for initialization
 	void Start () {
 		MetalinFirstStage = new List<GameObject> ();
@@ -35,6 +46,10 @@ public class GrindMetal : MonoBehaviour {
 	void Update () {
 		FistStageUpdate ();
 		SecondStageUpdate ();
+		TriggerPartikelSystem ();
+	}
+
+	void TriggerPartikelSystem(){
 		for (int i = 0; i < triggerdBurstEmmits.Count; i++) {
 			if (triggerdBurstEmmits [i] >= BurstEmitAtDestroyCurve.length) // longer than the animation Curve
 				triggerdBurstEmmits.RemoveAt (i--);
@@ -44,7 +59,19 @@ public class GrindMetal : MonoBehaviour {
 				ParticelSystemObject.GetComponent<ParticleSystem> ().Emit ((int)(emitstrength * Random.Range(minBurstAmount, maxBurstAmount)));
 			}
 		}
+	}
 
+	public void FixedUpdate(){
+		if (metalMined != 0) {
+			gainTimer += Time.fixedDeltaTime;
+			if (gainTimer >= showAfterTimer) {
+				gainTimer = 0;
+				GameObject gain = Instantiate (MetalGainedPrefab);
+				gain.transform.position = transform.position;
+				gain.GetComponentInChildren<TextMesh> ().text = "+" + metalMined;
+				metalMined = 0;
+			}
+		}
 	}
 
 	public void MetalEnterRange(GameObject metal){
@@ -107,6 +134,7 @@ public class GrindMetal : MonoBehaviour {
 		Destroy (metal);
 
 		triggerdBurstEmmits.Add (0);
+		metalMined += 1;
 		DataCollector.GetComponent<DataCollector> ().ModifieMetal (1);
 	}
 }
