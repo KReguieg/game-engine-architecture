@@ -58,7 +58,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294963711
+    m_Bits: 4294955515
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -110,7 +110,6 @@ MonoBehaviour:
   rotationSped: 3
   panningSpeed: 25
   mouseRotationSpeed: 100
-  autoHeight: 0
   groundMask:
     serializedVersion: 2
     m_Bits: 256
