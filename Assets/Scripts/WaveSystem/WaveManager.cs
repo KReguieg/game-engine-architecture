@@ -16,13 +16,23 @@ public class WaveManager : MonoBehaviour {
 	[SerializeField]
 	public  Wave[] Waves;
 	[SerializeField]
-	private int currentWave = 0;
+	private  int currentWave = 0;
 	[SerializeField]
 	private bool loopWaves = true;
 
+
 	float waitForNextWave;
 	public float waveWaitDuration ;
-	bool waveFinished;
+	private bool waveFinished;
+
+
+	public bool WaveFinished{
+		get{return waveFinished; }
+	}
+
+	public Wave CurrentWave{
+		get{return Waves [currentWave];}
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -37,12 +47,15 @@ public class WaveManager : MonoBehaviour {
 			if (waitForNextWave >= waveWaitDuration) {
 				waitForNextWave = 0;
 				waveFinished = false;
-				currentWave++;
-				if(loopWaves)
-					currentWave %= Waves.Length;
+
 			}
-		}
-		else
+		} else {
 			waveFinished = Waves [currentWave].Update (this);
+
+			if(waveFinished)
+				currentWave++;
+			if (loopWaves)
+				currentWave %= Waves.Length;
+		}
 	}
 }

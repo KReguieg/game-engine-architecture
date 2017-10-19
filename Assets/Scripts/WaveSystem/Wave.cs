@@ -36,23 +36,24 @@ public class Wave{
 	float SpawnSpeed;
 	int spawnCounter;
 	int amountCounter;
+	bool waveSpawnComplete = false;
+
+	public int AmountCounter { 
+		get{return amountCounter;}
+	}
 
 	// Update is called once per frame
 	public bool Update (WaveManager manager) {
 		time += Time.deltaTime;
 		if (time >= (int)waveType / 10f) {
 			time = 0;
-			if (spawnCounter >= EnemiesToSpawn.Count) {
-				spawnCounter = 0;
-				return true;
-			}
-			Spawn (manager);
+			return Spawn (manager);
 		}
 		return false;
 	}
 
 
-	public void Spawn(WaveManager manager){
+	public bool Spawn(WaveManager manager){
 		
 		amountCounter++;
 
@@ -68,7 +69,12 @@ public class Wave{
 		} else {
 			amountCounter = 0;
 			spawnCounter++;
+			if (spawnCounter >= EnemiesToSpawn.Count) {
+				spawnCounter = 0;
+				return true;
+			}
 		}
+		return false;
 	}
 
 	Vector3 SelectSpawn(WaveManager manager){

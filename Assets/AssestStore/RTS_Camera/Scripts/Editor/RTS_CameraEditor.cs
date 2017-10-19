@@ -114,17 +114,7 @@ namespace RTS_Cam
 
         private void HeightTab()
         {
-            using (new HorizontalBlock())
-            {
-                GUILayout.Label("Auto height: ", EditorStyles.boldLabel, GUILayout.Width(170f));
-                camera.autoHeight = EditorGUILayout.Toggle(camera.autoHeight);
-            }
-            if (camera.autoHeight)
-            {
-                camera.heightDampening = EditorGUILayout.FloatField("Height dampening: ", camera.heightDampening);
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("groundMask"));
-            }
-
+            
             using (new HorizontalBlock())
             {
                 GUILayout.Label("Keyboard zooming: ", EditorStyles.boldLabel, GUILayout.Width(170f));

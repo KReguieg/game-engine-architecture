@@ -6,4 +6,5 @@ This project contains our async coop game from the course Game Engine Architectu
 * In Unity We Trust
 * Mega Multiplayer Monster Madness
 * WE ARE (sprich VR) Unity
+* CoVR (COop + VR)
 * ...

@@ -20,6 +20,14 @@ public class MetalCollector : MonoBehaviour {
 		}
 	}
 
+	void FixedUpdate (){
+		
+		metalInRange.RemoveAll (x => {
+			//Debug.Log("Metal Name " + x.name + " Tagged With" + x.tag);
+			return x.transform.GetChild(0).tag == "Untagged";
+		});
+	}
+
 	void PullMetal(GameObject metal){
 		Vector3 dir = metal.transform.position - transform.position;
 		dir = dir.normalized * -pullStrength;
