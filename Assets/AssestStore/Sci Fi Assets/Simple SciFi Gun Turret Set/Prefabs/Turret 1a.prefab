@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 54298817763717730}
   m_Layer: 10
   m_Name: RangeChecker
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363866145908586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.84, y: 7.989362, z: -40.56}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.43572, y: 4.43572, z: 4.43572}
   m_Children: []
   m_Father: {fileID: 4000010737274380}
@@ -540,7 +540,7 @@ MonoBehaviour:
   methodToTriggerOnLeave:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114909276454376998}
         m_MethodName: EmemyLeaveRange
         m_Mode: 0
         m_Arguments:

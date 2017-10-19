@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33112333846273572}
   - component: {fileID: 64500916366090270}
   - component: {fileID: 23832196072733530}
-  m_Layer: 2
+  m_Layer: 14
   m_Name: BuildingArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1212555861235436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.33, y: 0.1, z: -2.99}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalPosition: {x: 0.038298856, y: 0.015319539, z: 0.11489655}
+  m_LocalScale: {x: 0.89342666, y: 0.8934261, z: 0.8934261}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

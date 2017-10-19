@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: FogOfWarPlane
-  m_Shader: {fileID: 4800000, guid: 4af32855b94b08641b3689918e6df3c7, type: 3}
+  m_Shader: {fileID: 4800000, guid: cf2d94a29bcdd4e13a2d2e30a62ac702, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,12 +24,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _FogMaxRadius: 1.2
-    - _FogRadius: 5.62
+    - _FogRadius: 13
+    - _ZLayer: 0.5
     m_Colors:
-    - _Color: {r: 0.5882352, g: 0.33304495, b: 0.33304495, a: 0.053}
+    - _Color: {r: 0.4852941, g: 0.4674524, b: 0.4674524, a: 0.053}
     - _PLayer2_Pos: {r: 19.75, g: 0, b: 12.63, a: 1}
     - _PLayer3_Pos: {r: -3.29, g: 0, b: 0, a: 1}
-    - _Player: {r: 2.5408154, g: 4.396184, b: -7.446664, a: 0}
+    - _Player: {r: 3.6574497, g: 2.8667488, b: -15.732159, a: 0}
     - _Player1_Pos: {r: 8.13, g: 0, b: 1.23, a: 1}
     - _Player2_Pos: {r: 0, g: 0, b: 0, a: 1}
     - _Player3_Pos: {r: 0, g: 0, b: 0, a: 1}

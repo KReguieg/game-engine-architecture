@@ -15,8 +15,11 @@ public class TowerPlacer : MonoBehaviour
     private KeyCode newObjectHotkey = KeyCode.A;
 
     private GameObject currentPlaceableObject;
+	public GameObject towerCollector;
 
     private float mouseWheelRotation;
+
+
 
 	[SerializeField]
 	private LayerMask mask;
@@ -40,13 +43,19 @@ public class TowerPlacer : MonoBehaviour
             if (currentPlaceableObject != null)
             {
                 Destroy(currentPlaceableObject);
+				UnMaskCamera ();
             }
             else
             {
-                currentPlaceableObject = Instantiate(placeableObjectPrefab);
+				Camera.main.cullingMask = Camera.main.cullingMask | mask;
+				currentPlaceableObject = Instantiate(placeableObjectPrefab,towerCollector.transform);
             }
         }
     }
+
+	private void UnMaskCamera(){
+		Camera.main.cullingMask = Camera.main.cullingMask ^ mask; //xOR
+	}
 
     private void MoveCurrentObjectToMouse()
     {
@@ -62,7 +71,7 @@ public class TowerPlacer : MonoBehaviour
 
     private void RotateFromMouseWheel()
     {
-        Debug.Log(Input.mouseScrollDelta);
+        //Debug.Log(Input.mouseScrollDelta);
         mouseWheelRotation += Input.mouseScrollDelta.y;
         currentPlaceableObject.transform.Rotate(Vector3.up, mouseWheelRotation * 10f);
     }
@@ -72,6 +81,7 @@ public class TowerPlacer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             currentPlaceableObject = null;
+			UnMaskCamera ();
         }
     }
 }
