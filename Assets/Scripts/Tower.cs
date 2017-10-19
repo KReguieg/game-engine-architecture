@@ -36,8 +36,9 @@ public class Tower : MonoBehaviour {
 		if (attacktimer >= 0.1f) {
 			GetComponent<LineRenderer> ().SetPositions (new Vector3[2]{ Vector3.zero, Vector3.zero });
 		}
-		if(EnemiesInRange.Count > 0) {
-			towerHead.transform.LookAt(EnemiesInRange[0].transform.position);
+		GameObject target = GetTarget ();
+		if(target != null) {
+			towerHead.transform.LookAt(target.transform.position);
 			towerHead.transform.Rotate(Vector3.up, -90);
 		}
 	}

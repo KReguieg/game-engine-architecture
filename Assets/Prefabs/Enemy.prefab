@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 23459715789216894}
   - component: {fileID: 114941448809004670}
   - component: {fileID: 114182484583881042}
+  - component: {fileID: 114838131716991688}
   m_Layer: 9
   m_Name: sightChecker
   m_TagString: Untagged
@@ -456,7 +457,7 @@ GameObject:
   - component: {fileID: 23718268670669482}
   - component: {fileID: 114612579803401568}
   - component: {fileID: 114406237536011820}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,6 +1641,20 @@ MonoBehaviour:
   speed: 0
   health: 0
   maxHealth: 5
+--- !u!114 &114838131716991688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1518761582827002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6be6d806aeed44ad94b90151695f508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedObjectToSeeInSight: []
+  onEnterLayer: PCOnly
+  onLeaveLayer: Ignore Raycast
 --- !u!114 &114941448809004670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1653,7 +1668,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedObjectToSeeInSight:
   - {fileID: 1971566665492066}
-  - {fileID: 1642267551197548}
   onEnterLayer: Default
   onLeaveLayer: VROnly
 --- !u!137 &137734595239311908
