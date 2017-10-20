@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(MetalCollector))]
-public class PortalSimulator : MonoBehaviour {
+public class PortalSimulator : MonoBehaviour{
 
 	public LayerMask mask;
 	public float TakeMetalOverDistance = 5;
 	MetalCollector collcetor;
+	public GameObject Canvas;
 	// Use this for initialization
 	void Start () {
 		collcetor = GetComponent<MetalCollector> ();
@@ -15,8 +17,8 @@ public class PortalSimulator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0)) {
-
+		if(Input.GetMouseButtonDown(0) && !Canvas.GetComponent<RaycastBlocker>().RaycastBlockByUI) {
+			
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
@@ -34,5 +36,10 @@ public class PortalSimulator : MonoBehaviour {
 		});
 
 		transform.position = hit.point + Vector3.up;
+	}
+
+	void OnPointerDown(PointerEventData data) // <-- Automatically called.
+	{
+		Debug.LogFormat("Click detected at {0}.", data.position);
 	}
 }
