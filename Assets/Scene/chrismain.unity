@@ -520,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &95949248
 Transform:
   m_ObjectHideFlags: 0
@@ -5500,7 +5500,12 @@ MonoBehaviour:
     type: 2}
   newObjectHotkey: 98
   towerCollector: {fileID: 95949247}
-  mask:
+  buildBlockLayer:
+    serializedVersion: 2
+    m_Bits: 32768
+  buildBlockLayerAsInteger: 15
+  rastersize: 10
+  buildLayer:
     serializedVersion: 2
     m_Bits: 16384
 --- !u!1 &824100351
@@ -11263,7 +11268,7 @@ Transform:
   m_LocalScale: {x: 15.693751, y: 15.6937475, z: 15.693752}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1162816720
 GameObject:
@@ -14004,7 +14009,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 459968, guid: 407bd5cbe8c43334bb1b25c0f3826974, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2056488, guid: 407bd5cbe8c43334bb1b25c0f3826974, type: 2}
       propertyPath: m_CullingMask.m_Bits

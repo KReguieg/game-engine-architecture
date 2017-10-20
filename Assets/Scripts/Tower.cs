@@ -6,7 +6,8 @@ public class Tower : MonoBehaviour {
 	public List<GameObject> EnemiesInRange;
 	[SerializeField]
 	private GameObject towerHead;
-
+	[SerializeField]
+	public  GameObject Buildblocker;
 	[SerializeField]
 	private float attackspeed;
 	private float attacktimer;

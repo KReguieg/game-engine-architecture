@@ -20,9 +20,15 @@ public class TowerPlacer : MonoBehaviour
     private float mouseWheelRotation;
 
 
+	[SerializeField]
+	private LayerMask buildBlockLayer;
+	[SerializeField]
+	private int buildBlockLayerAsInteger;
+
+	public float rastersize;
 
 	[SerializeField]
-	private LayerMask mask;
+	private LayerMask buildLayer;
 
     private void Update()
     {
@@ -47,27 +53,41 @@ public class TowerPlacer : MonoBehaviour
             }
             else
             {
-				Camera.main.cullingMask = Camera.main.cullingMask | mask;
+				Camera.main.cullingMask = Camera.main.cullingMask | buildLayer;
 				currentPlaceableObject = Instantiate(placeableObjectPrefab,towerCollector.transform);
             }
         }
     }
 
 	private void UnMaskCamera(){
-		Camera.main.cullingMask = Camera.main.cullingMask ^ mask; //xOR
+		Camera.main.cullingMask = Camera.main.cullingMask ^ buildLayer; //xOR
 	}
 
     private void MoveCurrentObjectToMouse()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+		//Vector3 oldPosition = Vector3.zero;
         RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, 100, mask))
+        if (Physics.Raycast(ray, out hitInfo, 100, buildLayer))
         {
-            currentPlaceableObject.transform.position = hitInfo.point;
-            currentPlaceableObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);
+			BoxCollider col = currentPlaceableObject.GetComponent<Tower> ().Buildblocker.GetComponent<BoxCollider> ();
+			Vector3 point = SnapToGrid(hitInfo.point);
+			if (!Physics.CheckBox (point, col.size / 2, Quaternion.identity, buildBlockLayer)) {
+				currentPlaceableObject.transform.position = point;
+				currentPlaceableObject.transform.rotation = Quaternion.FromToRotation (Vector3.up, hitInfo.normal);
+			}
         }
     }
+
+	Vector3 SnapToGrid(Vector3 point){
+		int x =(int)( point.x * 100  );
+		int z =(int)( point.z * 100 );
+
+		return new Vector3 (x/ 100, point.y, z/ 100);
+ 
+
+
+	}
 
     private void RotateFromMouseWheel()
     {
@@ -80,6 +100,7 @@ public class TowerPlacer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+			currentPlaceableObject.GetComponent<Tower> ().Buildblocker.layer = buildBlockLayerAsInteger;
             currentPlaceableObject = null;
 			UnMaskCamera ();
         }
