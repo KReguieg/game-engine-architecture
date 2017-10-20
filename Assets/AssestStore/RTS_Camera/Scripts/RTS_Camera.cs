@@ -316,6 +316,17 @@ namespace RTS_Cam
             targetFollow = target;
         }
 
+		public void SetTarget(Vector2 target)
+		{
+			Debug.Log (target);
+			target *= limitX;
+
+			float targetHeight = Mathf.Lerp (minHeight, maxHeight, zoomPos);
+
+			m_Transform.position = new Vector3 (target.x, targetHeight  ,target.y);
+			HeightCalculation ();
+		}
+
         /// <summary>
         /// reset the target (target is set to null)
         /// </summary>

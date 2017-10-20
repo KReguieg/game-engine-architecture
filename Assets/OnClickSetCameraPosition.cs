@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class OnClickSetCameraPosition : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void OnMouseDown(){
+
+		Vector2 point = GetComponent<RayCasterFilter> ().point;
+		RectTransform rectTransform = GetComponent<RectTransform> ();
+		point = new Vector2 (-point.x/ rectTransform.sizeDelta.x, -point.y/ rectTransform.sizeDelta.y );
+		point -= Vector2.one * 0.5f;
+		point *= -2;
+		Camera.main.GetComponent<RTS_Cam.RTS_Camera>().SetTarget(point);
 	}
 
-	public void OnMouseDown(){
-		Debug.Log ("ee");
-	}
+
 }

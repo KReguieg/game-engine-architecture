@@ -10,6 +10,7 @@ public class RayCasterFilter : MonoBehaviour, ICanvasRaycastFilter {
 	Collider2D myCollider;
 	RectTransform rectTransform;
 
+	public Vector2 point;
 	void Awake ()
 	{
 		myCollider = GetComponent<Collider2D>();
@@ -19,14 +20,14 @@ public class RayCasterFilter : MonoBehaviour, ICanvasRaycastFilter {
 	#region ICanvasRaycastFilter implementation
 	public bool IsRaycastLocationValid (Vector2 screenPos, Camera eventCamera)
 	{
-		Vector3 worldPoint = Vector3.zero;
-		bool isInside = RectTransformUtility.ScreenPointToWorldPointInRectangle(
+		Vector2 worldPoint = Vector2.zero;
+		bool isInside = RectTransformUtility.ScreenPointToLocalPointInRectangle(
 			rectTransform,
 			screenPos,
 			eventCamera,
 			out worldPoint
 		);
-
+		point = worldPoint;
 		Debug.Log (isInside);
 		if (isInside)
 			Canvas.GetComponent<RaycastBlocker> ().RaycastBlockByUI = true;
