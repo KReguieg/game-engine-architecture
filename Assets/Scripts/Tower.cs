@@ -2,6 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct TowerData{
+	public int range;
+	public int cost;
+	public float speed;
+	public float Damage;
+
+	public TowerData(int range, int cost, float speed, float damage){
+		this.range = range;
+		this.cost = cost;
+		this.speed = speed;
+		this.Damage = damage;
+	}
+}
+
+
 public class Tower : MonoBehaviour {
 	public List<GameObject> EnemiesInRange;
 	[SerializeField]

@@ -25,7 +25,6 @@ public class TowerPlacer : MonoBehaviour
 	[SerializeField]
 	private int buildBlockLayerAsInteger;
 
-	public float rastersize;
 
 	[SerializeField]
 	private LayerMask buildLayer;
@@ -80,13 +79,10 @@ public class TowerPlacer : MonoBehaviour
     }
 
 	Vector3 SnapToGrid(Vector3 point){
-		int x =(int)( point.x * 100  );
+		int x =(int)( point.x * 100 );
 		int z =(int)( point.z * 100 );
 
 		return new Vector3 (x/ 100, point.y, z/ 100);
- 
-
-
 	}
 
     private void RotateFromMouseWheel()
@@ -100,9 +96,11 @@ public class TowerPlacer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-			currentPlaceableObject.GetComponent<Tower> ().Buildblocker.layer = buildBlockLayerAsInteger;
-            currentPlaceableObject = null;
-			UnMaskCamera ();
+			if (DataCollector.GetInstance.ModifieMetal (-10)) {
+				currentPlaceableObject.GetComponent<Tower> ().Buildblocker.layer = buildBlockLayerAsInteger;
+				currentPlaceableObject = null;
+				UnMaskCamera ();
+			} 
         }
     }
 }

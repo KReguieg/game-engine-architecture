@@ -2368,6 +2368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MetalText: {fileID: 519272295}
+  MetalTextBackground: {fileID: 1866355451}
   Metal: 0
 --- !u!1001 &383351831
 Prefab:
@@ -5504,7 +5505,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32768
   buildBlockLayerAsInteger: 15
-  rastersize: 10
   buildLayer:
     serializedVersion: 2
     m_Bits: 16384
