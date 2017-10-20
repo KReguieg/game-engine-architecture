@@ -54,4 +54,8 @@ public class EnemyBehavior : MonoBehaviour {
 			metalpiece.transform.SetParent (MetalCollector.transform);
 		}
 	}
+
+	public void AttackTarget(){
+		GetComponent<StartSearch> ().target.GetComponent<Base> ().TakeDamage (enemyData.Damage);
+	}
 }

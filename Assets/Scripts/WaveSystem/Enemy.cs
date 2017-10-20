@@ -20,11 +20,13 @@ public struct EnemyData{
 	public int health;
 	public float speed;
 	public int carryMetal;
+	public float Damage;
 
-	public EnemyData(int health, float speed, int metal){
+	public EnemyData(int health, float speed, int metal, float damage){
 		this.health = health;
 		this.speed = speed;
 		this.carryMetal = metal;
+		this.Damage = damage;
 	}
 }
 
@@ -39,15 +41,15 @@ public class Enemy  {
 		get{ 
 			switch (type) {
 			case EnemyTypeData.Normal:
-				return new EnemyData(5	,2.5f	,1);
+				return new EnemyData(5	,2.5f	,1		,2);
 			case EnemyTypeData.Small:
-				return new EnemyData(2	,3f		,1);
+				return new EnemyData(2	,3f		,1		,1);
 			case EnemyTypeData.Fast:
-				return new EnemyData(3	,4f		,3);
+				return new EnemyData(3	,4f		,3		,2);
 			case EnemyTypeData.Strong:
-				return new EnemyData(20	,1f		,5);
+				return new EnemyData(20	,1f		,5		,10);
 			default:
-				return new EnemyData(1	,1f		,1);;
+				return new EnemyData(1	,1f		,1 		,1);
 			}
 		}
 	}

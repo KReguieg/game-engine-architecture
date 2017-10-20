@@ -1577,6 +1577,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+  XSize: 1.5
 --- !u!114 &114502666459459606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1652,8 +1653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6be6d806aeed44ad94b90151695f508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedObjectToSeeInSight: []
-  onEnterLayer: PCOnly
+  connectedObjectToSeeInSight:
+  - {fileID: 1642267551197548}
+  onEnterLayer: Default
   onLeaveLayer: Ignore Raycast
 --- !u!114 &114941448809004670
 MonoBehaviour:
