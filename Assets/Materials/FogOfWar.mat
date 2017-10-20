@@ -78,7 +78,7 @@ Material:
     m_Colors:
     - _Color: {r: 0.39705884, g: 0.3941393, b: 0.3941393, a: 0.097}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Player: {r: -0.07197292, g: 1.0000004, b: 2.5802877, a: 0}
+    - _Player: {r: 0, g: 0.66, b: -8.87, a: 0}
     - _Player1_Pos: {r: -0.7363167, g: 4.8047895, b: -13.951742, a: 0}
     - _Player2_Pos: {r: 0, g: 0, b: 0, a: 1}
     - _Player3_Pos: {r: 0, g: 0, b: 0, a: 1}

@@ -1,7 +1,7 @@
 # Files wich change at every run
-Assets/Materials/Door.mat
-Assets/Materials/FogOfWar.mat
-Assets/Materials/Upgrade/UpgradeSymbol.mat
+/Assets/Materials/Door.mat
+/Assets/Materials/FogOfWar.mat
+/Assets/Materials/Upgrade/UpgradeSymbol.mat
 
 /[Ll]ibrary/
 /[Tt]emp/
