@@ -331,13 +331,13 @@ namespace RTS_Cam
 
 		public void SetTarget(Vector2 target)
 		{
-			Debug.Log (target);
 			target *= limitX;
+			Plane plane = new Plane (Vector3.up, transform.position);
+			Ray ray = new Ray (target , -transform.forward);
+			float dist;
+			plane.Raycast (ray, out dist);
+			m_Transform.position = ray.GetPoint(dist);
 
-			float targetHeight = Mathf.Lerp (minHeight, maxHeight, zoomPos);
-
-			m_Transform.position = new Vector3 (target.x, targetHeight  ,target.y);
-			HeightCalculation ();
 		}
 
         /// <summary>
