@@ -268,8 +268,13 @@ namespace RTS_Cam
 
 			float targetHeight = Mathf.Lerp (minHeight, maxHeight, zoomPos);
 
+			Plane plane = new Plane (Vector3.up, Vector3.up * targetHeight);
+			float dist;
+			Ray ray = new Ray (transform.position, transform.forward);
+			plane.Raycast (ray, out dist);
+
 			//Vector3 position = m_Transform.Translate ( for targetHeight,Space.Self );
-			m_Transform.position = Vector3.Lerp (m_Transform.position, new Vector3 (m_Transform.position.x, targetHeight , m_Transform.position.z), Time.deltaTime * heightDampening);
+			m_Transform.position = Vector3.Lerp (m_Transform.position, ray.GetPoint(dist), Time.deltaTime * heightDampening);
 			
         }
 
