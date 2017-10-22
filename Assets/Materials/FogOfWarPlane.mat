@@ -23,14 +23,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _FogMaxRadius: 1.2
-    - _FogRadius: 13
+    - _FogMaxRadius: 0.36
+    - _FogRadius: 13.81
     - _ZLayer: 0.5
     m_Colors:
     - _Color: {r: 0.4852941, g: 0.4674524, b: 0.4674524, a: 0.053}
     - _PLayer2_Pos: {r: 19.75, g: 0, b: 12.63, a: 1}
     - _PLayer3_Pos: {r: -3.29, g: 0, b: 0, a: 1}
-    - _Player: {r: 0.11, g: 0.66, b: -8.45, a: 0}
+    - _Player: {r: -0.1910937, g: 1.8121202, b: -3.623874, a: 0}
     - _Player1_Pos: {r: 8.13, g: 0, b: 1.23, a: 1}
     - _Player2_Pos: {r: 0, g: 0, b: 0, a: 1}
     - _Player3_Pos: {r: 0, g: 0, b: 0, a: 1}

@@ -11,15 +11,7 @@ public class VisbilyCheck : MonoBehaviour {
 	string onLeaveLayer = "VROnly";
 
 	int counter = 0;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	void OnTriggerEnter(){
 		counter++;
