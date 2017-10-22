@@ -3,6 +3,7 @@
 	Properties
 	{
         _Color ("Main Color", Color) = (1,1,1,1)
+        _FogCenterRadius("Center Radius", Float) = 15.0
     	_FogRadius ("FogRadius", Float) = 1.0
     	_FogMaxRadius ("FogMaxRadius", Float) = 0.5
     	_ZLayer ("RenderOnZLayer", Float) = 0.5
@@ -26,6 +27,7 @@
 			half _FogRadius;
 			half _FogMaxRadius;
 			half _ZLayer;
+			half _FogCenterRadius;
 
 			struct appdata
 			{
@@ -39,12 +41,12 @@
 				fixed4 _color : COLOR;
 			};
 
-			float powerForPos(half4 pos, half2 nearVertex) { // make Cone to Circle for performance
-	 			float attenumat = clamp(_FogRadius - abs(length(pos.xz - nearVertex.xy)), 0.0, _FogRadius);
-	 			if(attenumat > _FogRadius*_FogMaxRadius) {
-	 				attenumat = _FogRadius*_FogMaxRadius;  
+			float powerForPos(half4 pos, half2 nearVertex , half radius) { // make Cone to Circle for performance
+	 			float attenumat = clamp(radius - abs(length(pos.xz - nearVertex.xy)), 0.0, radius);
+	 			if(attenumat > radius*_FogMaxRadius) {
+	 				attenumat = radius*_FogMaxRadius;  
 	 			}
-	    		return (1.0/_FogMaxRadius)*(attenumat/_FogRadius);
+	    		return (1.0/_FogMaxRadius)*(attenumat/radius);
 	    	}
 			
 			v2f vert (appdata v, v2f outData) 
@@ -54,7 +56,7 @@
 				outData._vertex = UnityObjectToClipPos(v.vertex);
 				outData._vertex.z = _ZLayer;
 				outData._color = _Color;
-		    	outData._color.a = (1.0 - clamp(_Color.a + powerForPos(_Player, posVertex) + powerForPos(half4(0,0,0,0), posVertex), 0, 1.0));
+		    	outData._color.a = (1.0 - clamp(_Color.a + powerForPos(_Player, posVertex, _FogRadius) + powerForPos(half4(0,0,0,0), posVertex, _FogCenterRadius), 0, 1.0));
 		    	return outData;
 			}
 			
