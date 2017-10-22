@@ -292,7 +292,7 @@ namespace RTS_Cam
 				Plane p = new Plane(Vector3.up, Vector3.zero);
 				float dist;
 				p.Raycast(ray, out dist);
-				transform.RotateAround (ray.GetPoint(dist),Vector3.up,-MouseAxis.x * Time.deltaTime * mouseRotationSpeed);
+				transform.RotateAround (ray.GetPoint(dist),Vector3.up,MouseAxis.x * Time.deltaTime * mouseRotationSpeed);
 				//m_Transform.Rotate (Vector3.up, -MouseAxis.x * Time.deltaTime * mouseRotationSpeed, Space.World);
 		
 			}
