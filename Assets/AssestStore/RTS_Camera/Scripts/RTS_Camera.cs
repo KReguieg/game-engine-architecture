@@ -329,15 +329,14 @@ namespace RTS_Cam
             targetFollow = target;
         }
 
-		public void SetTarget(Vector2 target)
+		public void SetTarget(Vector3 target)
 		{
 			target *= limitX;
 			Plane plane = new Plane (Vector3.up, transform.position);
 			Ray ray = new Ray (target , -transform.forward);
 			float dist;
 			plane.Raycast (ray, out dist);
-			m_Transform.position = ray.GetPoint(dist);
-
+			transform.position = ray.GetPoint(dist);
 		}
 
         /// <summary>
