@@ -41,13 +41,6 @@ public class GrindMetal : MonoBehaviour {
 		MetalinSecondStage  = new List<GameObject> (); 
 		triggerdBurstEmmits = new List<float> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		FistStageUpdate ();
-		SecondStageUpdate ();
-
-	}
 
 	void TriggerPartikelSystem(){
 		for (int i = 0; i < triggerdBurstEmmits.Count; i++) {
@@ -62,6 +55,9 @@ public class GrindMetal : MonoBehaviour {
 	}
 
 	public void FixedUpdate(){
+		FistStageUpdate ();
+		SecondStageUpdate ();
+
 		TriggerPartikelSystem ();
 
 		if (metalMined != 0) {

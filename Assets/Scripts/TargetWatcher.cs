@@ -15,17 +15,6 @@ public class TargetWatcher : MonoBehaviour {
 	[Header("Trigger with Tag On Leave")]
 	public TrigerWithTag methodToTriggerOnLeave;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
 	void OnTriggerEnter(Collider other){
 		if (other.tag == triggerOnTagName)
 			methodToTriggerOnEnter.Invoke (other.transform.parent.gameObject);

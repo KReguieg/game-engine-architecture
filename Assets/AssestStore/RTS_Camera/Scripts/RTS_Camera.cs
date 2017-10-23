@@ -268,8 +268,13 @@ namespace RTS_Cam
 
 			float targetHeight = Mathf.Lerp (minHeight, maxHeight, zoomPos);
 
+			Plane plane = new Plane (Vector3.up, Vector3.up * targetHeight);
+			float dist;
+			Ray ray = new Ray (transform.position, transform.forward);
+			plane.Raycast (ray, out dist);
+
 			//Vector3 position = m_Transform.Translate ( for targetHeight,Space.Self );
-			m_Transform.position = Vector3.Lerp (m_Transform.position, new Vector3 (m_Transform.position.x, targetHeight , m_Transform.position.z), Time.deltaTime * heightDampening);
+			m_Transform.position = Vector3.Lerp (m_Transform.position, ray.GetPoint(dist), Time.deltaTime * heightDampening);
 			
         }
 
@@ -278,11 +283,19 @@ namespace RTS_Cam
         /// </summary>
         private void Rotation()
         {
+			
             if(useKeyboardRotation)
                 transform.Rotate(Vector3.up, RotationDirection * Time.deltaTime * rotationSped, Space.World);
 
-            if (useMouseRotation && Input.GetKey(mouseRotationKey))
-                m_Transform.Rotate(Vector3.up, -MouseAxis.x * Time.deltaTime * mouseRotationSpeed, Space.World);
+			if (useMouseRotation && Input.GetKey (mouseRotationKey)) {
+				Ray ray = new Ray (transform.position, transform.forward);
+				Plane p = new Plane(Vector3.up, Vector3.zero);
+				float dist;
+				p.Raycast(ray, out dist);
+				transform.RotateAround (ray.GetPoint(dist),Vector3.up,MouseAxis.x * Time.deltaTime * mouseRotationSpeed);
+				//m_Transform.Rotate (Vector3.up, -MouseAxis.x * Time.deltaTime * mouseRotationSpeed, Space.World);
+		
+			}
         }
 
         /// <summary>
@@ -316,15 +329,14 @@ namespace RTS_Cam
             targetFollow = target;
         }
 
-		public void SetTarget(Vector2 target)
+		public void SetTarget(Vector3 target)
 		{
-			Debug.Log (target);
 			target *= limitX;
-
-			float targetHeight = Mathf.Lerp (minHeight, maxHeight, zoomPos);
-
-			m_Transform.position = new Vector3 (target.x, targetHeight  ,target.y);
-			HeightCalculation ();
+			Plane plane = new Plane (Vector3.up, transform.position);
+			Ray ray = new Ray (target , -transform.forward);
+			float dist;
+			plane.Raycast (ray, out dist);
+			transform.position = ray.GetPoint(dist);
 		}
 
         /// <summary>

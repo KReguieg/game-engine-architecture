@@ -28,7 +28,6 @@ public class RayCasterFilter : MonoBehaviour, ICanvasRaycastFilter {
 			out worldPoint
 		);
 		point = worldPoint;
-		Debug.Log (isInside);
 		if (isInside)
 			Canvas.GetComponent<RaycastBlocker> ().RaycastBlockByUI = true;
 		return isInside;
