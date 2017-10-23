@@ -1353,7 +1353,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0000014, z: 0}
+  m_Size: {x: 6, y: 6.0000014, z: 0.1}
   m_Center: {x: 3, y: -3.0000007, z: 0}
 --- !u!23 &142287238
 MeshRenderer:
@@ -6772,7 +6772,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0000014, z: 0}
+  m_Size: {x: 6, y: 6.0000014, z: 0.1}
   m_Center: {x: 3, y: -3.0000007, z: 0}
 --- !u!23 &766629103
 MeshRenderer:
@@ -7457,7 +7457,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0000014, z: 0}
+  m_Size: {x: 6, y: 6.0000014, z: 0.1}
   m_Center: {x: 3, y: -3.0000007, z: 0}
 --- !u!23 &819113020
 MeshRenderer:
@@ -7986,22 +7986,6 @@ Prefab:
     - target: {fileID: 4279442575840054, guid: 2f01900586265460b859e219a93163ff, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4279442575840054, guid: 2f01900586265460b859e219a93163ff, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5829846
-      objectReference: {fileID: 0}
-    - target: {fileID: 4279442575840054, guid: 2f01900586265460b859e219a93163ff, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5829847
-      objectReference: {fileID: 0}
-    - target: {fileID: 4279442575840054, guid: 2f01900586265460b859e219a93163ff, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.5829847
-      objectReference: {fileID: 0}
-    - target: {fileID: 4279442575840054, guid: 2f01900586265460b859e219a93163ff, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f01900586265460b859e219a93163ff, type: 2}
@@ -8804,7 +8788,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2018164930
+  randomSeed: -500565995
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14271,7 +14255,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0000014, z: 0}
+  m_Size: {x: 6, y: 6.0000014, z: 0.1}
   m_Center: {x: 3, y: -3.0000007, z: 0}
 --- !u!23 &1162034670
 MeshRenderer:
@@ -15753,7 +15737,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0000014, z: 0}
+  m_Size: {x: 6, y: 6.0000014, z: 0.1}
   m_Center: {x: 3, y: -3.0000007, z: 0}
 --- !u!23 &1325906336
 MeshRenderer:
@@ -16627,7 +16611,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0000014, z: 0}
+  m_Size: {x: 6, y: 6.0000014, z: 0.1}
   m_Center: {x: 3, y: -3.0000007, z: 0}
 --- !u!23 &1386054725
 MeshRenderer:
@@ -17959,7 +17943,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0000014, z: 0}
+  m_Size: {x: 6, y: 6.0000014, z: 0.1}
   m_Center: {x: 3, y: -3.0000007, z: 0}
 --- !u!23 &1557663711
 MeshRenderer:
@@ -18416,7 +18400,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 6.0000014, z: 0}
+  m_Size: {x: 6, y: 6.0000014, z: 0.1}
   m_Center: {x: 3, y: -3.0000007, z: 0}
 --- !u!23 &1618948760
 MeshRenderer:
