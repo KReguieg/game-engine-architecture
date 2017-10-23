@@ -332,7 +332,6 @@ namespace RTS_Cam
 		public void SetTarget(Vector2 value)
 		{
 			Vector3 target = new Vector3(value.x * limitX , 0, value.y * limitY);
-			Debug.Log (target);
 			Plane plane = new Plane (Vector3.up, transform.position);
 			Ray ray = new Ray (target , -transform.forward);
 			float dist;
