@@ -18,11 +18,23 @@ public struct TowerData{
 
 
 public class Tower : MonoBehaviour {
+	[Header("Link to Scene")]
 	public List<GameObject> EnemiesInRange;
+	public GameObject integratedUiManager;
+
+	[Header("Link to Own Objects")]
 	[SerializeField]
 	private GameObject towerHead;
 	[SerializeField]
 	public  GameObject Buildblocker;
+
+	/// <summary>
+	/// The components wich gets activatet when the Tower is build
+	/// </summary>
+	[SerializeField]
+	public  GameObject[] activeComponents;
+
+	[Header("Tower Attributes")]
 	[SerializeField]
 	private float attackspeed;
 	private float attacktimer;
@@ -30,21 +42,28 @@ public class Tower : MonoBehaviour {
 	[SerializeField]
 	private float damage;
 
+
+	bool active = false;
 	// Use this for initialization
 	void Start () {
 		EnemiesInRange = new List<GameObject> ();
 		attacktimer = Mathf.Infinity;
+		foreach (GameObject child in activeComponents) {
+			child.SetActive (false);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!active) 
+			return;
+		
 		attacktimer += Time.deltaTime;
 		if (attacktimer >= 1f / attackspeed) {
 			attacktimer = 0;
 			GameObject activeTarget = GetTarget ();
 			if(activeTarget != null)
 			{
-				
 				GetComponent<LineRenderer>().SetPositions(new Vector3[2]{ activeTarget.transform.position , towerHead.transform.position}); // Shoot interface to implement shotvarients
 				activeTarget.GetComponent<EnemyBehavior>().TakeDamage(damage);
 			}
@@ -78,6 +97,14 @@ public class Tower : MonoBehaviour {
 		EnemiesInRange.Remove (enemy);
 	}
 
+	public void Select(){
+		integratedUiManager.GetComponent<IntergratedUiManager> ().SetTowerMenu (towerHead.transform.position);
+	}
 
-
+	public void EnableTower(){
+		active = true;
+		foreach (GameObject child in activeComponents) {
+			child.SetActive (true);
+		}
+	}
 }
