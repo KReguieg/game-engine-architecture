@@ -17,9 +17,11 @@ public class DataCollector : MonoBehaviour {
 	public static DataCollector GetInstance{
 		get{ return instance; }
 	}
+	Color startColor;
 	// Use this for initialization
 	void Start () {
 		instance = this;
+		startColor = MetalTextBackground.GetComponent<RawImage> ().color;
 	}
 	
 	// Update is called once per frame
@@ -39,7 +41,6 @@ public class DataCollector : MonoBehaviour {
 	}
 
 	IEnumerator BlinkNotEnoughMetalMetal(){
-		Color startColor = MetalTextBackground.GetComponent<RawImage> ().color;
 		for (int i = 0; i < 4; i++) {
 			MetalTextBackground.GetComponent<RawImage> ().color = Color.red;
 			yield return new WaitForSeconds (0.4f);
