@@ -10,6 +10,8 @@ public class IntergratedUiManager : MonoBehaviour {
 	GameObject currentSelectedTower;
 	public float MenuHeight = 1;
 
+	public GameObject[] towerUpgrades;
+
 	public void SetTowerMenu(GameObject tower){
 		currentSelectedTower = tower;
 		if (currentTowerInteractionMenu == null){
@@ -23,7 +25,15 @@ public class IntergratedUiManager : MonoBehaviour {
 
 
 	public void UpgradeSelecetdTower(){
-		currentSelectedTower.GetComponent<Tower>().Upgrade ();
+		int towerLevel = currentSelectedTower.GetComponent<Tower> ().upgradeLevel + 1;
+		if (towerLevel >= 3)
+			return;
+		GameObject towerUpgraded = Instantiate( towerUpgrades[towerLevel]);
+		towerUpgraded.transform.SetPositionAndRotation(currentSelectedTower.transform.position, currentSelectedTower.transform.rotation);
+		towerUpgraded.transform.SetParent (currentSelectedTower.transform.parent);
+		towerUpgraded.GetComponent<Tower> ().integratedUiManager = gameObject;
+		Destroy (currentSelectedTower);
+
 	}
 
 	public void SellSelecetdTower(){

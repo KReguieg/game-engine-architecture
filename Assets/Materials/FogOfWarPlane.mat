@@ -31,7 +31,7 @@ Material:
     - _Color: {r: 0, g: 0, b: 0, a: 0.072}
     - _PLayer2_Pos: {r: 19.75, g: 0, b: 12.63, a: 1}
     - _PLayer3_Pos: {r: -3.29, g: 0, b: 0, a: 1}
-    - _Player: {r: -7.9453554, g: 1.1156504, b: 0.6905305, a: 0}
+    - _Player: {r: 0.63517815, g: 1.1156505, b: -6.1906857, a: 0}
     - _Player1_Pos: {r: 8.13, g: 0, b: 1.23, a: 1}
     - _Player2_Pos: {r: 0, g: 0, b: 0, a: 1}
     - _Player3_Pos: {r: 0, g: 0, b: 0, a: 1}

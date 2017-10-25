@@ -139,8 +139,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4680377981507374}
   - component: {fileID: 33386581154785986}
-  - component: {fileID: 65011848205247452}
   - component: {fileID: 114466541441761800}
+  - component: {fileID: 136101108253745312}
   m_Layer: 5
   m_Name: ClickCollider
   m_TagString: Untagged
@@ -218,7 +218,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012174300454}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.792961, y: 0.08316315, z: -5.4939113}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
@@ -302,7 +302,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157525599385018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 4000010737274380}
@@ -577,18 +577,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65011848205247452
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1157525599385018}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65682973398669084
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -677,6 +665,7 @@ MonoBehaviour:
   - {fileID: 1560242493475780}
   attackspeed: 2.5
   damage: 0.5
+  upgradeLevel: 0
 --- !u!120 &120121085720914964
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -774,3 +763,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5.13
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136101108253745312
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157525599385018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.53
+  m_Height: 1.68
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.21, z: 0}

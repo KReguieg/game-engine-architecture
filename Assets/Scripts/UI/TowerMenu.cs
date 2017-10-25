@@ -18,7 +18,6 @@ public class TowerMenu : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
 		if (!locked && Input.GetMouseButton (0)) {
 			destroy = true;
 		}

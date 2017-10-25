@@ -41,16 +41,19 @@ public class Tower : MonoBehaviour {
 
 	[SerializeField]
 	private float damage;
-
+	public int upgradeLevel;
 
 	bool active = false;
 	// Use this for initialization
 	void Start () {
 		EnemiesInRange = new List<GameObject> ();
 		attacktimer = Mathf.Infinity;
-		foreach (GameObject child in activeComponents) {
-			child.SetActive (false);
-		}
+		if(activeComponents != null)
+			foreach (GameObject child in activeComponents) {
+				child.SetActive (false);
+			}
+		if (upgradeLevel != 0)
+			active = true;
 	}
 	
 	// Update is called once per frame
