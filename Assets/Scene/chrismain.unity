@@ -6175,7 +6175,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 699983576}
   m_LocalRotation: {x: 0.7044421, y: -0, z: -0, w: 0.70976156}
-  m_LocalPosition: {x: 0, y: 1.27, z: 8}
+  m_LocalPosition: {x: 0, y: 1.27, z: 7.718}
   m_LocalScale: {x: 0.23049782, y: 1.0000024, z: 0.29977286}
   m_Children: []
   m_Father: {fileID: 474428777}
@@ -7463,7 +7463,6 @@ MonoBehaviour:
   buildBlockLayer:
     serializedVersion: 2
     m_Bits: 32768
-  buildBlockLayerAsInteger: 15
   buildLayer:
     serializedVersion: 2
     m_Bits: 16384
@@ -12422,6 +12421,7 @@ MonoBehaviour:
   TowerInteractionMenuPrefab: {fileID: 1913024880530758, guid: 5325e8e427b2e40ddae263aede062605,
     type: 2}
   Canvas: {fileID: 1432366041}
+  MenuHeight: 1
 --- !u!4 &990665851 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4558503157152108, guid: c69ca5d4562934b8c8d61b46a4214978,

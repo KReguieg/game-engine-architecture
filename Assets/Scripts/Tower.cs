@@ -98,7 +98,7 @@ public class Tower : MonoBehaviour {
 	}
 
 	public void Select(){
-		integratedUiManager.GetComponent<IntergratedUiManager> ().SetTowerMenu (towerHead.transform.position);
+		integratedUiManager.GetComponent<IntergratedUiManager> ().SetTowerMenu (gameObject);
 	}
 
 	public void EnableTower(){
@@ -106,5 +106,13 @@ public class Tower : MonoBehaviour {
 		foreach (GameObject child in activeComponents) {
 			child.SetActive (true);
 		}
+	}
+
+	public void Upgrade(){
+		
+	}
+
+	public void Sell(){
+		Destroy (gameObject);
 	}
 }

@@ -7,11 +7,13 @@ public class TowerMenu : MonoBehaviour {
 	bool locked = true;
 	float destroyTimer = 0;
 	bool destroy;
+	IntergratedUiManager iUIManager;
+
 
 	public float DestroyAfterTime = 1;
 	// Use this for initialization
 	void Start () {
-		
+		iUIManager = transform.parent.GetComponent<IntergratedUiManager> ();
 	}
 
 	// Update is called once per frame
@@ -36,4 +38,12 @@ public class TowerMenu : MonoBehaviour {
 		locked = true;
 	}
 
+	public void OnUpgrade(){
+		iUIManager.UpgradeSelecetdTower();
+	}
+
+	public void OnSell(){
+		Destroy (gameObject);
+		iUIManager.SellSelecetdTower();
+	}
 }
