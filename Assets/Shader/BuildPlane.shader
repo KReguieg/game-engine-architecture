@@ -8,7 +8,8 @@ Shader "Custom/BuildPlane"
 	}
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
+		Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+		Blend OneMinusDstColor One
 		LOD 100
 
 		Pass
@@ -41,14 +42,15 @@ Shader "Custom/BuildPlane"
 				return o;
 			}
 			
-			fixed4 frag (v2f i) : SV_Target
+			fixed4 frag (v2f i) : COLOR
 			{
-				// sample the texture
 				fixed4 col = fixed4(0,0,0,0);
-				col.y = (int)abs(i.worldPos.x) % 2 & (int)(abs(i.worldPos.x)-0.8) % 2 |
+				float val = (int)abs(i.worldPos.x) % 2 & (int)(abs(i.worldPos.x)-0.8) % 2 |
 					    (int)abs(i.worldPos.z) % 2 & (int)(abs(i.worldPos.z) - 0.8) % 2 |
 					    ((abs(i.worldPos.x) <= 0.1)) |
 					    ((abs(i.worldPos.z) <= 0.1));
+			   	col.y = val;
+			   	col.a = val;
 				return col;
 			}
 			ENDCG

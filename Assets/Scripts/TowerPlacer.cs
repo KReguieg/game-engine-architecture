@@ -12,7 +12,7 @@ public class TowerPlacer : MonoBehaviour
     private GameObject placeableObjectPrefab;
 
     [SerializeField]
-    private KeyCode newObjectHotkey = KeyCode.A;
+    private KeyCode newObjectHotkey = KeyCode.B;
 
     private GameObject currentPlaceableObject;
 	public GameObject towerCollector;
@@ -22,9 +22,6 @@ public class TowerPlacer : MonoBehaviour
 
 	[SerializeField]
 	private LayerMask buildBlockLayer;
-	[SerializeField]
-	private int buildBlockLayerAsInteger;
-
 
 	[SerializeField]
 	private LayerMask buildLayer;
@@ -97,7 +94,9 @@ public class TowerPlacer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 			if (DataCollector.GetInstance.ModifieMetal (-10)) {
-				currentPlaceableObject.GetComponent<Tower> ().Buildblocker.layer = buildBlockLayerAsInteger;
+				currentPlaceableObject.GetComponent<Tower> ().EnableTower ();
+
+				currentPlaceableObject.GetComponent<Tower> ().integratedUiManager = transform.parent.GetComponentInChildren<IntergratedUiManager>().gameObject;
 				currentPlaceableObject = null;
 				UnMaskCamera ();
 			} 

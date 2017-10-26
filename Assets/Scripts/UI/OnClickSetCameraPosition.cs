@@ -8,7 +8,7 @@ public class OnClickSetCameraPosition : MonoBehaviour {
 
 		Vector2 point = GetComponent<RayCasterFilter> ().point;
 		RectTransform rectTransform = GetComponent<RectTransform> ();
-		point = new Vector2 (-point.x/ rectTransform.sizeDelta.x, -point.y/ rectTransform.sizeDelta.y );
+		point = new Vector2 (-point.x/ rectTransform.sizeDelta.x, -point.y/ rectTransform.sizeDelta.y ); // nomalize
 		point -= Vector2.one * 0.5f;
 		point *= -2;
 		Camera.main.GetComponent<RTS_Cam.RTS_Camera>().SetTarget(point);

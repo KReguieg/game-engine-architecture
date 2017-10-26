@@ -10,8 +10,9 @@ public class WaveManager : MonoBehaviour {
 	public GameObject MetalCollector;
 
 	public GameObject[] Spawns;
+	public GameObject[] Doors;
 
-
+	public int OpenSouthDoorAtLvl, OpenEastDoorAtLvl, OpenWestDoorAtLvl;
 	[Header("Wave System")]
 	[SerializeField]
 	public  Wave[] Waves;
@@ -52,10 +53,26 @@ public class WaveManager : MonoBehaviour {
 		} else {
 			waveFinished = Waves [currentWave].Update (this);
 
-			if(waveFinished)
+			if (waveFinished) {
 				currentWave++;
+				OpenDoors ();
+			}
 			if (loopWaves)
 				currentWave %= Waves.Length;
+		}
+	}
+
+	void OpenDoors(){
+		if (currentWave == OpenEastDoorAtLvl) {
+			Doors [0].GetComponent<DoorOpener> ().StartOpeningDoor ();
+			return;
+		}
+		if (currentWave == OpenSouthDoorAtLvl) {
+			Doors [1].GetComponent<DoorOpener> ().StartOpeningDoor ();
+			return;
+		}
+		if (currentWave == OpenWestDoorAtLvl) {
+			Doors [2].GetComponent<DoorOpener> ().StartOpeningDoor ();
 		}
 	}
 }

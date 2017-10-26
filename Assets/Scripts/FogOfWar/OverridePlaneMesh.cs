@@ -69,4 +69,8 @@ public class OverridePlaneMesh : MonoBehaviour
         meshFilter.sharedMesh = m;
         m.RecalculateBounds();
     }
+
+	void OnApplicationQuit(){
+		GetComponent<Renderer>().sharedMaterial.SetVector ("_Player", Vector4.zero );
+	}
 }

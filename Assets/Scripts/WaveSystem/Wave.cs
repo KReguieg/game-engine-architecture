@@ -81,7 +81,11 @@ public class Wave{
 		GameObject Spawn;
 		switch (spawnType) {
 			case SpawnType.Random:
-			Spawn = manager.Spawns [Random.Range(0,manager.Spawns.Length - 1)];
+				Spawn = manager.Spawns [Random.Range(0,manager.Spawns.Length - 1)];
+			break;
+
+		case SpawnType.One:
+			Spawn = FindFirstActive (manager);
 			break;
 
 			default: 
@@ -90,5 +94,16 @@ public class Wave{
 		}
 		return Spawn.transform.position;
 	}
+
+
+	GameObject FindFirstActive(WaveManager manager){
+		for (int i = 0; i < SpawnActive.Length; i++) {
+			if (SpawnActive [i])
+				return manager.Spawns [i];
+		}
+		Debug.LogError ("No Spawn Active");
+		return null;
+	}
+
 }
 

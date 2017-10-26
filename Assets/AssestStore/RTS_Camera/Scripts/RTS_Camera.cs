@@ -329,9 +329,9 @@ namespace RTS_Cam
             targetFollow = target;
         }
 
-		public void SetTarget(Vector3 target)
+		public void SetTarget(Vector2 value)
 		{
-			target *= limitX;
+			Vector3 target = new Vector3(value.x * limitX , 0, value.y * limitY);
 			Plane plane = new Plane (Vector3.up, transform.position);
 			Ray ray = new Ray (target , -transform.forward);
 			float dist;

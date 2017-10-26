@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof (RectTransform), typeof (Collider2D))]
+[RequireComponent (typeof (RectTransform))]
 public class RayCasterFilter : MonoBehaviour, ICanvasRaycastFilter {
 
 	public GameObject Canvas;
 
-	Collider2D myCollider;
 	RectTransform rectTransform;
 
 	public Vector2 point;
 	void Awake ()
 	{
-		myCollider = GetComponent<Collider2D>();
 		rectTransform = GetComponent<RectTransform>();
 	}
 
