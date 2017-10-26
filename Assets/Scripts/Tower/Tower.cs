@@ -24,7 +24,7 @@ public class Tower : MonoBehaviour {
 
 	[Header("Link to Own Objects")]
 	[SerializeField]
-	private GameObject towerHead;
+	internal GameObject towerHead;
 	[SerializeField]
 	public  GameObject Buildblocker;
 	[SerializeField]
@@ -38,16 +38,17 @@ public class Tower : MonoBehaviour {
 
 	[Header("Tower Attributes")]
 	[SerializeField]
-	private float attackspeed;
-	private float attacktimer;
+	internal float attackspeed;
+	internal float attacktimer;
 
 	[SerializeField]
-	private float damage;
+	internal float damage;
 	public int upgradeLevel;
 
 	bool active = false;
+	internal GameObject target;
 	// Use this for initialization
-	void Start () {
+	internal void Start () {
 		EnemiesInRange = new List<GameObject> ();
 		attacktimer = Mathf.Infinity;
 		if(activeComponents != null)
@@ -62,17 +63,17 @@ public class Tower : MonoBehaviour {
 	internal void Update () {
 		if (!active) 
 			return;
-		GameObject target = GetTarget ();
+		target = GetTarget ();
 		if(target != null) {
-			towerHead.transform.LookAt(target.transform.position);
-			towerHead.transform.Rotate(Vector3.up, -90);
+			LookAtTarget ();
 		}
 		
 		attacktimer += Time.deltaTime;
 		if (attacktimer >= 1f / attackspeed) {
-			attacktimer = 0;
-			Shoot (target);
-
+			if (target != null) {
+				attacktimer = 0;
+				ShootAtTarget ();
+			}
 		}
 		if (attacktimer >= 0.1f) {
 			RemoveShot ();
@@ -91,10 +92,14 @@ public class Tower : MonoBehaviour {
 		return null;
 	}
 
-	public virtual void Shoot(GameObject target){
-		
-		if (target == null)
-			return;
+	public virtual void LookAtTarget ()
+	{
+		towerHead.transform.LookAt(target.transform.position);
+		towerHead.transform.Rotate(Vector3.up, -90);
+	}
+
+	public virtual void ShootAtTarget()
+	{
 		
 		foreach(GameObject gun in Guns)
 			gun.GetComponent<LineRenderer>().SetPositions(new Vector3[2]{ target.transform.position , gun.transform.position}); // Shoot interface to implement shotvarients

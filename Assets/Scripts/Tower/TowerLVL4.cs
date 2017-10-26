@@ -8,16 +8,20 @@ public class TowerLVL4 : Tower {
 
 	public GameObject RotatingGun;
 
-	void Update(){
+	void Start(){
+		base.Start ();
+	}
+
+	void FixedUpdate(){
 		if(EnemiesInRange.Count != 0)
 			RotatingGun.transform.Rotate (new Vector3(rotationSpeed,0,0));
 		base.Update ();
 
 	}
 
-	public override void Shoot (GameObject target)
+	public override void ShootAtTarget ()
 	{
-		base.Shoot (target);
+		base.ShootAtTarget ();
 	}
 
 	public override void RemoveShot ()

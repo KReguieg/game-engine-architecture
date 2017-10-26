@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4324074020586342}
-  - component: {fileID: 114851112663080362}
+  - component: {fileID: 114924033670292812}
   m_Layer: 0
   m_Name: 'Turret 2c '
   m_TagString: Untagged
@@ -268,7 +268,7 @@ Transform:
   m_GameObject: {fileID: 1568396216286482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children: []
   m_Father: {fileID: 4919902386114668}
   m_RootOrder: 1
@@ -853,7 +853,7 @@ MonoBehaviour:
   methodToTriggerOnEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114851112663080362}
+      - m_Target: {fileID: 0}
         m_MethodName: EmemyEnterRange
         m_Mode: 0
         m_Arguments:
@@ -869,7 +869,7 @@ MonoBehaviour:
   methodToTriggerOnLeave:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114851112663080362}
+      - m_Target: {fileID: 0}
         m_MethodName: EmemyLeaveRange
         m_Mode: 0
         m_Arguments:
@@ -882,7 +882,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: TrigerWithTag, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114851112663080362
+--- !u!114 &114924033670292812
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -890,21 +890,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1728118311863790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd033cd8d69b3470185924423d6bd7b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7543ba3f3693e41b1b4d1969f6a086b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesInRange: []
   integratedUiManager: {fileID: 0}
-  towerHead: {fileID: 1568396216286482}
+  towerHead: {fileID: 1370675936739622}
   Buildblocker: {fileID: 1603309009770644}
   Guns:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1603309009770644}
   activeComponents: []
-  attackspeed: 2.5
-  damage: 0.5
-  upgradeLevel: 3
+  attackspeed: 0
+  damage: 0
+  upgradeLevel: 0
+  spinnUpTime: 3
+  spinTimer: 0
+  MaxSpeed: 20
 --- !u!135 &135019950626330242
 SphereCollider:
   m_ObjectHideFlags: 1
