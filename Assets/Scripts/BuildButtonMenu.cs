@@ -22,9 +22,8 @@ public class BuildButtonMenu : MonoBehaviour
 	public float radius = -125.0f;
     private bool expand = false;
 	public AnimationCurve AnimationCurve;
-
-	[Range(0.1f, 100.0f)]
-    public float speed;
+    private float startColor;
+    private float endColor;
 
     // Use this for initialization
     private void Start ()
@@ -36,12 +35,12 @@ public class BuildButtonMenu : MonoBehaviour
 
 		GetComponent<Button>().onClick.AddListener( () => {ExpandMenu();} );
 		GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0.5f);
-
 	}
 
 	public void ExpandMenu() 
 	{
 		expand = !expand;
+		startColor = expand?0:1;
 		float angle = -90.0f /(buildMenuItems.Count - 1) * Mathf.Deg2Rad;
 		for (int i = 0; i < buildMenuItems.Count; i++)
 		{
@@ -49,29 +48,39 @@ public class BuildButtonMenu : MonoBehaviour
 					float xPos = Mathf.Cos(angle * i) * radius;
 					float yPos = Mathf.Sin(angle * i) * radius;
 					buildMenuItemsPositions[i] = new Vector2(transform.position.x + xPos, transform.position.y + yPos);
+					buildMenuItems[i].gameObject.SetActive(true);
 					//buildMenuItems[i].transform.position = buildMenuItemsPositions[i];
 			}
 			else
 			{
 				buildMenuItemsPositions[i] = transform.position;
+				buildMenuItems[i].gameObject.SetActive(false);
 				//buildMenuItems[i].transform.position = buildMenuItemsPositions[i];
 			}
 		}
-
-		StartCoroutine(AnimateBuildMenuItems());
+		StartCoroutine(AnimateBuildMenuItems());		
 	}
 
 	private IEnumerator AnimateBuildMenuItems() 
 	{
+		Color c;
 		float timer = 0;
 		while(timer <= AnimationCurve.length){
-			int i = 0;
+			yield return new WaitForSeconds(0.01f);
+			int i = 0;							
 			timer += Time.deltaTime;
 			foreach (Button menuItem in buildMenuItems) {
 				menuItem.gameObject.transform.position = Vector2.Lerp(menuItem.gameObject.transform.position, buildMenuItemsPositions[i], AnimationCurve.Evaluate(timer));
+				if(expand)
+				{
+					c = new Color(1,1,1,Mathf.Lerp(startColor, 1, AnimationCurve.Evaluate(timer)));
+				} else 
+				{
+					c = new Color(1,1,1,Mathf.Lerp(startColor, 0, AnimationCurve.Evaluate(timer)));
+				}
+				menuItem.gameObject.GetComponent<Image>().color = c;				
 				i++;
 			}
-			yield return new WaitForSeconds(0.01f);			
 		}
 	}
 }
