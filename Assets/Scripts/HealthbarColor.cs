@@ -16,7 +16,10 @@ public class HealthbarColor : MonoBehaviour {
 
 	public void SetLives(float amount)
 	{
-		
+		if (amount <= 0) {
+			transform.localScale = Vector3.zero;
+			return;
+		}
 		material.color = fadeColor.Evaluate (1 - amount);
 
 		Vector3 scale = transform.localScale;

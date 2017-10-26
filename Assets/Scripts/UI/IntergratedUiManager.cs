@@ -25,7 +25,7 @@ public class IntergratedUiManager : MonoBehaviour {
 
 
 	public void UpgradeSelecetdTower(){
-		Debug.Log ("level" + currentSelectedTower.GetComponent<Tower> ().upgradeLevel );
+		
 		int towerLevel = currentSelectedTower.GetComponent<Tower> ().upgradeLevel;
 		if (towerLevel >= 4)
 			return;
