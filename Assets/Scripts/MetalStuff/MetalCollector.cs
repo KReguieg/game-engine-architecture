@@ -12,18 +12,13 @@ public class MetalCollector : MonoBehaviour {
 	void Start () {
 		metalInRange = new List<GameObject> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void FixedUpdate (){
 		foreach (var obj in metalInRange) {
 			PullMetal(obj);
 		}
-	}
 
-	void FixedUpdate (){
-		
 		metalInRange.RemoveAll (x => {
-			//Debug.Log("Metal Name " + x.name + " Tagged With" + x.tag);
 			return x.transform.GetChild(0).tag == "Untagged";
 		});
 	}
