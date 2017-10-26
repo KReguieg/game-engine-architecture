@@ -38,7 +38,8 @@ public class TowerMenu : MonoBehaviour {
 	}
 
 	public void OnUpgrade(){
-		iUIManager.UpgradeSelecetdTower();
+		if (!locked)
+			iUIManager.UpgradeSelecetdTower();
 	}
 
 	public void OnSell(){

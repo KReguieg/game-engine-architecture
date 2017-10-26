@@ -25,8 +25,9 @@ public class IntergratedUiManager : MonoBehaviour {
 
 
 	public void UpgradeSelecetdTower(){
-		int towerLevel = currentSelectedTower.GetComponent<Tower> ().upgradeLevel + 1;
-		if (towerLevel >= 3)
+		Debug.Log ("level" + currentSelectedTower.GetComponent<Tower> ().upgradeLevel );
+		int towerLevel = currentSelectedTower.GetComponent<Tower> ().upgradeLevel;
+		if (towerLevel >= 4)
 			return;
 		GameObject towerUpgraded = Instantiate( towerUpgrades[towerLevel]);
 		towerUpgraded.transform.SetPositionAndRotation(currentSelectedTower.transform.position, currentSelectedTower.transform.rotation);

@@ -27,6 +27,8 @@ public class Tower : MonoBehaviour {
 	private GameObject towerHead;
 	[SerializeField]
 	public  GameObject Buildblocker;
+	[SerializeField]
+	public  GameObject[] Guns;
 
 	/// <summary>
 	/// The components wich gets activatet when the Tower is build
@@ -57,28 +59,25 @@ public class Tower : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	internal void Update () {
 		if (!active) 
 			return;
-		
-		attacktimer += Time.deltaTime;
-		if (attacktimer >= 1f / attackspeed) {
-			attacktimer = 0;
-			GameObject activeTarget = GetTarget ();
-			if(activeTarget != null)
-			{
-				GetComponent<LineRenderer>().SetPositions(new Vector3[2]{ activeTarget.transform.position , towerHead.transform.position}); // Shoot interface to implement shotvarients
-				activeTarget.GetComponent<EnemyBehavior>().TakeDamage(damage);
-			}
-		}
-		if (attacktimer >= 0.1f) {
-			GetComponent<LineRenderer> ().SetPositions (new Vector3[2]{ Vector3.zero, Vector3.zero });
-		}
 		GameObject target = GetTarget ();
 		if(target != null) {
 			towerHead.transform.LookAt(target.transform.position);
 			towerHead.transform.Rotate(Vector3.up, -90);
 		}
+		
+		attacktimer += Time.deltaTime;
+		if (attacktimer >= 1f / attackspeed) {
+			attacktimer = 0;
+			Shoot (target);
+
+		}
+		if (attacktimer >= 0.1f) {
+			RemoveShot ();
+		}
+
 	}
 
 	GameObject GetTarget (){
@@ -90,6 +89,23 @@ public class Tower : MonoBehaviour {
 			return EnemiesInRange [0];
 		}
 		return null;
+	}
+
+	public virtual void Shoot(GameObject target){
+		
+		if (target == null)
+			return;
+		
+		foreach(GameObject gun in Guns)
+			gun.GetComponent<LineRenderer>().SetPositions(new Vector3[2]{ target.transform.position , gun.transform.position}); // Shoot interface to implement shotvarients
+
+		target.GetComponent<EnemyBehavior>().TakeDamage(damage);
+	}
+
+	public virtual void RemoveShot(){
+		foreach(GameObject gun in Guns)
+			gun.GetComponent<LineRenderer>().SetPositions(new Vector3[2]{ Vector3.zero , Vector3.zero}); // Shoot interface to implement shotvarients
+		
 	}
 
 	public void EmemyEnterRange(GameObject enemy){
