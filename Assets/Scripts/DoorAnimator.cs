@@ -17,4 +17,8 @@ public class DoorAnimator : MonoBehaviour {
 		Vector2 offset = new Vector2 (offsetCounter * speed.x, offsetCounter * speed.y);
 		material.SetTextureOffset ("_MainTex", offset);
 	}
+
+	void OnApplicationQuit(){
+		material.SetTextureOffset ("_MainTex", Vector2.zero );
+	}
 }

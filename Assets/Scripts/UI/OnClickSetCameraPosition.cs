@@ -11,7 +11,6 @@ public class OnClickSetCameraPosition : MonoBehaviour {
 		point = new Vector2 (-point.x/ rectTransform.sizeDelta.x, -point.y/ rectTransform.sizeDelta.y ); // nomalize
 		point -= Vector2.one * 0.5f;
 		point *= -2;
-		Debug.Log (point);
 		Camera.main.GetComponent<RTS_Cam.RTS_Camera>().SetTarget(point);
 	}
 
