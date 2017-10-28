@@ -47,7 +47,7 @@ public class TowerPlacer : MonoBehaviour
         if (currentPlaceableObject != null)
         {
             MoveCurrentObjectToMouse();
-            RotateFromMouseWheel();
+            //RotateFromMouseWheel();
             ReleaseIfClicked();
         }
     }
