@@ -108,6 +108,7 @@ public class TowerPlacer : MonoBehaviour
 				currentPlaceableObject.GetComponent<Tower> ().EnableTower ();
 
 				currentPlaceableObject.GetComponent<Tower> ().integratedUiManager = transform.parent.GetComponentInChildren<IntergratedUiManager>().gameObject;
+
 				currentPlaceableObject = null;
 				UnMaskCamera ();
                 buildButtonMenu.GetComponent<BuildButtonMenu>().ExpandMenu();
