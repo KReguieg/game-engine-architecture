@@ -10,9 +10,6 @@ public class IntergratedUiManager : MonoBehaviour {
 	GameObject currentSelectedTower;
 	public float MenuHeight = 1;
 
-	public GameObject[] towerUpgrades;
-
-
 	public void SetTowerMenu(GameObject tower){
 		currentSelectedTower = tower;
 		if (currentTowerInteractionMenu == null){
@@ -21,6 +18,7 @@ public class IntergratedUiManager : MonoBehaviour {
 				filter.Canvas = Canvas;
 		}
 		currentTowerInteractionMenu.transform.position = tower.transform.position + Vector3.up * MenuHeight;
+		currentTowerInteractionMenu.GetComponent<TowerMenu> ().SetNewContent(currentSelectedTower);
 		currentTowerInteractionMenu.GetComponent<TowerMenu> ().DontDestroy ();
 	}
 

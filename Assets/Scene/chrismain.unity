@@ -5499,7 +5499,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4696459616298358, guid: 59f3c32b432594064a0334b723942443, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114788149397110264, guid: 59f3c32b432594064a0334b723942443,
         type: 2}
@@ -12703,11 +12703,6 @@ MonoBehaviour:
     type: 2}
   Canvas: {fileID: 1432366041}
   MenuHeight: 1
-  towerUpgrades:
-  - {fileID: 1000012174300454, guid: 8a4fca54c9faa3449bcff12193992420, type: 2}
-  - {fileID: 1000012258839112, guid: c36865a7da8627b42a5d8dae1b1a98bb, type: 2}
-  - {fileID: 1000010378282670, guid: 913c474af4fed6e45bc3725b21e84f11, type: 2}
-  - {fileID: 1000011222192992, guid: 9b3a643ca887918468955b42c4531666, type: 2}
 --- !u!4 &990665851 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4558503157152108, guid: c69ca5d4562934b8c8d61b46a4214978,
@@ -18081,7 +18076,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &1492424793 stripped
 Transform:

@@ -8,7 +8,8 @@ public class TowerMenu : MonoBehaviour {
 	float destroyTimer = 0;
 	bool destroy;
 	IntergratedUiManager iUIManager;
-
+	[SerializeField]
+	private GameObject UpgradeText, SellText;
 
 	public float DestroyAfterTime = 1;
 	// Use this for initialization
@@ -29,6 +30,15 @@ public class TowerMenu : MonoBehaviour {
 			if (destroyTimer >= DestroyAfterTime)
 				Destroy (gameObject);
 		}
+	}
+
+	public void SetNewContent(GameObject currentTower ){
+		SellText.GetComponent<UnityEngine.UI.Text>().text = "Sell(" +  currentTower.GetComponent<Tower> ().metalCost + ")";
+		if (currentTower.GetComponent<Tower> ().towerUpgrade == null) {
+			UpgradeText.GetComponent<UnityEngine.UI.Text> ().text = "Maxed";
+			UpgradeText.transform.parent.GetComponent<UnityEngine.UI.Button> ().enabled = false;
+		}
+		UpgradeText.GetComponent<UnityEngine.UI.Text>().text = "Upgrade(" +  currentTower.GetComponent<Tower> ().towerUpgrade.GetComponent<Tower>().metalCost + ")";
 	}
 
 	public void DontDestroy(){

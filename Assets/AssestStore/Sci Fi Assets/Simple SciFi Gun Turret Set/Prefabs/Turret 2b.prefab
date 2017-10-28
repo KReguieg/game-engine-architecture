@@ -851,7 +851,7 @@ MonoBehaviour:
   damage: 0
   metalCost: 60
   MaxSpeed: 15
-  lightningFadeOut: 10
+  lightningFadeOut: 0.25
   lightningComplexityMin: 6
   lightningComplexityMax: 13
   color: {r: 1.9367368, g: 0.3842734, b: 2.6130588, a: 1}
