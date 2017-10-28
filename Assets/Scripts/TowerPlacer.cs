@@ -30,9 +30,19 @@ public class TowerPlacer : MonoBehaviour
 	[SerializeField]
 	private LayerMask buildLayer;
 
+    [SerializeField]
+    private GameObject buildButtonMenu;
+
+    [SerializeField]
+    private GameObject canvas;
+
     private void Update()
     {
-        HandleNewObjectHotkey();
+        if (Input.GetKeyDown(newObjectHotkey))
+        {
+            HandleNewObjectHotkey();
+            buildButtonMenu.GetComponent<BuildButtonMenu>().ExpandMenu();
+        }
 
         if (currentPlaceableObject != null)
         {
@@ -42,20 +52,17 @@ public class TowerPlacer : MonoBehaviour
         }
     }
 
-    private void HandleNewObjectHotkey()
+    public void HandleNewObjectHotkey()
     {
-        if (Input.GetKeyDown(newObjectHotkey))
+        if (currentPlaceableObject != null)
         {
-            if (currentPlaceableObject != null)
-            {
-                Destroy(currentPlaceableObject);
-				UnMaskCamera ();
-            }
-            else
-            {
-				Camera.main.cullingMask = Camera.main.cullingMask | buildLayer;
-				currentPlaceableObject = Instantiate(placeableObjectPrefab, towerCollector.transform);
-            }
+            Destroy(currentPlaceableObject);
+            UnMaskCamera ();
+        }
+        else
+        {
+            Camera.main.cullingMask = Camera.main.cullingMask | buildLayer;
+            currentPlaceableObject = Instantiate(placeableObjectPrefab, towerCollector.transform);
         }
     }
 
@@ -95,7 +102,7 @@ public class TowerPlacer : MonoBehaviour
 
     private void ReleaseIfClicked()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !canvas.GetComponent<RaycastBlocker>().RaycastBlockByUI)
         {
 			if (DataCollector.GetInstance.ModifieMetal (-10)) {
 				currentPlaceableObject.GetComponent<Tower> ().EnableTower ();
@@ -103,6 +110,7 @@ public class TowerPlacer : MonoBehaviour
 				currentPlaceableObject.GetComponent<Tower> ().integratedUiManager = transform.parent.GetComponentInChildren<IntergratedUiManager>().gameObject;
 				currentPlaceableObject = null;
 				UnMaskCamera ();
+                buildButtonMenu.GetComponent<BuildButtonMenu>().ExpandMenu();
 			} 
         }
     }

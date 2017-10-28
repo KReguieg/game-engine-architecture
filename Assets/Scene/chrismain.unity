@@ -714,6 +714,39 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 86834347}
   m_Mesh: {fileID: 4300000, guid: 620813c3d11d1412a874c60c0aed7aeb, type: 3}
+--- !u!1 &87132115 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1778301057984830, guid: b5c8aa806c7364be7b14639df92a91d9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1241618716}
+--- !u!58 &87132117
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 87132115}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 64
+--- !u!114 &87132121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 87132115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e47b210d39f74062bf85733fae9ff7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 1432366041}
+  point: {x: 0, y: 0}
 --- !u!1 &90814930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3091,39 @@ Transform:
   m_PrefabParentObject: {fileID: 4000010737274380, guid: 8a4fca54c9faa3449bcff12193992420,
     type: 2}
   m_PrefabInternal: {fileID: 1915794745}
+--- !u!1 &312298595 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1483079804714808, guid: b5c8aa806c7364be7b14639df92a91d9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1241618716}
+--- !u!58 &312298597
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312298595}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 64
+--- !u!114 &312298601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312298595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e47b210d39f74062bf85733fae9ff7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 1432366041}
+  point: {x: 0, y: 0}
 --- !u!1001 &347703127
 Prefab:
   m_ObjectHideFlags: 0
@@ -4879,6 +4945,39 @@ Transform:
   m_Father: {fileID: 563141776}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &580257637 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1601622338966928, guid: b5c8aa806c7364be7b14639df92a91d9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1241618716}
+--- !u!58 &580257639
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 580257637}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 64
+--- !u!114 &580257643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 580257637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e47b210d39f74062bf85733fae9ff7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 1432366041}
+  point: {x: 0, y: 0}
 --- !u!1 &584812122
 GameObject:
   m_ObjectHideFlags: 0
@@ -7682,7 +7781,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351344c5144fd43c788803a64d4a02ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerPrefabs: []
+  TowerPrefabs:
+  - {fileID: 1000012174300454, guid: 8a4fca54c9faa3449bcff12193992420, type: 2}
+  - {fileID: 1984319095912942, guid: 95944fd2b36be483fad6579b4435b179, type: 2}
   placeableObjectPrefab: {fileID: 1000012174300454, guid: 8a4fca54c9faa3449bcff12193992420,
     type: 2}
   newObjectHotkey: 98
@@ -7693,6 +7794,8 @@ MonoBehaviour:
   buildLayer:
     serializedVersion: 2
     m_Bits: 16384
+  buildButtonMenu: {fileID: 1019487958}
+  canvas: {fileID: 1432366041}
 --- !u!1 &819113017
 GameObject:
   m_ObjectHideFlags: 0
@@ -13353,6 +13456,39 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1018636661}
   m_Mesh: {fileID: 4300000, guid: 7e013f49aeba048f286942722b09cd48, type: 3}
+--- !u!1 &1019487958 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1069871810501086, guid: b5c8aa806c7364be7b14639df92a91d9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1241618716}
+--- !u!114 &1019487959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1019487958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e47b210d39f74062bf85733fae9ff7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 1432366041}
+  point: {x: 0, y: 0}
+--- !u!58 &1019487960
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1019487958}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 50
 --- !u!1001 &1020503367
 Prefab:
   m_ObjectHideFlags: 0
@@ -13755,6 +13891,39 @@ Transform:
   m_Father: {fileID: 843832568}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1064925047 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1015846653711874, guid: b5c8aa806c7364be7b14639df92a91d9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1241618716}
+--- !u!58 &1064925049
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064925047}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 64
+--- !u!114 &1064925053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064925047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e47b210d39f74062bf85733fae9ff7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 1432366041}
+  point: {x: 0, y: 0}
 --- !u!1 &1071537896
 GameObject:
   m_ObjectHideFlags: 0
@@ -15544,6 +15713,22 @@ Prefab:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 810236641}
+    - target: {fileID: 114004125408578364, guid: b5c8aa806c7364be7b14639df92a91d9,
+        type: 2}
+      propertyPath: towerPlacer
+      value: 
+      objectReference: {fileID: 810236641}
+    - target: {fileID: 114765200340087488, guid: b5c8aa806c7364be7b14639df92a91d9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114971555008225658, guid: b5c8aa806c7364be7b14639df92a91d9,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fe0504c79464495e8def772048d75cd,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5c8aa806c7364be7b14639df92a91d9, type: 2}
   m_IsPrefabParent: 0
