@@ -847,10 +847,10 @@ MonoBehaviour:
   towerUpgrade: {fileID: 1728118311863790, guid: d5f6dd447eb4d46b798920e0294aa6c6,
     type: 2}
   activeComponents: []
-  attackspeed: 0.6
-  damage: 0
+  attackspeed: 0.5
+  damage: 6
   metalCost: 60
-  MaxSpeed: 15
+  MaxSpeed: 7
   lightningFadeOut: 0.25
   lightningComplexityMin: 6
   lightningComplexityMax: 13

@@ -104,11 +104,10 @@ public class TowerPlacer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !canvas.GetComponent<RaycastBlocker>().RaycastBlockByUI)
         {
-			if (DataCollector.GetInstance.ModifieMetal (-10)) {
+			if (DataCollector.GetInstance.ModifieMetal (-currentPlaceableObject.GetComponent<Tower> ().metalCost)) {
 				currentPlaceableObject.GetComponent<Tower> ().EnableTower ();
 
 				currentPlaceableObject.GetComponent<Tower> ().integratedUiManager = transform.parent.GetComponentInChildren<IntergratedUiManager>().gameObject;
-
 				currentPlaceableObject = null;
 				UnMaskCamera ();
                 buildButtonMenu.GetComponent<BuildButtonMenu>().ExpandMenu();

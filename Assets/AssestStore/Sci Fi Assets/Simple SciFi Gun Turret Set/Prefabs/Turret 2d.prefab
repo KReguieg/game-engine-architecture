@@ -846,10 +846,10 @@ MonoBehaviour:
   Guns: []
   towerUpgrade: {fileID: 0}
   activeComponents: []
-  attackspeed: 0
-  damage: 0
-  metalCost: 0
-  MaxSpeed: 25
+  attackspeed: 0.7
+  damage: 24
+  metalCost: 240
+  MaxSpeed: 11
   lightningFadeOut: 0.25
   lightningComplexityMin: 6
   lightningComplexityMax: 13

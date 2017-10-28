@@ -850,10 +850,10 @@ MonoBehaviour:
   - {fileID: 1248311300099464}
   - {fileID: 1997865485959212}
   - {fileID: 1056515486352370}
-  attackspeed: 0.5
+  attackspeed: 0.3
   damage: 2
   metalCost: 30
-  MaxSpeed: 10
+  MaxSpeed: 5
   lightningFadeOut: 0.25
   lightningComplexityMin: 6
   lightningComplexityMax: 13
@@ -948,7 +948,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 2.02
+    widthMultiplier: 1.5
     widthCurve:
       serializedVersion: 2
       m_Curve:

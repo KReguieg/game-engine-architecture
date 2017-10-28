@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorAnimator : MonoBehaviour {
-	Material material;
+	public Material material;
 	public Vector2 speed = Vector2.one;
 	// Use this for initialization
 	void Start () {
-		material = GetComponent <Renderer>().sharedMaterial;
+		
 	}
 	float offsetCounter;
 	// Update is called once per frame
