@@ -741,10 +741,12 @@ MonoBehaviour:
   Guns:
   - {fileID: 1829333728557304}
   - {fileID: 1530263071516544}
+  towerUpgrade: {fileID: 1000010378282670, guid: 913c474af4fed6e45bc3725b21e84f11,
+    type: 2}
   activeComponents: []
   attackspeed: 2.5
   damage: 0.5
-  upgradeLevel: 2
+  metalCost: 20
 --- !u!114 &114043505145390412
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -407,7 +407,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984319095912942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.4, y: 0.12, z: 9.27}
+  m_LocalPosition: {x: -8.94, y: 0.12, z: -5.36}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4605309148673348}
@@ -844,15 +844,17 @@ MonoBehaviour:
   towerHead: {fileID: 1593896312180178}
   Buildblocker: {fileID: 1997865485959212}
   Guns: []
+  towerUpgrade: {fileID: 1506985774916508, guid: 61b4849863cff498589a9aba009e6536,
+    type: 2}
   activeComponents: []
   attackspeed: 0.5
   damage: 2
-  upgradeLevel: 1
+  metalCost: 30
   MaxSpeed: 10
   lightningFadeOut: 0.25
   lightningComplexityMin: 6
   lightningComplexityMax: 13
-  color: {r: 0.36937714, g: 0.41668642, b: 0.89705884, a: 0}
+  color: {r: 1.9367368, g: 0.3842734, b: 2.6130588, a: 1}
 --- !u!114 &114689049695808408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -940,24 +942,28 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.2
+    widthMultiplier: 2.02
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0
+        time: 0.017543793
         value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0.5952421
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
       key0: {r: 0, g: 0.5034485, b: 1, a: 1}

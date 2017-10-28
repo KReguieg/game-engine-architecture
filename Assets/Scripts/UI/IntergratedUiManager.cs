@@ -12,6 +12,7 @@ public class IntergratedUiManager : MonoBehaviour {
 
 	public GameObject[] towerUpgrades;
 
+
 	public void SetTowerMenu(GameObject tower){
 		currentSelectedTower = tower;
 		if (currentTowerInteractionMenu == null){
@@ -25,16 +26,14 @@ public class IntergratedUiManager : MonoBehaviour {
 
 
 	public void UpgradeSelecetdTower(){
-		
-		int towerLevel = currentSelectedTower.GetComponent<Tower> ().upgradeLevel;
-		if (towerLevel >= 4)
-			return;
-		GameObject towerUpgraded = Instantiate( towerUpgrades[towerLevel]);
-		towerUpgraded.transform.SetPositionAndRotation(currentSelectedTower.transform.position, currentSelectedTower.transform.rotation);
-		towerUpgraded.transform.SetParent (currentSelectedTower.transform.parent);
-		towerUpgraded.GetComponent<Tower> ().integratedUiManager = gameObject;
-		Destroy (currentSelectedTower);
-
+		GameObject nextLevelTower = currentSelectedTower.GetComponent<Tower> ().towerUpgrade;
+		if (DataCollector.GetInstance.ModifieMetal (-nextLevelTower.GetComponent<Tower> ().metalCost)) {
+			GameObject towerUpgraded = Instantiate( nextLevelTower);
+			towerUpgraded.transform.SetPositionAndRotation(currentSelectedTower.transform.position, currentSelectedTower.transform.rotation);
+			towerUpgraded.transform.SetParent (currentSelectedTower.transform.parent);
+			towerUpgraded.GetComponent<Tower> ().integratedUiManager = gameObject;
+			Destroy (currentSelectedTower);
+		}
 	}
 
 	public void SellSelecetdTower(){

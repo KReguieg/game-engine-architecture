@@ -635,10 +635,11 @@ MonoBehaviour:
   Buildblocker: {fileID: 1916760300968200}
   Guns:
   - {fileID: 1247758425912014}
+  towerUpgrade: {fileID: 0}
   activeComponents: []
   attackspeed: 5
   damage: 2
-  upgradeLevel: 4
+  metalCost: 80
   rotationSpeed: 25
   RotatingGun: {fileID: 1000012782717092}
 --- !u!114 &114540897114191602

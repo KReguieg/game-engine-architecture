@@ -56,7 +56,7 @@ public class ElectroTower : Tower {
 
 	void UpdateLightning(){
 		Color actualColor = color;
-		//actualColor.a = 1 - (lightningFadeOutTimer / lightningFadeOut);
+		actualColor.a = 1 - (lightningFadeOutTimer / lightningFadeOut);
 		lineRenderer.endColor = actualColor;
 		lineRenderer.startColor = actualColor;
 

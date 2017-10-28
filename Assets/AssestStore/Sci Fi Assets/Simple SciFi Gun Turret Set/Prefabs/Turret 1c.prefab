@@ -848,10 +848,12 @@ MonoBehaviour:
   - {fileID: 1614916175242500}
   - {fileID: 1589136874795704}
   - {fileID: 1486928512922200}
+  towerUpgrade: {fileID: 1000011222192992, guid: 9b3a643ca887918468955b42c4531666,
+    type: 2}
   activeComponents: []
   attackspeed: 2.5
   damage: 0.5
-  upgradeLevel: 3
+  metalCost: 40
 --- !u!114 &114824226876007814
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -29,6 +29,7 @@ public class Tower : MonoBehaviour {
 	public  GameObject Buildblocker;
 	[SerializeField]
 	public  GameObject[] Guns;
+	public GameObject towerUpgrade;
 
 	/// <summary>
 	/// The components wich gets activatet when the Tower is build
@@ -43,20 +44,22 @@ public class Tower : MonoBehaviour {
 
 	[SerializeField]
 	internal float damage;
-	public int upgradeLevel;
+	[SerializeField]
+	internal int metalCost;
 
-	bool active = false;
+	bool active = true;
 	internal GameObject target;
 	// Use this for initialization
 	internal void Start () {
 		EnemiesInRange = new List<GameObject> ();
 		attacktimer = Mathf.Infinity;
-		if(activeComponents != null)
+
+		if (activeComponents.Length > 0)
+			active = false;
 			foreach (GameObject child in activeComponents) {
 				child.SetActive (false);
-			}
-		if (upgradeLevel != 0)
-			active = true;
+		}
+		
 	}
 	
 	// Update is called once per frame

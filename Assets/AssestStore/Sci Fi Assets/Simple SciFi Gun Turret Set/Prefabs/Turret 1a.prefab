@@ -690,13 +690,15 @@ MonoBehaviour:
   Buildblocker: {fileID: 1560242493475780}
   Guns:
   - {fileID: 1518539174968024}
+  towerUpgrade: {fileID: 1000012258839112, guid: c36865a7da8627b42a5d8dae1b1a98bb,
+    type: 2}
   activeComponents:
   - {fileID: 1363866145908586}
   - {fileID: 1157525599385018}
   - {fileID: 1560242493475780}
   attackspeed: 2.5
   damage: 0.5
-  upgradeLevel: 1
+  metalCost: 10
 --- !u!120 &120853873194132062
 LineRenderer:
   m_ObjectHideFlags: 1
