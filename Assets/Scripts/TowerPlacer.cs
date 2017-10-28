@@ -8,8 +8,12 @@
 /// </remarks>
 public class TowerPlacer : MonoBehaviour
 {
-[SerializeField]
+	[SerializeField]
+	private GameObject[] TowerPrefabs;
+
+	[SerializeField]
     private GameObject placeableObjectPrefab;
+
 
     [SerializeField]
     private KeyCode newObjectHotkey = KeyCode.B;
@@ -50,7 +54,7 @@ public class TowerPlacer : MonoBehaviour
             else
             {
 				Camera.main.cullingMask = Camera.main.cullingMask | buildLayer;
-				currentPlaceableObject = Instantiate(placeableObjectPrefab,towerCollector.transform);
+				currentPlaceableObject = Instantiate(placeableObjectPrefab, towerCollector.transform);
             }
         }
     }
@@ -102,4 +106,12 @@ public class TowerPlacer : MonoBehaviour
 			} 
         }
     }
+
+	public void SwitchTower(int i){
+		placeableObjectPrefab = TowerPrefabs [i];
+		if (currentPlaceableObject != null) {
+			Destroy(currentPlaceableObject);
+			currentPlaceableObject = Instantiate (placeableObjectPrefab, towerCollector.transform);
+		}
+	}
 }
