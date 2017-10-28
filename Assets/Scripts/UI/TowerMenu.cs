@@ -38,7 +38,8 @@ public class TowerMenu : MonoBehaviour {
 			UpgradeText.GetComponent<UnityEngine.UI.Text> ().text = "Maxed";
 			UpgradeText.transform.parent.GetComponent<UnityEngine.UI.Button> ().enabled = false;
 		}
-		UpgradeText.GetComponent<UnityEngine.UI.Text>().text = "Upgrade(" +  currentTower.GetComponent<Tower> ().towerUpgrade.GetComponent<Tower>().metalCost + ")";
+		else
+			UpgradeText.GetComponent<UnityEngine.UI.Text>().text = "Upgrade(" +  currentTower.GetComponent<Tower> ().towerUpgrade.GetComponent<Tower>().metalCost + ")";
 	}
 
 	public void DontDestroy(){

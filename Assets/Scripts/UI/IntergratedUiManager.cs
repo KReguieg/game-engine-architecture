@@ -35,6 +35,7 @@ public class IntergratedUiManager : MonoBehaviour {
 	}
 
 	public void SellSelecetdTower(){
+		DataCollector.GetInstance.ModifieMetal (currentSelectedTower.GetComponent<Tower> ().metalCost);
 		currentSelectedTower.GetComponent<Tower> ().Sell ();
 	}
 }
