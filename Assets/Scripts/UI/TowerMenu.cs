@@ -60,5 +60,6 @@ public class TowerMenu : MonoBehaviour {
 	public void OnSell(){
 		Destroy (gameObject);
 		iUIManager.SellSelecetdTower();
+		rangeRotator.Disable ();
 	}
 }
