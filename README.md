@@ -9,4 +9,4 @@ This project contains our async coop game from the course Game Engine Architectu
 * CoVR (COop + VR)
 * ROBVR
 * V-Roter (VR + Roboter)
-* ACOTD (Asycron Coop Tower Defence)
+* VRACOOTD (Asycron Coop Tower Defence)
