@@ -36,10 +36,14 @@ public class TowerPlacer : MonoBehaviour
     [SerializeField]
     private GameObject canvas;
 
+	private Material standartMaterial;
+	public Material notPlaceble;
+
     private void Update()
     {
         if (Input.GetKeyDown(newObjectHotkey))
         {
+			
             HandleNewObjectHotkey();
             buildButtonMenu.GetComponent<BuildButtonMenu>().ExpandMenu();
         }
@@ -64,6 +68,7 @@ public class TowerPlacer : MonoBehaviour
         {
             Camera.main.cullingMask = Camera.main.cullingMask | buildLayer;
             currentPlaceableObject = Instantiate(placeableObjectPrefab, towerCollector.transform);
+			standartMaterial = currentPlaceableObject.GetComponentInChildren<Renderer> ().sharedMaterial;
 			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
         }
     }
@@ -77,16 +82,37 @@ public class TowerPlacer : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		//Vector3 oldPosition = Vector3.zero;
         RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, 100, buildLayer))
-        {
-			BoxCollider col = currentPlaceableObject.GetComponent<Tower> ().Buildblocker.GetComponent<BoxCollider> ();
-			Vector3 point = SnapToGrid(hitInfo.point);
-			if (!Physics.CheckBox (point, col.size / 2, Quaternion.identity, buildBlockLayer)) {
-				currentPlaceableObject.transform.position = point;
-				currentPlaceableObject.transform.rotation = Quaternion.FromToRotation (Vector3.up, hitInfo.normal);
-			}
-        }
+		BoxCollider col = currentPlaceableObject.GetComponent<Tower> ().Buildblocker.GetComponent<BoxCollider> ();
+
+		bool hitbuildPLane = Physics.Raycast (ray, out hitInfo, 100, buildLayer);
+		Vector3 point = SnapToGrid (hitInfo.point);
+		bool hitOtherTower = Physics.CheckBox (point, col.size / 2, Quaternion.identity, buildBlockLayer);
+		if (hitbuildPLane && !hitOtherTower) {
+			currentPlaceableObject.transform.position = point;
+			currentPlaceableObject.transform.rotation = Quaternion.FromToRotation (Vector3.up, hitInfo.normal);
+
+			SetMaterialStandart(currentPlaceableObject.GetComponentsInChildren<Renderer> ());
+
+		} else {
+			Plane plane = new Plane (Vector3.up, Vector3.zero);
+			Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+			float dist;
+			plane.Raycast (r, out dist);
+			currentPlaceableObject.transform.position = r.GetPoint(dist);
+			SetMaterialNotPlaceble (currentPlaceableObject.GetComponentsInChildren<Renderer> ());
+		}
     }
+
+	void SetMaterialNotPlaceble(Renderer[] renderer)
+	{
+		foreach (Renderer r in renderer)
+			r.sharedMaterial = notPlaceble;
+	}
+	void SetMaterialStandart(Renderer[] renderer)
+	{
+		foreach (Renderer r in renderer)
+			r.sharedMaterial = standartMaterial;
+	}
 
 	Vector3 SnapToGrid(Vector3 point){
 		int x =(int)( point.x * 100 );
@@ -125,6 +151,8 @@ public class TowerPlacer : MonoBehaviour
 			Destroy(currentPlaceableObject);
 			currentPlaceableObject = Instantiate (placeableObjectPrefab, towerCollector.transform);
 			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
+			standartMaterial = currentPlaceableObject.GetComponentInChildren<Renderer> ().sharedMaterial;
+
 		}
 	}
 }

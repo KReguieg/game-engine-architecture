@@ -8509,6 +8509,7 @@ MonoBehaviour:
     m_Bits: 16384
   buildButtonMenu: {fileID: 1019487958}
   canvas: {fileID: 1432366041}
+  notPlaceble: {fileID: 2100000, guid: 2515b572aec1646a4b561c04f84f2c67, type: 2}
 --- !u!1 &819113017
 GameObject:
   m_ObjectHideFlags: 0
