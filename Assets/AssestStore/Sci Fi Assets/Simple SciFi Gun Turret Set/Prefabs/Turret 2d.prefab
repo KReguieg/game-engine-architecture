@@ -843,6 +843,7 @@ MonoBehaviour:
   integratedUiManager: {fileID: 0}
   towerHead: {fileID: 1351062309474490}
   Buildblocker: {fileID: 1862559687947512}
+  RangeChecker: {fileID: 1284831332164658}
   Guns: []
   towerUpgrade: {fileID: 0}
   activeComponents: []

@@ -57,12 +57,14 @@ public class TowerPlacer : MonoBehaviour
         if (currentPlaceableObject != null)
         {
             Destroy(currentPlaceableObject);
+			transform.parent.GetComponentInChildren<RangeRotator> ().Disable ();
             UnMaskCamera ();
         }
         else
         {
             Camera.main.cullingMask = Camera.main.cullingMask | buildLayer;
             currentPlaceableObject = Instantiate(placeableObjectPrefab, towerCollector.transform);
+			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
         }
     }
 
@@ -107,10 +109,12 @@ public class TowerPlacer : MonoBehaviour
 			if (DataCollector.GetInstance.ModifieMetal (-currentPlaceableObject.GetComponent<Tower> ().metalCost)) {
 				currentPlaceableObject.GetComponent<Tower> ().EnableTower ();
 
-				currentPlaceableObject.GetComponent<Tower> ().integratedUiManager = transform.parent.GetComponentInChildren<IntergratedUiManager>().gameObject;
+				currentPlaceableObject.GetComponent<Tower> ().ManagerObjects = transform.parent.gameObject;
 				currentPlaceableObject = null;
 				UnMaskCamera ();
                 buildButtonMenu.GetComponent<BuildButtonMenu>().ExpandMenu();
+
+				transform.parent.GetComponentInChildren<RangeRotator> ().Disable ();
 			} 
         }
     }
@@ -120,6 +124,7 @@ public class TowerPlacer : MonoBehaviour
 		if (currentPlaceableObject != null) {
 			Destroy(currentPlaceableObject);
 			currentPlaceableObject = Instantiate (placeableObjectPrefab, towerCollector.transform);
+			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
 		}
 	}
 }

@@ -8,6 +8,7 @@ public class TowerMenu : MonoBehaviour {
 	float destroyTimer = 0;
 	bool destroy;
 	IntergratedUiManager iUIManager;
+	RangeRotator rangeRotator;
 	[SerializeField]
 	private GameObject UpgradeText, SellText;
 
@@ -15,6 +16,7 @@ public class TowerMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		iUIManager = transform.parent.GetComponent<IntergratedUiManager> ();
+		rangeRotator = transform.parent.parent.GetComponentInChildren<RangeRotator>();
 	}
 
 	// Update is called once per frame
@@ -27,8 +29,10 @@ public class TowerMenu : MonoBehaviour {
 
 		if (destroy) {
 			destroyTimer += Time.deltaTime;
-			if (destroyTimer >= DestroyAfterTime)
+			if (destroyTimer >= DestroyAfterTime) {
 				Destroy (gameObject);
+				rangeRotator.Disable ();
+			}
 		}
 	}
 

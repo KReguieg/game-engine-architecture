@@ -20,13 +20,14 @@ public struct TowerData{
 public class Tower : MonoBehaviour {
 	[Header("Link to Scene")]
 	public List<GameObject> EnemiesInRange;
-	public GameObject integratedUiManager;
+	public GameObject ManagerObjects;
 
 	[Header("Link to Own Objects")]
 	[SerializeField]
 	internal GameObject towerHead;
 	[SerializeField]
 	public  GameObject Buildblocker;
+	public GameObject RangeChecker;
 	[SerializeField]
 	public  GameObject[] Guns;
 	public GameObject towerUpgrade;
@@ -125,7 +126,9 @@ public class Tower : MonoBehaviour {
 	}
 
 	public void Select(){
-		integratedUiManager.GetComponent<IntergratedUiManager> ().SetTowerMenu (gameObject);
+		ManagerObjects.GetComponentInChildren<IntergratedUiManager> ().SetTowerMenu (gameObject);
+		ManagerObjects.GetComponentInChildren<RangeRotator> ().SetToTower (gameObject);
+
 	}
 
 	public void EnableTower(){

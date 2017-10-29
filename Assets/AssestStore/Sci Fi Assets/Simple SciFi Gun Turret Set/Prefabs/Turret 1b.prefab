@@ -354,7 +354,7 @@ Transform:
   m_GameObject: {fileID: 1268387031635508}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.5, y: 5.5, z: 5.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000010324646232}
   m_RootOrder: 2
@@ -735,9 +735,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  integratedUiManager: {fileID: 0}
+  ManagerObjects: {fileID: 0}
   towerHead: {fileID: 1000010357398462}
   Buildblocker: {fileID: 1417499838280798}
+  RangeChecker: {fileID: 1268387031635508}
   Guns:
   - {fileID: 1829333728557304}
   - {fileID: 1530263071516544}
@@ -982,7 +983,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5.13
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136920696569166498
 CapsuleCollider:

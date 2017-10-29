@@ -29,7 +29,7 @@ public class IntergratedUiManager : MonoBehaviour {
 			GameObject towerUpgraded = Instantiate( nextLevelTower);
 			towerUpgraded.transform.SetPositionAndRotation(currentSelectedTower.transform.position, currentSelectedTower.transform.rotation);
 			towerUpgraded.transform.SetParent (currentSelectedTower.transform.parent);
-			towerUpgraded.GetComponent<Tower> ().integratedUiManager = gameObject;
+			towerUpgraded.GetComponent<Tower> ().ManagerObjects = transform.parent.gameObject;
 			Destroy (currentSelectedTower);
 		}
 	}
