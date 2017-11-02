@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 1284831332164658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4826289320555290}
   m_RootOrder: 2
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesInRange: []
-  integratedUiManager: {fileID: 0}
+  ManagerObjects: {fileID: 0}
   towerHead: {fileID: 1351062309474490}
   Buildblocker: {fileID: 1862559687947512}
   RangeChecker: {fileID: 1284831332164658}
@@ -1009,7 +1009,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5.13
+  m_Radius: 35.91
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136106410962347720
 CapsuleCollider:
