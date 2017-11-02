@@ -109,12 +109,14 @@ public class TowerPlacer : MonoBehaviour
 	void SetMaterialNotPlaceble(Renderer[] renderer)
 	{
 		foreach (Renderer r in renderer)
-			r.sharedMaterial = notPlaceble;
+			if(r.gameObject.tag != "Fixed")
+				r.sharedMaterial = notPlaceble;
 	}
 	void SetMaterialStandart(Renderer[] renderer)
 	{
 		foreach (Renderer r in renderer)
-			r.sharedMaterial = standartMaterial;
+			if(r.gameObject.tag != "Fixed")
+				r.sharedMaterial = standartMaterial;
 	}
 
 	Vector3 SnapToGrid(Vector3 point){

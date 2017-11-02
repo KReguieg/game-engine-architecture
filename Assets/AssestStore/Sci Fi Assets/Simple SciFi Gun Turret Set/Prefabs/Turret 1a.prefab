@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 120853873194132062}
   m_Layer: 0
   m_Name: GunHead
-  m_TagString: Untagged
+  m_TagString: Fixed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesInRange: []
-  integratedUiManager: {fileID: 0}
+  ManagerObjects: {fileID: 0}
   towerHead: {fileID: 1000011762054444}
   Buildblocker: {fileID: 1560242493475780}
   RangeChecker: {fileID: 1363866145908586}

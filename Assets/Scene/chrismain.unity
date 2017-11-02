@@ -24532,11 +24532,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114909276454376998, guid: 8a4fca54c9faa3449bcff12193992420,
-        type: 2}
-      propertyPath: integratedUiManager
-      value: 
-      objectReference: {fileID: 983684946}
     - target: {fileID: 1000012174300454, guid: 8a4fca54c9faa3449bcff12193992420, type: 2}
       propertyPath: m_IsActive
       value: 0
