@@ -38,6 +38,7 @@ public class TowerPlacer : MonoBehaviour
 
 	private Material standartMaterial;
 	public Material notPlaceble;
+	bool blocked;
 
     private void Update()
     {
@@ -52,7 +53,8 @@ public class TowerPlacer : MonoBehaviour
         {
             MoveCurrentObjectToMouse();
             //RotateFromMouseWheel();
-            ReleaseIfClicked();
+			if(!blocked)
+				ReleaseIfClicked();
         }
     }
 
@@ -92,8 +94,9 @@ public class TowerPlacer : MonoBehaviour
 			currentPlaceableObject.transform.rotation = Quaternion.FromToRotation (Vector3.up, hitInfo.normal);
 
 			SetMaterialStandart(currentPlaceableObject.GetComponentsInChildren<Renderer> ());
-
+			blocked = false;
 		} else {
+			blocked = true;
 			Plane plane = new Plane (Vector3.up, Vector3.zero);
 			Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
 			float dist;
