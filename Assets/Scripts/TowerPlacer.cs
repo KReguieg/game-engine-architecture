@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Describe your class quickly here.
@@ -36,7 +37,7 @@ public class TowerPlacer : MonoBehaviour
     [SerializeField]
     private GameObject canvas;
 
-	private Material standartMaterial;
+	private List<Material> standartMaterials = new List<Material>();
 	public Material notPlaceble;
 	bool blocked;
 
@@ -44,7 +45,6 @@ public class TowerPlacer : MonoBehaviour
     {
         if (Input.GetKeyDown(newObjectHotkey))
         {
-			
             HandleNewObjectHotkey();
             buildButtonMenu.GetComponent<BuildButtonMenu>().ExpandMenu();
         }
@@ -58,6 +58,17 @@ public class TowerPlacer : MonoBehaviour
         }
     }
 
+	void FixedUpdate(){
+		SelectTowerViaKeyboard ();
+	}
+	
+	void SelectTowerViaKeyboard(){
+		
+		if (Input.GetKeyDown (KeyCode.Alpha1))
+			SwitchTower (0);
+		else if(Input.GetKeyDown (KeyCode.Alpha2))
+			SwitchTower (1);
+	}
     public void HandleNewObjectHotkey()
     {
         if (currentPlaceableObject != null)
@@ -70,7 +81,7 @@ public class TowerPlacer : MonoBehaviour
         {
             Camera.main.cullingMask = Camera.main.cullingMask | buildLayer;
             currentPlaceableObject = Instantiate(placeableObjectPrefab, towerCollector.transform);
-			standartMaterial = currentPlaceableObject.GetComponentInChildren<Renderer> ().sharedMaterial;
+			SetStandartMaterial ();
 			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
         }
     }
@@ -93,7 +104,7 @@ public class TowerPlacer : MonoBehaviour
 			currentPlaceableObject.transform.position = point;
 			currentPlaceableObject.transform.rotation = Quaternion.FromToRotation (Vector3.up, hitInfo.normal);
 
-			SetMaterialStandart(currentPlaceableObject.GetComponentsInChildren<Renderer> ());
+			SetMaterialStandart();
 			blocked = false;
 		} else {
 			blocked = true;
@@ -102,21 +113,27 @@ public class TowerPlacer : MonoBehaviour
 			float dist;
 			plane.Raycast (r, out dist);
 			currentPlaceableObject.transform.position = r.GetPoint(dist);
-			SetMaterialNotPlaceble (currentPlaceableObject.GetComponentsInChildren<Renderer> ());
+			SetMaterialNotPlaceble ();
 		}
     }
 
-	void SetMaterialNotPlaceble(Renderer[] renderer)
+	void SetMaterialNotPlaceble()
 	{
+		Renderer[] renderer = currentPlaceableObject.GetComponentsInChildren<Renderer> ();
 		foreach (Renderer r in renderer)
-			if(r.gameObject.tag != "Fixed")
-				r.sharedMaterial = notPlaceble;
+			r.sharedMaterial = notPlaceble;
 	}
-	void SetMaterialStandart(Renderer[] renderer)
+	void SetMaterialStandart()
 	{
-		foreach (Renderer r in renderer)
-			if(r.gameObject.tag != "Fixed")
-				r.sharedMaterial = standartMaterial;
+		Renderer[] renderer = currentPlaceableObject.GetComponentsInChildren<Renderer> ();
+		for(int i = 0; i <renderer.Length; i++)
+			renderer[i].sharedMaterial = standartMaterials[i];
+	}
+
+	void SetStandartMaterial(){
+		standartMaterials = new List<Material> ();
+		foreach (Renderer r in currentPlaceableObject.GetComponentsInChildren<Renderer>())
+			standartMaterials.Add (r.sharedMaterial);
 	}
 
 	Vector3 SnapToGrid(Vector3 point){
@@ -156,8 +173,7 @@ public class TowerPlacer : MonoBehaviour
 			Destroy(currentPlaceableObject);
 			currentPlaceableObject = Instantiate (placeableObjectPrefab, towerCollector.transform);
 			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
-			standartMaterial = currentPlaceableObject.GetComponentInChildren<Renderer> ().sharedMaterial;
-
+			SetStandartMaterial ();
 		}
 	}
 }

@@ -96,9 +96,9 @@ NavMeshSettings:
     serializedVersion: 2
     agentTypeID: 0
     agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentHeight: 1.19
+    agentSlope: 35.9
+    agentClimb: 0.84
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -106,7 +106,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    accuratePlacement: 1
   m_NavMeshData: {fileID: 23800000, guid: d10066200b70748e6b06c586b7054a63, type: 2}
 --- !u!1 &2676311
 GameObject:
@@ -1964,6 +1964,18 @@ Prefab:
     - target: {fileID: 1161841497049354, guid: 78196c2946aba40bcb735ee1782fd7dc, type: 2}
       propertyPath: m_Name
       value: Corridor_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520682703731218, guid: 78196c2946aba40bcb735ee1782fd7dc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 16.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520682703731218, guid: 78196c2946aba40bcb735ee1782fd7dc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520682703731218, guid: 78196c2946aba40bcb735ee1782fd7dc, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4.0235763
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78196c2946aba40bcb735ee1782fd7dc, type: 2}
@@ -3934,6 +3946,21 @@ Prefab:
     - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 64412475757707160, guid: 4cd8b95e91b614e728206538b125f079,
+        type: 2}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64412475757707160, guid: 4cd8b95e91b614e728206538b125f079,
+        type: 2}
+      propertyPath: m_InflateMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64412475757707160, guid: 4cd8b95e91b614e728206538b125f079,
+        type: 2}
+      propertyPath: m_SkinWidth
+      value: 1.00000005e-20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
@@ -7416,7 +7443,6 @@ GameObject:
   m_Component:
   - component: {fileID: 699983577}
   - component: {fileID: 699983581}
-  - component: {fileID: 699983580}
   - component: {fileID: 699983579}
   m_Layer: 0
   m_Name: Plane (3)
@@ -7470,20 +7496,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &699983580
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 699983576}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &699983581
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16909,6 +16921,10 @@ Prefab:
     - target: {fileID: 1413190374034444, guid: 2dfe8474d44f041259dc2d3e26b789b1, type: 2}
       propertyPath: m_Name
       value: EastDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413190374034444, guid: 2dfe8474d44f041259dc2d3e26b789b1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2dfe8474d44f041259dc2d3e26b789b1, type: 2}
