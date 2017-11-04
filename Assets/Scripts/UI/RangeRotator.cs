@@ -30,4 +30,13 @@ public class RangeRotator : MonoBehaviour {
 	public void Disable(){
 		transform.localScale = Vector3.zero;
 	}
+
+	public void SetUpgrade(Tower t){
+		float radius = t.GetComponent<Tower> ().RangeChecker.GetComponent<SphereCollider> ().radius;
+		transform.localScale = Vector3.one * radius / 2;
+	}
+
+	public void UnsetUpgrade(){
+		SetToTower (target);
+	}
 }
