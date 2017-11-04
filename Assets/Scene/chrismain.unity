@@ -16291,6 +16291,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1131251091}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1131288459 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: f370d4cf8edbb427da0cf9b42d666796, type: 3}
+  m_PrefabInternal: {fileID: 662228544}
+--- !u!111 &1131288463
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131288459}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e1efdd2a449b7454f92381c377054000, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e1efdd2a449b7454f92381c377054000, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!4 &1131840860 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4462236029301170, guid: b24065330b298486b8961f6a5273cab4,
