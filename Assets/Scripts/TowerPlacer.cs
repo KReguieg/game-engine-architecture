@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 /// <summary>
 /// Describe your class quickly here.
@@ -32,37 +33,56 @@ public class TowerPlacer : MonoBehaviour
 	private LayerMask buildLayer;
 
     [SerializeField]
-    private GameObject buildButtonMenu;
+    private BuildButtonMenu buildButtonMenu;
 
     [SerializeField]
     private GameObject canvas;
 
 	private List<Material> standartMaterials = new List<Material>();
+
 	public Material notPlaceble;
-	bool blocked;
+
+    bool blocked;
+
+    private bool inBuildMode;
 
     private void Update()
     {
         if (Input.GetKeyDown(newObjectHotkey))
         {
             HandleNewObjectHotkey();
-            buildButtonMenu.GetComponent<BuildButtonMenu>().ExpandMenu();
+            buildButtonMenu.ExpandMenu();
         }
 
         if (currentPlaceableObject != null)
         {
+            inBuildMode = true;
             MoveCurrentObjectToMouse();
             //RotateFromMouseWheel();
 			if(!blocked)
 				ReleaseIfClicked();
         }
+        else
+        {
+            inBuildMode = false;
+        }
     }
 
 	void FixedUpdate(){
 		SelectTowerViaKeyboard ();
+        EndBuildingOnRightClick();
 	}
-	
-	void SelectTowerViaKeyboard(){
+
+    private void EndBuildingOnRightClick()
+    {
+        if (Input.GetMouseButtonDown(1) && inBuildMode)
+        {
+            buildButtonMenu.ExpandMenu();
+            HandleNewObjectHotkey();
+        }
+    }
+
+    void SelectTowerViaKeyboard(){
 		
 		if (Input.GetKeyDown (KeyCode.Alpha1))
 			SwitchTower (0);

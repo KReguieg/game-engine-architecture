@@ -23,7 +23,7 @@ public class BuildButtonMenu : MonoBehaviour
 
 	[Range(-200.0f, .0f)]
 	public float radius = -125.0f;
-    private bool expand = false;
+    public bool expand = false;
 	public AnimationCurve AnimationCurve;
     private float startColor;
     private float endColor;
