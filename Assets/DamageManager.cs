@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageManager : MonoBehaviour {
+	[Header("Link To own Objects")]
 	public GameObject Circles;
-	int damageLevel = 0;
-	int maxDamageLevel = 3;
+	public GameObject head;
 
-	public void DestroyBase(float percent){
-		return;
-		if (damageLevel >= maxDamageLevel)
-			return;
+	[Header("Attributes")]
+	public AnimationCurve headRotationSpeed;
+	float damageLevel = 1;
+	float maxDamageLevel = 3;
+
+	public void DestroyBase(float lifeLeftPercent){
 		
-		GameObject Circle = Circles.transform.GetChild (damageLevel).gameObject;
+		if (damageLevel > maxDamageLevel)
+			return;
+
+			head.GetComponent<ElementRotator>().rotationSpeed = Vector3.forward * headRotationSpeed.Evaluate(1 - lifeLeftPercent);
+		bool enoughLife = lifeLeftPercent >= 1 - (damageLevel / maxDamageLevel);
+		if(enoughLife)
+			return;
+
+		
+		GameObject Circle = Circles.transform.GetChild (0).gameObject;
 		Transform[] children = Circle.GetComponentsInChildren<Transform> ();
 		foreach (Transform t in children) {
 			Rigidbody ridgidbody = t.gameObject.AddComponent<Rigidbody> ();
