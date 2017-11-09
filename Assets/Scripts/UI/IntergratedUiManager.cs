@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class IntergratedUiManager : MonoBehaviour {
 	public GameObject TowerInteractionMenuPrefab;
-
-	public GameObject Canvas; // to set the Raycast blocker
 	GameObject currentTowerInteractionMenu;
 	GameObject currentSelectedTower;
 	public float MenuHeight = 1;
@@ -14,8 +12,7 @@ public class IntergratedUiManager : MonoBehaviour {
 		currentSelectedTower = tower;
 		if (currentTowerInteractionMenu == null){
 			currentTowerInteractionMenu = Instantiate (TowerInteractionMenuPrefab, transform);
-			foreach (RayCasterFilter filter in currentTowerInteractionMenu.GetComponentsInChildren<RayCasterFilter>())
-				filter.Canvas = Canvas;
+			
 		}
 		currentTowerInteractionMenu.transform.position = tower.transform.position + Vector3.up * MenuHeight;
 		currentTowerInteractionMenu.GetComponent<TowerMenu> ().SetNewContent(currentSelectedTower);

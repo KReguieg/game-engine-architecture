@@ -126,9 +126,10 @@ public class Tower : MonoBehaviour {
 	}
 
 	public void Select(){
-		ManagerObjects.GetComponentInChildren<IntergratedUiManager> ().SetTowerMenu (gameObject);
-		ManagerObjects.GetComponentInChildren<RangeRotator> ().SetToTower (gameObject);
-
+		if(!RaycastBlocker.GetInstance().RaycastBlockByUI){
+			ManagerObjects.GetComponentInChildren<IntergratedUiManager> ().SetTowerMenu (gameObject);
+			ManagerObjects.GetComponentInChildren<RangeRotator> ().SetToTower (gameObject);
+		}
 	}
 
 	public void EnableTower(){

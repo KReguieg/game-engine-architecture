@@ -17,7 +17,7 @@ public class PortalSimulator : MonoBehaviour{
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0) && !Canvas.GetComponent<RaycastBlocker>().RaycastBlockByUI) {
+		if(Input.GetMouseButtonDown(0) && !RaycastBlocker.GetInstance().RaycastBlockByUI) {
 			
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;

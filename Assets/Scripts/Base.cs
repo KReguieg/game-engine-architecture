@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Base : MonoBehaviour {
 	public GameObject Healthbar;
+	public DamageManager BaseDamageManager;
 
 	public float MaxHealth;
 	[SerializeField]
@@ -16,5 +17,8 @@ public class Base : MonoBehaviour {
 	public void TakeDamage(float damage){
 		health -= damage;
 		Healthbar.GetComponent<HealthbarColor> ().SetLives (health / MaxHealth);
+		BaseDamageManager.DestroyBase (0);
 	}
+
+
 }

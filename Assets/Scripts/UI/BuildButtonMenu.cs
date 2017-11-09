@@ -59,10 +59,11 @@ public class BuildButtonMenu : MonoBehaviour
 
     private void ButtonAnimation()
     {
-        int i = 0;
+        
         timer += Time.deltaTime;
         if (timer <= AnimationCurve.keys[1].time)
-        {
+		{
+			int i = 0;
             foreach (Button menuItem in buildMenuItems)
             {
                 menuItem.gameObject.transform.localPosition = Vector2.Lerp(menuItemStartPositions[i], menuItemsTargetPositions[i], AnimationCurve.Evaluate(timer));
