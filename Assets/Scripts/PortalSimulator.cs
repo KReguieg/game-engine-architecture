@@ -19,7 +19,7 @@ public class PortalSimulator : MonoBehaviour{
 	void Update () {
 		if(Input.GetMouseButtonDown(0) && !RaycastBlocker.GetInstance().RaycastBlockByUI) {
 			
-			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			Ray ray = RTS_Camera.Camera.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 
 			if (Physics.Raycast (ray, out hit, 1000, mask)) {

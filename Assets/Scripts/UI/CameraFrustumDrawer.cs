@@ -18,9 +18,9 @@ public class CameraFrustumDrawer : MonoBehaviour {
 	void FixedUpdate () {
 		
 		Ray[] ray = new Ray[]{	RTS_Camera.Camera.ScreenPointToRay (new Vector3(0,0,0)),
-			Camera.main.ScreenPointToRay (new Vector3(0,height,0)),
-			Camera.main.ScreenPointToRay (new Vector3(width,height,0)),
-			Camera.main.ScreenPointToRay (new Vector3(width,0,0))};
+								RTS_Camera.Camera.ScreenPointToRay (new Vector3(0,height,0)),
+								RTS_Camera.Camera.ScreenPointToRay (new Vector3(width,height,0)),
+								RTS_Camera.Camera.ScreenPointToRay (new Vector3(width,0,0))};
 		Plane plane = new Plane (Vector3.up, Vector3.zero);
 		float dist;
 		for (int i = 0; i < 4; i++) {
