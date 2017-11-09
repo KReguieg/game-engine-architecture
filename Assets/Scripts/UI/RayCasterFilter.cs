@@ -4,9 +4,6 @@ using UnityEngine;
 
 [RequireComponent (typeof (RectTransform))]
 public class RayCasterFilter : MonoBehaviour, ICanvasRaycastFilter {
-
-	public GameObject Canvas;
-
 	RectTransform rectTransform;
 
 	public Vector2 point;
@@ -26,8 +23,9 @@ public class RayCasterFilter : MonoBehaviour, ICanvasRaycastFilter {
 			out worldPoint
 		);
 		point = worldPoint;
-		if (isInside)
-			Canvas.GetComponent<RaycastBlocker> ().RaycastBlockByUI = true;
+		if (isInside){
+			RaycastBlocker.GetInstance().RaycastBlockByUI = true;
+		}
 		return isInside;
 	}
 	#endregion

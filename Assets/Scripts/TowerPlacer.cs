@@ -10,10 +10,10 @@ using System;
 /// </remarks>
 public class TowerPlacer : MonoBehaviour
 {
+	[Header("Link to Prefabs & Objects")]
 	[SerializeField]
 	private GameObject[] TowerPrefabs;
 
-	[SerializeField]
     private GameObject placeableObjectPrefab;
 
 
@@ -35,9 +35,6 @@ public class TowerPlacer : MonoBehaviour
     [SerializeField]
     private BuildButtonMenu buildButtonMenu;
 
-    [SerializeField]
-    private GameObject canvas;
-
 	private List<Material> standartMaterials = new List<Material>();
 
 	public Material notPlaceble;
@@ -45,6 +42,11 @@ public class TowerPlacer : MonoBehaviour
     bool blocked;
 
     private bool inBuildMode;
+
+	void Start()
+	{
+		placeableObjectPrefab =  TowerPrefabs[0];
+	}
 
     private void Update()
     {
@@ -103,6 +105,7 @@ public class TowerPlacer : MonoBehaviour
             currentPlaceableObject = Instantiate(placeableObjectPrefab, towerCollector.transform);
 			SetStandartMaterial ();
 			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
+			
         }
     }
 
@@ -139,12 +142,14 @@ public class TowerPlacer : MonoBehaviour
 
 	void SetMaterialNotPlaceble()
 	{
+		transform.parent.GetComponentInChildren<RangeRotator> ().Disable ();
 		Renderer[] renderer = currentPlaceableObject.GetComponentsInChildren<Renderer> ();
 		foreach (Renderer r in renderer)
 			r.sharedMaterial = notPlaceble;
 	}
 	void SetMaterialStandart()
 	{
+		transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
 		Renderer[] renderer = currentPlaceableObject.GetComponentsInChildren<Renderer> ();
 		for(int i = 0; i <renderer.Length; i++)
 			renderer[i].sharedMaterial = standartMaterials[i];
@@ -172,7 +177,7 @@ public class TowerPlacer : MonoBehaviour
 
     private void ReleaseIfClicked()
     {
-        if (Input.GetMouseButtonDown(0) && !canvas.GetComponent<RaycastBlocker>().RaycastBlockByUI)
+        if (Input.GetMouseButtonDown(0) && !RaycastBlocker.GetInstance().RaycastBlockByUI)
         {
 			if (DataCollector.GetInstance.ModifieMetal (-currentPlaceableObject.GetComponent<Tower> ().metalCost)) {
 				currentPlaceableObject.GetComponent<Tower> ().EnableTower ();

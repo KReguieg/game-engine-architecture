@@ -61,19 +61,19 @@ public class TowerMenu : MonoBehaviour {
 	}
 
 	public void OnSell(){
-		if (!locked) {
-			Destroy (gameObject);
-			iUIManager.SellSelecetdTower ();
-			rangeRotator.Disable ();
-		}
+		Destroy (gameObject);
+		iUIManager.SellSelecetdTower ();
+		rangeRotator.Disable ();
 	}
 
-	public void MouseEnter(){
+	public void MouseEnterUpgrade(){
 		rangeRotator.SetUpgrade (currentTower.GetComponent<Tower> ().towerUpgrade.GetComponent<Tower>());
 	}
 
-	public void MouseLeave(){
+	public void MouseLeaveUpgrade(){
 		rangeRotator.UnsetUpgrade ();
 	}
+
+
 
 }
