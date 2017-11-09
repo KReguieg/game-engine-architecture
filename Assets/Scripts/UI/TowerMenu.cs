@@ -13,10 +13,12 @@ public class TowerMenu : MonoBehaviour {
 	private GameObject UpgradeText, SellText;
 
 	public float DestroyAfterTime = 1;
+	GameObject currentTower;
 	// Use this for initialization
 	void Start () {
 		iUIManager = transform.parent.GetComponent<IntergratedUiManager> ();
 		rangeRotator = transform.parent.parent.GetComponentInChildren<RangeRotator>();
+
 	}
 
 	// Update is called once per frame
@@ -37,6 +39,7 @@ public class TowerMenu : MonoBehaviour {
 	}
 
 	public void SetNewContent(GameObject currentTower ){
+		this.currentTower = currentTower;
 		SellText.GetComponent<UnityEngine.UI.Text>().text = "Sell(" +  currentTower.GetComponent<Tower> ().metalCost + ")";
 		if (currentTower.GetComponent<Tower> ().towerUpgrade == null) {
 			UpgradeText.GetComponent<UnityEngine.UI.Text> ().text = "Maxed";
@@ -58,8 +61,19 @@ public class TowerMenu : MonoBehaviour {
 	}
 
 	public void OnSell(){
-		Destroy (gameObject);
-		iUIManager.SellSelecetdTower();
-		rangeRotator.Disable ();
+		if (!locked) {
+			Destroy (gameObject);
+			iUIManager.SellSelecetdTower ();
+			rangeRotator.Disable ();
+		}
 	}
+
+	public void MouseEnter(){
+		rangeRotator.SetUpgrade (currentTower.GetComponent<Tower> ().towerUpgrade.GetComponent<Tower>());
+	}
+
+	public void MouseLeave(){
+		rangeRotator.UnsetUpgrade ();
+	}
+
 }
