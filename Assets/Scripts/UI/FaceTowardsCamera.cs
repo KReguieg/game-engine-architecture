@@ -11,7 +11,7 @@ public class FaceTowardsCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		transform.forward = Camera.main.transform.forward;
+		transform.forward = RTS_Camera.Camera.transform.forward;
 		//transform.Rotate (Vector3.up * 180);
 	}
 }

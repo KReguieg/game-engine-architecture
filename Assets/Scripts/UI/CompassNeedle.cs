@@ -5,7 +5,7 @@ using UnityEngine;
 public class CompassNeedle : MonoBehaviour {
 
 	void FixedUpdate (){
-		Vector3 direction = Camera.main.transform.forward;
+		Vector3 direction = RTS_Camera.Camera.transform.forward;
 		direction.y = 0;
 		float angle = Vector3.Angle (direction, Vector3.forward);
 		if (direction.x < 0)

@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace RTS_Cam
-{
+
     [RequireComponent(typeof(Camera))]
     [AddComponentMenu("RTS Camera")]
     public class RTS_Camera : MonoBehaviour
     {
 		public bool useFixedUpdate = true; //use FixedUpdate() or Update()
-
+        static RTS_Camera instance;
+        public static RTS_Camera GetInstance{get{return instance;}}
+        public static Camera Camera{get{return instance.GetComponent<Camera>();}}
         #region Foldouts
 
 #if UNITY_EDITOR
@@ -168,6 +169,7 @@ namespace RTS_Cam
         {
             m_Transform = transform;
 			zoomPos = 0.5f;
+            instance = this;
         }
 
         private void Update()
@@ -363,4 +365,3 @@ namespace RTS_Cam
 
         #endregion
     }
-}

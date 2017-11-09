@@ -17,7 +17,7 @@ public class CameraFrustumDrawer : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		
-		Ray[] ray = new Ray[]{	Camera.main.ScreenPointToRay (new Vector3(0,0,0)),
+		Ray[] ray = new Ray[]{	RTS_Camera.Camera.ScreenPointToRay (new Vector3(0,0,0)),
 			Camera.main.ScreenPointToRay (new Vector3(0,height,0)),
 			Camera.main.ScreenPointToRay (new Vector3(width,height,0)),
 			Camera.main.ScreenPointToRay (new Vector3(width,0,0))};
