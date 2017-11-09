@@ -16,8 +16,9 @@ public class Base : MonoBehaviour {
 
 	public void TakeDamage(float damage){
 		health -= damage;
-		Healthbar.GetComponent<HealthbarColor> ().SetLives (health / MaxHealth);
-		BaseDamageManager.DestroyBase (0);
+		float amount = health / MaxHealth;
+		Healthbar.GetComponent<HealthbarColor> ().SetLives (amount);
+		BaseDamageManager.DestroyBase (amount);
 	}
 
 
