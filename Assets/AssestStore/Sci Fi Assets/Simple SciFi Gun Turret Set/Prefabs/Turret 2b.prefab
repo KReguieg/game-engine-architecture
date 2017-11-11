@@ -71,9 +71,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4467521548139120}
   - component: {fileID: 33343880522790486}
-  - component: {fileID: 114433895453575810}
   - component: {fileID: 136568699600040256}
-  m_Layer: 5
+  - component: {fileID: 114821051948645238}
+  m_Layer: 16
   m_Name: ClickCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,17 +856,6 @@ MonoBehaviour:
   lightningComplexityMin: 6
   lightningComplexityMax: 13
   color: {r: 1.9367368, g: 0.3842734, b: 2.6130588, a: 1}
---- !u!114 &114433895453575810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1278384418077272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69dfb0da18e3a445fb1dadc5b4070169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114697494092201926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -910,6 +899,33 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: TrigerWithTag, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114821051948645238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278384418077272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a5ff2e2857a49a88fc8b6d4d11e597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114371627457952732}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!120 &120490595133901394
 LineRenderer:

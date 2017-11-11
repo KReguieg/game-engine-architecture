@@ -155,9 +155,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4466792196413408}
   - component: {fileID: 33044343486863216}
-  - component: {fileID: 114788822980185928}
   - component: {fileID: 136920696569166498}
-  m_Layer: 5
+  - component: {fileID: 114126884575063756}
+  m_Layer: 16
   m_Name: ClickCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: TrigerWithTag, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114788822980185928
+--- !u!114 &114126884575063756
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -800,9 +800,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1208098355101092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69dfb0da18e3a445fb1dadc5b4070169, type: 3}
+  m_Script: {fileID: 11500000, guid: e9a5ff2e2857a49a88fc8b6d4d11e597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114013923658522828}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!120 &120429880701009324
 LineRenderer:
   m_ObjectHideFlags: 1

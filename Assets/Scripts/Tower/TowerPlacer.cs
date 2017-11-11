@@ -101,7 +101,7 @@ public class TowerPlacer : MonoBehaviour
         }
         else
         {
-            Camera.main.cullingMask = Camera.main.cullingMask | buildLayer;
+            RTS_Camera.Camera.cullingMask = RTS_Camera.Camera.cullingMask | buildLayer;
             currentPlaceableObject = Instantiate(placeableObjectPrefab, towerCollector.transform);
 			SetStandartMaterial ();
 			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);
@@ -110,12 +110,12 @@ public class TowerPlacer : MonoBehaviour
     }
 
 	private void UnMaskCamera(){
-		Camera.main.cullingMask = Camera.main.cullingMask ^ buildLayer; //xOR
+		RTS_Camera.Camera.cullingMask = RTS_Camera.Camera.cullingMask ^ buildLayer; //xOR
 	}
 
     private void MoveCurrentObjectToMouse()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = RTS_Camera.Camera.ScreenPointToRay(Input.mousePosition);
 		//Vector3 oldPosition = Vector3.zero;
         RaycastHit hitInfo;
 		BoxCollider col = currentPlaceableObject.GetComponent<Tower> ().Buildblocker.GetComponent<BoxCollider> ();
@@ -132,7 +132,7 @@ public class TowerPlacer : MonoBehaviour
 		} else {
 			blocked = true;
 			Plane plane = new Plane (Vector3.up, Vector3.zero);
-			Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Ray r = RTS_Camera.Camera.ScreenPointToRay(Input.mousePosition);
 			float dist;
 			plane.Raycast (r, out dist);
 			currentPlaceableObject.transform.position = r.GetPoint(dist);

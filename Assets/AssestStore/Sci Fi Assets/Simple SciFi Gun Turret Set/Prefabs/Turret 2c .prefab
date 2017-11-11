@@ -72,9 +72,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4546769285658410}
   - component: {fileID: 33234324157244414}
-  - component: {fileID: 114484745598312290}
   - component: {fileID: 136172654596724000}
-  m_Layer: 5
+  - component: {fileID: 114088538008472086}
+  m_Layer: 16
   m_Name: ClickCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +828,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114484745598312290
+--- !u!114 &114088538008472086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -836,9 +836,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298329614133818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69dfb0da18e3a445fb1dadc5b4070169, type: 3}
+  m_Script: {fileID: 11500000, guid: e9a5ff2e2857a49a88fc8b6d4d11e597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114924033670292812}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114670939649503942
 MonoBehaviour:
   m_ObjectHideFlags: 1

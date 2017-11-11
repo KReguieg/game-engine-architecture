@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010548752912
 GameObject:
   m_ObjectHideFlags: 1
@@ -172,9 +172,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4655343312405504}
   - component: {fileID: 33475031098753348}
-  - component: {fileID: 114409966629053192}
   - component: {fileID: 136202853836162104}
-  m_Layer: 5
+  - component: {fileID: 114325877148244406}
+  m_Layer: 16
   m_Name: ClickCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114409966629053192
+--- !u!114 &114325877148244406
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -826,9 +826,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1295097088197152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69dfb0da18e3a445fb1dadc5b4070169, type: 3}
+  m_Script: {fileID: 11500000, guid: e9a5ff2e2857a49a88fc8b6d4d11e597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114414065612358978}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114414065612358978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -841,7 +857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesInRange: []
-  integratedUiManager: {fileID: 0}
+  ManagerObjects: {fileID: 0}
   towerHead: {fileID: 1000010548752912}
   Buildblocker: {fileID: 1686091549284976}
   RangeChecker: {fileID: 1413424889898606}
