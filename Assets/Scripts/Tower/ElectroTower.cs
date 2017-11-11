@@ -16,18 +16,13 @@ public class ElectroTower : Tower {
 	[ColorUsageAttribute(true,true,0f,8f,0.125f,3f)]
 	public Color color;
 	// Use this for initialization
-	void Start () {
+	new void Start () {
 		lineRenderer = GetComponent<LineRenderer> ();
 		lineRenderer.positionCount = lightningComplexityMax;
 
 		base.Start ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		base.Update ();
-
-	}
 
 	void FixedUpdate(){
 		float spinAmount = Mathf.Clamp01( attacktimer * attackspeed) * MaxSpeed;

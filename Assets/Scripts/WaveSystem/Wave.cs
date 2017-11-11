@@ -36,8 +36,7 @@ public class Wave{
 	float SpawnSpeed;
 	int spawnCounter;
 	int amountCounter;
-	bool waveSpawnComplete = false;
-
+	
 	public int AmountCounter { 
 		get{return amountCounter;}
 	}

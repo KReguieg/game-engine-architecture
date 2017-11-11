@@ -8,10 +8,6 @@ public class TowerLVL4 : Tower {
 
 	public GameObject RotatingGun;
 
-	void Start(){
-		base.Start ();
-	}
-
 	void FixedUpdate(){
 		if(EnemiesInRange.Count != 0)
 			RotatingGun.transform.Rotate (new Vector3(rotationSpeed,0,0));

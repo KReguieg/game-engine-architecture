@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorOpener : MonoBehaviour {
-	Animation animation;
+	Animation doorAnimation;
 	// Use this for initialization
 	void Start () {
-		animation = GetComponent<Animation> ();
+		doorAnimation = GetComponent<Animation> ();
 	}
 	
 	// Update is called once per frame
@@ -15,6 +15,6 @@ public class DoorOpener : MonoBehaviour {
 	}
 
 	public void StartOpeningDoor(){
-		animation.Play ();
+		doorAnimation.Play ();
 	}
 }
