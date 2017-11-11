@@ -18,6 +18,7 @@ public class TowerMenu : MonoBehaviour {
 	void Start () {
 		iUIManager = transform.parent.GetComponent<IntergratedUiManager> ();
 		rangeRotator = transform.parent.parent.GetComponentInChildren<RangeRotator>();
+		GetComponentInChildren<Canvas>().worldCamera = RTS_Camera.Camera;
 
 	}
 
