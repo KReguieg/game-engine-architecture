@@ -17,8 +17,9 @@ public class ArmCurveGenerator : MonoBehaviour {
 	void Start () {
 		curve = GetComponent<BezierCurve>();
 		tubeRenderer = GetComponent<TubeRenderer>();
-
-		armVertecies = new Vector3[steps];
+		
+		armVertecies = new Vector3[steps+1];
+		tubeRenderer.SetSize(armVertecies.Length);
 	}
 	
 	// Update is called once per frame
@@ -29,7 +30,7 @@ public class ArmCurveGenerator : MonoBehaviour {
 	}
 
 	void CalculateArm(){
-		for (int i = 0; i < steps; i++){
+		for (int i = 0; i <= steps; i++){
 			armVertecies[i] = curve.GetPoint(((float)i/steps));
 		}
 	}

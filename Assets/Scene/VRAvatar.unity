@@ -323,8 +323,6 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   material: {fileID: 2100000, guid: 048f60fb1aeeb438fa42ac3ab5caed0b, type: 2}
   crossSegments: 10
-  movePixelsForRebuild: 6
-  maxRebuildTime: 0.1
   thickness:
     serializedVersion: 2
     m_Curve:
@@ -335,8 +333,14 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 1
+      time: 0.9425742
       value: 0.3082466
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9980469
+      value: 0.26242447
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -411,7 +415,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 1, y: 1, z: 0}
   - {x: 5.171381, y: -1.5046035, z: 1.8791951}
-  - {x: 5.08, y: -1.43, z: -0.64}
+  - {x: 5.22972, y: -1.4300001, z: -2.8721614}
 --- !u!1 &939174080
 GameObject:
   m_ObjectHideFlags: 0
