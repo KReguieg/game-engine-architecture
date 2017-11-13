@@ -16,11 +16,6 @@ public class BezierCurve : MonoBehaviour {
 		set{points[3] = value;}
 	}
 
-	public void SetEndWithHandle(Vector3 end){
-		Vector3 direction = points[3] - points[2];
-		points[3] = end;
-		points[2] = end - direction;
-	}
 	public Vector3[] points;
 
 	public Vector3 GetPoint (float t) {
