@@ -19,7 +19,6 @@ public class TubeRenderer : MonoBehaviour
     // see http://wiki.unity3d.com/index.php?title=TubeRenderer
 
     public Vector3[] vertices;
-    public Material material;
 
     public int crossSegments = 10;
 
@@ -60,8 +59,6 @@ public class TubeRenderer : MonoBehaviour
         {
             mesh = new Mesh();
         }
-        MeshRenderer mr = gameObject.GetComponent<MeshRenderer>();
-        mr.material = material;
     }    
 
 
@@ -99,7 +96,7 @@ public class TubeRenderer : MonoBehaviour
             {
                 int vertexIndex = p * crossSegments + c;
                 meshVertices[vertexIndex] = vertices[p] + rotation * crossPoints[c] * thickness.Evaluate((float)p / vertices.Length);
-                uvs[vertexIndex] = new Vector2((0.0f + c) / crossSegments, (0.0f + p) / vertices.Length);
+                uvs[vertexIndex] = Vector2.one - new Vector2((0.0f + c) / crossSegments, (0.0f + p) / vertices.Length);
                 colors[vertexIndex] = color;
 
                 lastVertices[c] = theseVertices[c];
