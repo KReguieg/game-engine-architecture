@@ -19,7 +19,7 @@ public class TowerMenu : MonoBehaviour {
 		iUIManager = transform.parent.GetComponent<IntergratedUiManager> ();
 		rangeRotator = transform.parent.parent.GetComponentInChildren<RangeRotator>();
 		GetComponentInChildren<Canvas>().worldCamera = RTS_Camera.Camera;
-
+	
 	}
 
 	// Update is called once per frame
