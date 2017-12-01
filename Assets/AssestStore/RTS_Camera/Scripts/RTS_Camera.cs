@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 
@@ -8,6 +9,8 @@ using System.Collections;
     {
 		public bool useFixedUpdate = true; //use FixedUpdate() or Update()
         static RTS_Camera instance;
+
+        public RawImage rawImage;
         public static RTS_Camera GetInstance{get{return instance;}}
         public static Camera Camera{get{return instance.GetComponent<Camera>();}}
         #region Foldouts
@@ -188,6 +191,8 @@ using System.Collections;
 
         #region RTSCamera_Methods
 
+        int width;
+        int height;
         /// <summary>
         /// update camera movement and rotation
         /// </summary>
@@ -201,6 +206,17 @@ using System.Collections;
             HeightCalculation();
             Rotation();
             LimitPosition();
+            if(height != Screen.height  || width != Screen.width)
+                SetRenderTexutre();
+        }
+
+        // set Rendertexture
+        void SetRenderTexutre(){
+            Camera.targetTexture.Release();
+            width = Screen.width;
+            height = Screen.height;
+            Camera.targetTexture = new RenderTexture( width, height, 24 );
+            rawImage.texture = Camera.targetTexture;
         }
 
         /// <summary>
