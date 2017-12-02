@@ -14,6 +14,8 @@ public class ArmCurveGenerator : MonoBehaviour {
 
 	Vector3[] armVertecies;
 
+	float handDistance = 0;
+
 	float bezierAncorDistance = 1.25f;
 	Material armMaterial;
 	// Use this for initialization
@@ -34,11 +36,9 @@ public class ArmCurveGenerator : MonoBehaviour {
 		CalculateArm();
 		tubeRenderer.vertices = armVertecies;
 	}
-
 	void CalculateArm(){
-		float handDistance = 0;
 		Vector3 previousVertex = Vector3.zero;
-
+		handDistance = 0;
 		for (int i = steps; i >= 0 ; i--){
 			armVertecies[i] = curve.GetPoint(((float)i/steps));
 			handDistance += Vector3.Distance(armVertecies[i], previousVertex);
@@ -50,7 +50,7 @@ public class ArmCurveGenerator : MonoBehaviour {
 	}
 
 	void SetHandToCurve(){
-		curve.points[2] = Hand.transform.localPosition + transform.InverseTransformDirection(Hand.transform.forward * -bezierAncorDistance);
+		curve.points[2] = Hand.transform.localPosition + transform.InverseTransformDirection(Hand.transform.forward * -bezierAncorDistance );
 		curve.End = Hand.transform.localPosition;
 	}
 }
