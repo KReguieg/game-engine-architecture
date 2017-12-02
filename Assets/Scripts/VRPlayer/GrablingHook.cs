@@ -50,7 +50,7 @@ public class GrablingHook : MonoBehaviour {
 
 	DestinationMarkerEventArgs CreateDestinationMarker(){
 		DestinationMarkerEventArgs e = new DestinationMarkerEventArgs();
-		e.destinationPosition = seeker.transform.position;
+		e.destinationPosition = seeker.TargetPosition;
 		e.target = target;
 		e.enableTeleport = true;
 		return e;
@@ -77,6 +77,10 @@ public class GrablingHook : MonoBehaviour {
 				target = transform;
 			}
 			pos = seeker.TargetPosition ;
+		}
+		else{
+			seeker.TargetPosition = Vector3.zero;
+			seeker.transform.position = transform.position;
 		}
 		seeker.transform.rotation = transform.rotation ;
 	}

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4243481334794524}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Heavy_Full_Metal_Sword_Mech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4005880078318692}
   - component: {fileID: 137594031223127738}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS22_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114377280861351406}
   - component: {fileID: 114832105157425198}
   - component: {fileID: 114984459799690148}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Heavy_Full_Metal_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4727675289508668}
   - component: {fileID: 137954671377710086}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS20_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 124267491926172668}
   - component: {fileID: 81630763878163514}
   - component: {fileID: 114933490259880780}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550844757036838}
   - component: {fileID: 137725499658793702}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS32_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4715348945670512}
   - component: {fileID: 137733751273409368}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS30_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4496742890937152}
   - component: {fileID: 137287531224214330}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS02_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4575417787672418}
   - component: {fileID: 137901272569450586}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS19_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4037472284628072}
   - component: {fileID: 96197361686219316}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: SwordTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4348029113270406}
   - component: {fileID: 137519327032772980}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS25_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 114042958083256502}
   - component: {fileID: 114586251296342094}
   - component: {fileID: 114846732456510184}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4947725139484596}
   - component: {fileID: 114944697033931952}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4366589139761216}
   - component: {fileID: 114993507142979370}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: SnapPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4846190209229864}
   - component: {fileID: 137029408175506468}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS21_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4949579122962540}
   - component: {fileID: 137070619032890392}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS04_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4836033156639464}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4263988477420730}
   - component: {fileID: 114799478371796822}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4770360742465046}
   - component: {fileID: 137050919943757516}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS26_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 33775397203263482}
   - component: {fileID: 135644940906444670}
   - component: {fileID: 23534197209000824}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4621868842713838}
   - component: {fileID: 137987939005440252}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS31_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4504131586043362}
   - component: {fileID: 137235988286377260}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS17_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 33125516893323218}
   - component: {fileID: 65495656796388864}
   - component: {fileID: 23875411446043968}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 33523035900124496}
   - component: {fileID: 135686177417160852}
   - component: {fileID: 23924765128981916}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HMD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4797163870401954}
   - component: {fileID: 137562737457612492}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS10_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 33430539260858380}
   - component: {fileID: 65967616639584364}
   - component: {fileID: 23427035322485066}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4797187290978712}
   - component: {fileID: 137132831594664106}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS34_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4946736428557008}
   - component: {fileID: 137848370553757630}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS16_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4981335138876082}
   - component: {fileID: 137288599805229224}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS28_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4469541461148418}
   - component: {fileID: 137004098127427776}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS01_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4861836507542828}
   - component: {fileID: 137870663682003310}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS29_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 33853201520795824}
   - component: {fileID: 65592292699216848}
   - component: {fileID: 23686310445695434}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 114365271981717770}
   - component: {fileID: 114305459156577258}
   - component: {fileID: 114058349705194342}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 33433893977289010}
   - component: {fileID: 65425828568415200}
   - component: {fileID: 23195131524872888}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4728046897247364}
   - component: {fileID: 114630081948697054}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: VR RIg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4560421505786594}
   - component: {fileID: 137204755757862182}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS36_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 33971855966009598}
   - component: {fileID: 135055637268175406}
   - component: {fileID: 23525213932407840}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4592011335726728}
   - component: {fileID: 137642553362648876}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS18_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4088475350870288}
   - component: {fileID: 137696149655056996}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS03_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4909246491550286}
   - component: {fileID: 137530240248402430}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS09_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 135691352951146064}
   - component: {fileID: 23957942691890998}
   - component: {fileID: 54016024054448102}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: InSight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 33904165009740300}
   - component: {fileID: 65755750832656348}
   - component: {fileID: 23009301789051878}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4765730096207564}
   - component: {fileID: 137223312829042754}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS14_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 135236480617795626}
   - component: {fileID: 114706936808537354}
   - component: {fileID: 54670940241354010}
-  m_Layer: 10
+  m_Layer: 17
   m_Name: RangeChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4482663169752990}
   - component: {fileID: 137606534692940792}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS12_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4993194810267498}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Heavy_Full_Metal_Sword_Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4432756911803644}
   - component: {fileID: 137406157245682296}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS23_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4558715976724758}
   - component: {fileID: 137163433376481210}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS06_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4986552520276950}
   - component: {fileID: 137357967274600902}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS35_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -838,7 +838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4447750716464230}
   - component: {fileID: 137884315486937462}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS33_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 33855657910573762}
   - component: {fileID: 65958449913806956}
   - component: {fileID: 23760034627186252}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4975907368606468}
   - component: {fileID: 137440160486016522}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS27_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4139615991895674}
   - component: {fileID: 137730692522853154}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS11_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4527810607166000}
   - component: {fileID: 137081042466868836}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS05_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,8 +924,7 @@ GameObject:
   - component: {fileID: 23916913890481072}
   - component: {fileID: 114072924837263976}
   - component: {fileID: 114794286752688952}
-  - component: {fileID: 114002244089335096}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -941,7 +940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4745910064152022}
   - component: {fileID: 137278285678463906}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS07_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,7 +956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4926305098489528}
   - component: {fileID: 137574061847586916}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS15_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +971,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4670396669542450}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4340587258375846}
   - component: {fileID: 137454135377340944}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS24_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,7 +1003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4822503426067328}
   - component: {fileID: 137841897115155462}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS08_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1021,7 @@ GameObject:
   - component: {fileID: 33103390744242806}
   - component: {fileID: 136230214922388920}
   - component: {fileID: 23695750486936086}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4617487993969748}
   - component: {fileID: 137846968550926636}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: HFMS13_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1569,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1640142075500100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.033756614, y: 0.62584, z: -7.16}
+  m_LocalPosition: {x: 0, y: 1.714, z: 0}
   m_LocalScale: {x: 0.5983773, y: 0.5983772, z: 0.5983772}
   m_Children:
   - {fileID: 4895741164526972}
@@ -1759,7 +1758,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1911442582330272}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.33, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4344857226954508}
@@ -2712,22 +2711,6 @@ TrailRenderer:
     textureMode: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114002244089335096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1911442582330272}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b4323e753026434bba4eba1f76f1f78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 1
-  TakeMetalOverDistance: 1.5
-  Canvas: {fileID: 0}
 --- !u!114 &114042958083256502
 MonoBehaviour:
   m_ObjectHideFlags: 1
