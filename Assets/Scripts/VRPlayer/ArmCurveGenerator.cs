@@ -45,7 +45,7 @@ public class ArmCurveGenerator : MonoBehaviour {
 			previousVertex = armVertecies[i];
 		}
 
-		armMaterial.mainTextureScale = new Vector3(0, handDistance * 2);
+		armMaterial.mainTextureScale = new Vector3(1, handDistance * 2);
 		
 	}
 
