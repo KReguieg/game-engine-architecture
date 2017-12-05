@@ -5,10 +5,12 @@ using UnityEngine;
 public class TrackObject : MonoBehaviour {
 
 	public Transform TrackedObject;
+	public Transform AlternativeTrackedObject;
 	public bool lockRotationX;
 	// Use this for initialization
 	void Start () {
-		
+		if(!TrackedObject.gameObject.active)
+			TrackedObject = AlternativeTrackedObject;
 	}
 	
 	// Update is called once per frame

@@ -2781,7 +2781,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1911442582330272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18e00cedb704564e8835e1a0367005b, type: 3}
   m_Name: 
@@ -2890,6 +2890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackedObject: {fileID: 0}
+  AlternativeTrackedObject: {fileID: 0}
   lockRotationX: 1
 --- !u!114 &114706936808537354
 MonoBehaviour:
@@ -2960,6 +2961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackedObject: {fileID: 0}
+  AlternativeTrackedObject: {fileID: 0}
   lockRotationX: 0
 --- !u!114 &114832105157425198
 MonoBehaviour:
@@ -3018,6 +3020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackedObject: {fileID: 0}
+  AlternativeTrackedObject: {fileID: 0}
   lockRotationX: 0
 --- !u!114 &114984459799690148
 MonoBehaviour:
