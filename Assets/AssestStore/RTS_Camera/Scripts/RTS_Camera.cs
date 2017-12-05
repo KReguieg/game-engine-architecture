@@ -212,7 +212,8 @@ using System.Collections;
 
         // set Rendertexture
         void SetRenderTexutre(){
-            Camera.targetTexture.Release();
+            if(Camera.targetTexture != null)
+                Camera.targetTexture.Release();
             width = Screen.width;
             height = Screen.height;
             Camera.targetTexture = new RenderTexture( width, height, 24 );

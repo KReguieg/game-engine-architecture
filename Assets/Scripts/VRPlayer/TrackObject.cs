@@ -9,12 +9,14 @@ public class TrackObject : MonoBehaviour {
 	public bool lockRotationX;
 	// Use this for initialization
 	void Start () {
-		if(!TrackedObject.gameObject.active)
-			TrackedObject = AlternativeTrackedObject;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Transform currentObject = TrackedObject;
+		if(AlternativeTrackedObject != null && !currentObject.gameObject.active)
+			currentObject = AlternativeTrackedObject;
 		transform.SetPositionAndRotation(TrackedObject.position, TrackedObject.rotation);
 		if(lockRotationX)
 			transform.rotation = Quaternion.Euler(0,transform.eulerAngles.y,transform.eulerAngles.z);

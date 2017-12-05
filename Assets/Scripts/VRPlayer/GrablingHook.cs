@@ -33,7 +33,8 @@ public class GrablingHook : MonoBehaviour {
 
     private void Pressed(object sender, ControllerInteractionEventArgs e)
     {
-		linkToDash.Teleport(CreateDestinationMarker());
+		if(translatedHand.GetComponent<PositionSeeker>().ready)
+			linkToDash.Teleport(CreateDestinationMarker());
 		target = transform;
     }
 
