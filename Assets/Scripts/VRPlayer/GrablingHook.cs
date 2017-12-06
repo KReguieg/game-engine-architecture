@@ -80,8 +80,7 @@ public class GrablingHook : MonoBehaviour {
 			pos = seeker.TargetPosition ;
 		}
 		else{
-			seeker.TargetPosition = Vector3.zero;
-			seeker.transform.position = transform.position;
+			seeker.TargetPosition = transform.position;
 		}
 		seeker.transform.rotation = transform.rotation ;
 	}
