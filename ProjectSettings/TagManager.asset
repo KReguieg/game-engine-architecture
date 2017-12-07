@@ -10,6 +10,7 @@ TagManager:
   - FxTemporaire
   - projectile
   - ExcludeTeleport
+  - Blocker
   layers:
   - Default
   - TransparentFX
