@@ -8,27 +8,27 @@ public class GetPickedUpByTracker : MonoBehaviour {
 
 		Rigidbody boody;
 
-		GameObject tracker;
+		GameObject claw;
 
 	void OnTriggerEnter(Collider col) {
 		Debug.Log(col.gameObject.name);
-		if(col.name == "Kran") {
-			tracker = col.gameObject;
-			tracker.GetComponent<Rigidbody>().isKinematic = true;
-			tracker.AddComponent<SpringJoint>();
+		if(col.name == "Claw") {
+			claw = col.gameObject;
+			claw.GetComponent<Rigidbody>().isKinematic = true;
+			claw.AddComponent<SpringJoint>();
 			
-			SpringJoint springy = tracker.GetComponent<SpringJoint>();
+			SpringJoint springy = claw.GetComponent<SpringJoint>();
 			springy.breakForce = 100.0f;
-			tracker.GetComponent<SpringJoint>().connectedBody = boody;
-			tracker.GetComponent<SpringJoint>().spring = 25;
-			tracker.GetComponent<SpringJoint>().anchor *= -1;
+			claw.GetComponent<SpringJoint>().connectedBody = boody;
+			claw.GetComponent<SpringJoint>().spring = 25;
+			claw.GetComponent<SpringJoint>().anchor *= -1;
 			transform.parent = col.transform;
 			boody.drag = 35;
 			transform.localPosition += new Vector3(0, -0.01f, 0);
 		}
 		if (col.name == "TargetboxFloor") {
 			Debug.Log("TARGETBOX, DROP THAT SHIT!!!");
-			Destroy(tracker.GetComponent<SpringJoint>());
+			Destroy(claw.GetComponent<SpringJoint>());
 			transform.parent = null;
 			GameObject.Find("Boxes").GetComponent<Animator>().enabled = true;
 		}
