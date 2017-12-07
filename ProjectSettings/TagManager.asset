@@ -9,6 +9,7 @@ TagManager:
   - Dead
   - FxTemporaire
   - projectile
+  - ExcludeTeleport
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Build
   - BuildBlock
   - Clickable
-  - 
+  - Player
   - 
   - 
   - 

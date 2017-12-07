@@ -25,7 +25,9 @@ namespace RTS_Cam
         public override void OnInspectorGUI()
         {
             //base.OnInspectorGUI();
-            Undo.RecordObject(camera, "RTS_CAmera");
+            camera.rawImage = (UnityEngine.UI.RawImage)EditorGUILayout.ObjectField("Render to To UI", camera.rawImage, typeof(UnityEngine.UI.RawImage),true);
+            
+            Undo.RecordObject(camera, "RTS_Camera");
             tabs.Draw();
             if (GUI.changed)
                 camera.lastTab = tabs.curMethodIndex;

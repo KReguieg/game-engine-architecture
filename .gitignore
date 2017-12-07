@@ -3,6 +3,8 @@
 /Assets/Materials/FogOfWar.mat
 /Assets/Materials/Upgrade/UpgradeSymbol.mat
 
+#MAC
+/.DS_Store
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
