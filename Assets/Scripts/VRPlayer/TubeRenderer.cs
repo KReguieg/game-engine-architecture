@@ -123,6 +123,6 @@ public class TubeRenderer : MonoBehaviour
         mesh.triangles = tris;
         mesh.RecalculateNormals();
         mesh.uv = uvs;
-        mesh.bounds = new Bounds(Vector3.zero, Vector3.one * 5);
+        mesh.bounds = new Bounds(Vector3.zero, Vector3.one * 100);
     }
 }

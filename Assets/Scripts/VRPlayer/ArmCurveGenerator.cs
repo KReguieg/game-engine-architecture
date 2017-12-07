@@ -32,25 +32,30 @@ public class ArmCurveGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		SetShoulderToCurve();
 		SetHandToCurve();
 		CalculateArm();
 		tubeRenderer.vertices = armVertecies;
 	}
 	void CalculateArm(){
-		Vector3 previousVertex = Vector3.zero;
+		Vector3 previousVertex = curve.GetPoint(0);
 		handDistance = 0;
 		for (int i = steps; i >= 0 ; i--){
 			armVertecies[i] = curve.GetPoint(((float)i/steps));
 			handDistance += Vector3.Distance(armVertecies[i], previousVertex);
 			previousVertex = armVertecies[i];
 		}
-
+		bezierAncorDistance = Mathf.Clamp( handDistance, 0, 10) / 5;
 		armMaterial.mainTextureScale = new Vector3(1, handDistance * 2);
-		
 	}
 
 	void SetHandToCurve(){
-		curve.points[2] = Hand.transform.localPosition + transform.InverseTransformDirection(Hand.transform.forward * -bezierAncorDistance );
-		curve.End = Hand.transform.localPosition;
+		curve.points[2] = Hand.transform.position + transform.InverseTransformDirection(Hand.transform.forward * -bezierAncorDistance );
+		curve.End = Hand.transform.position;
+	}
+
+	void SetShoulderToCurve(){
+		curve.Start = Shoulder.transform.position;
+		curve.points[1] = Shoulder.transform.position + Shoulder.transform.forward * bezierAncorDistance;
 	}
 }
