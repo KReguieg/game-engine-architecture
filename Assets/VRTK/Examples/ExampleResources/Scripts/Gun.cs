@@ -1,5 +1,6 @@
 ﻿namespace VRTK.Examples
 {
+    using System;
     using UnityEngine;
 
     public class Gun : VRTK_InteractableObject
@@ -19,10 +20,33 @@
 
         private LineRenderer lineRenderer;
 
+        [SerializeField]
+        private float damagePerShot = 8.0f; // <-- Haha Random Number by Moni^^
+
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
             base.StartUsing(usingObject);
-            FireBullet();
+            FireLaser();
+            // FireBullet();
+        }
+
+        private void FireLaser()
+        {
+            Ray r = new Ray(muzzlePoint.transform.position, muzzlePoint.transform.forward);
+            RaycastHit hit;
+
+            if(Physics.Raycast(r, out hit))
+            {
+                if(hit.collider.CompareTag("Enemy"))
+                {
+                    hit.transform.gameObject.GetComponent<EnemyBehavior>().TakeDamage(damagePerShot);
+                }
+                lineRenderer.SetPosition(0, muzzlePoint.transform.position);
+                lineRenderer.SetPosition(1, hit.transform.position);
+            }
+            
+            audio.Play();
+            
         }
 
         protected void Start()
@@ -37,19 +61,11 @@
         private void FireBullet()
         {
             GameObject bulletClone = Instantiate(bullet, bullet.transform.position, bullet.transform.rotation) as GameObject;
-            Ray r = new Ray(muzzlePoint.transform.position, muzzlePoint.transform.forward);
-            RaycastHit hit;
-            if(Physics.Raycast(r, out hit))
-            {
-                lineRenderer.SetPosition(0, muzzlePoint.transform.position);
-                lineRenderer.SetPosition(1, hit.transform.position);
-            }
-            
+
             bulletClone.SetActive(true);
             Rigidbody rb = bulletClone.GetComponent<Rigidbody>();
             rb.AddForce(bullet.transform.forward * bulletSpeed);
 
-            audio.Play();
             Destroy(bulletClone, bulletLife);
         }
     }
