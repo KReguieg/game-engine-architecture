@@ -14,14 +14,11 @@ public class PositionSeeker : MonoBehaviour {
 	void Update () {
 		if(targetPosition != Vector3.zero){
 			float dist = Vector3.Distance(targetPosition, transform.position);
-			ready = (dist <= 0.01f);
-
-			if(!ready)
-			{
-				Vector3 dir = (targetPosition - transform.position).normalized;
-				float distFaktor = Mathf.Clamp(dist,0,1f);
-				transform.position += dir * speed * Time.deltaTime * distFaktor	;
-			}
+			ready = (dist <= 0.1f);
+			Vector3 dir = (targetPosition - transform.position).normalized;
+			float distFaktor = Mathf.Clamp(dist,0,1f);
+			transform.position += dir * speed * Time.deltaTime * distFaktor	;
+			
 		}
 	}
 }
