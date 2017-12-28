@@ -7681,7 +7681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MetalText: {fileID: 519272295}
   MetalTextBackground: {fileID: 1866355451}
-  Metal: 10
+  Metal: 1000
 --- !u!1001 &369783290
 Prefab:
   m_ObjectHideFlags: 0
@@ -12878,7 +12878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555988313}
   m_Layer: 0
-  m_Name: MetalColector
+  m_Name: MetalCollector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27371,7 +27371,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 774
+      value: 542
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -33974,6 +33974,10 @@ Prefab:
     - target: {fileID: 4000012355355172, guid: 913c474af4fed6e45bc3725b21e84f11, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010378282670, guid: 913c474af4fed6e45bc3725b21e84f11, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 913c474af4fed6e45bc3725b21e84f11, type: 2}
