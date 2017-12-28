@@ -11,6 +11,18 @@ public class Gun : VRTK_InteractableObject
     [SerializeField]
     private float damagePerShot = 8.0f; // <-- Haha Random Number by Moni^^
 
+    struct StartTransform{
+        public Vector3 position;
+        public Quaternion rotation;
+
+        public StartTransform(Vector3 position, Quaternion rotation)
+        {
+            this.position = position;
+            this.rotation = rotation;
+        }
+    }
+
+    StartTransform start;
     float timer = 0;
     public override void StartUsing(VRTK_InteractUse usingObject)
     {
@@ -36,11 +48,17 @@ public class Gun : VRTK_InteractableObject
             StartCoroutine(DisableShot());
         }
     }
-
+    public override  void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null){
+        transform.localPosition = start.position;
+        transform.localRotation = start.rotation;
+        base.Ungrabbed(previousGrabbingObject);
+    }
 
     protected void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        start = new StartTransform(transform.localPosition, transform.localRotation);
+        
     }
 
     IEnumerator DisableShot()
@@ -49,4 +67,6 @@ public class Gun : VRTK_InteractableObject
         yield return new WaitForSeconds(0.2f);
         lineRenderer.enabled = false;
     }
+
+    
 }
