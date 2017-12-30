@@ -52,7 +52,7 @@ public class WaveManager : MonoBehaviour {
 			}
 		} else {
 			waveFinished = Waves [currentWave].Update (this);
-			if(Waves [currentWave].OpenDoor != null && Waves [currentWave].OpenDoor.GetComponent<DoorOpener> ().open ){				
+			if(Waves [currentWave].OpenDoor != null && !Waves [currentWave].OpenDoor.GetComponent<DoorOpener> ().open ){				
 				Waves [currentWave].OpenDoor.GetComponent<DoorOpener> ().StartOpeningDoor ();
 			}
 			if (waveFinished) {

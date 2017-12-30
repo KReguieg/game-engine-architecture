@@ -38,9 +38,4 @@ public class DamageManager : MonoBehaviour {
 		}
 		damageLevel++;
 	}
-
-	void Update()
-	{
-		
-	}
 }
