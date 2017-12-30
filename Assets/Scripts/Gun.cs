@@ -6,6 +6,8 @@ public class Gun : VRTK_InteractableObject
 {
     [SerializeField]
     private GameObject muzzlePoint;
+    //The Layer to hit with a shot, should be rangecheck
+    public LayerMask mask;
     private LineRenderer lineRenderer;
 
     [SerializeField]
@@ -23,11 +25,11 @@ public class Gun : VRTK_InteractableObject
         Ray r = new Ray(muzzlePoint.transform.position, muzzlePoint.transform.forward);
         RaycastHit hit;
 
-        if(Physics.Raycast(r, out hit))
+        if(Physics.Raycast(r, out hit, mask))
         {
-            if(hit.collider.CompareTag("Enemy"))
+            if(hit.collider.CompareTag("Enemy")) // Hit rangechecker of Enemy
             {
-                hit.transform.gameObject.GetComponent<EnemyBehavior>().TakeDamage(damagePerShot);
+                hit.transform.parent.GetComponent<EnemyBehavior>().TakeDamage(damagePerShot);
             }
             
             lineRenderer.enabled = true;
@@ -39,7 +41,7 @@ public class Gun : VRTK_InteractableObject
     public override  void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null){
         transform.localPosition = Vector3.zero;
         transform.localRotation = new Quaternion(0,0,0,0);
-        
+
         base.Ungrabbed(previousGrabbingObject);
     }
 
