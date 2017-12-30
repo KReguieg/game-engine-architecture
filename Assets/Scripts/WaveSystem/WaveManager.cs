@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour {
 
+	
+
 	[Header("Link to Scene and Prefabs")]
 	public GameObject target;
 	public GameObject EnemyCollector;
 	public GameObject MetalCollector;
 
 	public GameObject[] Spawns;
-	public GameObject[] Doors;
-
-	public int OpenSouthDoorAtLvl, OpenEastDoorAtLvl, OpenWestDoorAtLvl;
+	
 	[Header("Wave System")]
 	[SerializeField]
 	public  Wave[] Waves;
@@ -52,27 +52,14 @@ public class WaveManager : MonoBehaviour {
 			}
 		} else {
 			waveFinished = Waves [currentWave].Update (this);
-
+			if(Waves [currentWave].OpenDoor != null && Waves [currentWave].OpenDoor.GetComponent<DoorOpener> ().open ){				
+				Waves [currentWave].OpenDoor.GetComponent<DoorOpener> ().StartOpeningDoor ();
+			}
 			if (waveFinished) {
 				currentWave++;
-				OpenDoors ();
 			}
 			if (loopWaves)
 				currentWave %= Waves.Length;
-		}
-	}
-
-	void OpenDoors(){
-		if (currentWave == OpenEastDoorAtLvl) {
-			Doors [0].GetComponent<DoorOpener> ().StartOpeningDoor ();
-			return;
-		}
-		if (currentWave == OpenSouthDoorAtLvl) {
-			Doors [1].GetComponent<DoorOpener> ().StartOpeningDoor ();
-			return;
-		}
-		if (currentWave == OpenWestDoorAtLvl) {
-			Doors [2].GetComponent<DoorOpener> ().StartOpeningDoor ();
 		}
 	}
 }

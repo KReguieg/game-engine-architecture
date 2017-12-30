@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorOpener : MonoBehaviour {
 	Animation doorAnimation;
+	public bool open = false;
 	// Use this for initialization
 	void Start () {
 		doorAnimation = GetComponent<Animation> ();
@@ -15,6 +16,8 @@ public class DoorOpener : MonoBehaviour {
 	}
 
 	public void StartOpeningDoor(){
-		doorAnimation.Play ();
+		if(!open)
+			doorAnimation.Play ();
+		open = true;
 	}
 }

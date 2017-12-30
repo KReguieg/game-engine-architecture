@@ -31,6 +31,7 @@ public class Wave{
 	public SpawnType spawnType = SpawnType.One;
 	[SerializeField]
 	public bool[] SpawnActive = new bool[4];  
+	public GameObject OpenDoor;
 
 	float time;
 	float SpawnSpeed;
