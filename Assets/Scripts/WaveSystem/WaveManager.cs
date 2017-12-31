@@ -12,6 +12,7 @@ public class WaveManager : MonoBehaviour {
 	public GameObject MetalCollector;
 
 	public GameObject[] Spawns;
+
 	
 	[Header("Wave System")]
 	[SerializeField]
@@ -21,7 +22,7 @@ public class WaveManager : MonoBehaviour {
 	[SerializeField]
 	private bool loopWaves = true;
 
-
+	public bool StartGame = false;
 	float waitForNextWave;
 	public float waveWaitDuration ;
 	private bool waveFinished;
@@ -35,20 +36,16 @@ public class WaveManager : MonoBehaviour {
 		get{return Waves [currentWave];}
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(!StartGame)
+			return;
 		if (waveFinished) {
 			waitForNextWave += Time.deltaTime;
 			if (waitForNextWave >= waveWaitDuration) {
 				waitForNextWave = 0;
 				waveFinished = false;
-
 			}
 		} else {
 			waveFinished = Waves [currentWave].Update (this);
