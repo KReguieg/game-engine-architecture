@@ -112,7 +112,13 @@ using System.Collections;
 
         private Vector2 KeyboardInput
         {
-            get { return useKeyboardInput ? new Vector2(Input.GetAxis(horizontalAxis), Input.GetAxis(verticalAxis)) : Vector2.zero; }
+            get {
+                float horizontal = (Input.GetKey(KeyCode.A)) ? -1 : 0 + ((Input.GetKey(KeyCode.D)) ? 1 : 0);
+                float vertical = (Input.GetKey(KeyCode.S)) ? -1 : 0 + ((Input.GetKey(KeyCode.W)) ? 1 : 0);
+
+                Vector2 input = new Vector2(horizontal, vertical);
+                return useKeyboardInput ? input : Vector2.zero;
+            }
         }
 
         private Vector2 MouseInput
