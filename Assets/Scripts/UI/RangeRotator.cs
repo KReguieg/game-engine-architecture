@@ -7,10 +7,6 @@ public class RangeRotator : MonoBehaviour {
 	public float yAchseOffset;
 
 	GameObject target;
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {

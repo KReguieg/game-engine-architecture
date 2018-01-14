@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 23734802186702502}
   - component: {fileID: 114768775375992640}
   - component: {fileID: 114212769498668180}
-  - component: {fileID: 114788149397110264}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -386,22 +385,6 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &114788149397110264
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1185623140287904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b4323e753026434bba4eba1f76f1f78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 1
-  TakeMetalOverDistance: 1.5
-  Canvas: {fileID: 0}
 --- !u!124 &124131552733610460
 Behaviour:
   m_ObjectHideFlags: 1

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
+
 public class Gun : VRTK_InteractableObject
 {
     [SerializeField]
@@ -9,38 +10,59 @@ public class Gun : VRTK_InteractableObject
     //The Layer to hit with a shot, should be rangecheck
     public LayerMask mask;
     private LineRenderer lineRenderer;
+	private VRTK_ControllerReference controllerReference;
+	public float noHitHapticStrength = 0.1f;
+	public float hapticStrength = 0.25f;
+	public float enemyHitHapticStrength = 1f;
 
     [SerializeField]
-    private float damagePerShot = 8.0f; // <-- Haha Random Number by Moni^^
+    private float damagePerSecond = 8.0f; // <-- Haha Random Number by Moni^^
 
     float timer = 0;
-    public override void StartUsing(VRTK_InteractUse usingObject)
-    {
-        base.StartUsing(usingObject);
-        FireLaser();
-    }
+
+	protected void Update()
+	{
+		if (IsUsing ()) {	
+			FireLaser ();
+		} else {
+			lineRenderer.enabled = false;
+		}
+	}
 
     private void FireLaser()
     {
         Ray r = new Ray(muzzlePoint.transform.position, muzzlePoint.transform.forward);
         RaycastHit hit;
 
-        if(Physics.Raycast(r, out hit, mask))
-        {
-            if(hit.collider.CompareTag("Enemy")) // Hit rangechecker of Enemy
-            {
-                hit.transform.parent.GetComponent<EnemyBehavior>().TakeDamage(damagePerShot);
-            }
+		if (Physics.Raycast (r, out hit,50.0f, mask )) {
+			if (hit.collider.CompareTag ("Enemy")) { // Hit rangechecker of Enemy
+				hit.transform.parent.GetComponent<EnemyBehavior> ().TakeDamage (damagePerSecond * Time.deltaTime);
+				VRTK_ControllerHaptics.TriggerHapticPulse (controllerReference, enemyHitHapticStrength, 0.1f, 0.01f);
+			} else {
+				VRTK_ControllerHaptics.TriggerHapticPulse (controllerReference, hapticStrength, 0.1f, 0.01f);
+			}
             
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, muzzlePoint.transform.position);
-            lineRenderer.SetPosition(1, hit.point);
-            StartCoroutine(DisableShot());
-        }
+			lineRenderer.enabled = true;
+			lineRenderer.SetPosition (0, muzzlePoint.transform.position);
+			lineRenderer.SetPosition (1, hit.point);
+		} else {
+			lineRenderer.enabled = true;
+			lineRenderer.SetPosition (0, muzzlePoint.transform.position);
+			lineRenderer.SetPosition (1, r.GetPoint(50));
+			VRTK_ControllerHaptics.TriggerHapticPulse (controllerReference, noHitHapticStrength, 0.1f, 0.01f);
+		}
     }
+
+	public override void Grabbed(VRTK_InteractGrab grabbingObject)
+	{
+		base.Grabbed(grabbingObject);
+		controllerReference = VRTK_ControllerReference.GetControllerReference(grabbingObject.controllerEvents.gameObject);
+	}
+
     public override  void Ungrabbed(VRTK_InteractGrab previousGrabbingObject = null){
         transform.localPosition = Vector3.zero;
         transform.localRotation = new Quaternion(0,0,0,0);
+		controllerReference = null;
 
         base.Ungrabbed(previousGrabbingObject);
     }
@@ -48,15 +70,5 @@ public class Gun : VRTK_InteractableObject
     protected void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        
     }
-
-    IEnumerator DisableShot()
-    {
-        
-        yield return new WaitForSeconds(0.2f);
-        lineRenderer.enabled = false;
-    }
-
-    
 }

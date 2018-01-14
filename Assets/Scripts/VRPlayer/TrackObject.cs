@@ -7,6 +7,7 @@ public class TrackObject : MonoBehaviour {
 	public Transform TrackedObject;
 	public Transform AlternativeTrackedObject;
 	public bool lockRotationX;
+	public bool lockRotationZ = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,5 +21,7 @@ public class TrackObject : MonoBehaviour {
 		transform.SetPositionAndRotation(TrackedObject.position, TrackedObject.rotation);
 		if(lockRotationX)
 			transform.rotation = Quaternion.Euler(0,transform.eulerAngles.y,transform.eulerAngles.z);
+		if(lockRotationZ)
+			transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0);
 	}
 }

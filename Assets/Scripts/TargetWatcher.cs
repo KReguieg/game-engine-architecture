@@ -16,9 +16,10 @@ public class TargetWatcher : MonoBehaviour {
 	public TrigerWithTag methodToTriggerOnLeave;
 
 	void OnTriggerEnter(Collider other){
-		if (other.tag == triggerOnTagName)
+		if (other.tag == triggerOnTagName) {
 			methodToTriggerOnEnter.Invoke (other.transform.parent.gameObject);
-		
+
+		}
 	}
 
 	void OnTriggerExit(Collider other){

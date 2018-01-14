@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 114252814827977636}
   - component: {fileID: 114371604353648062}
   - component: {fileID: 120183265025758242}
+  - component: {fileID: 114036267360914378}
   m_Layer: 18
   m_Name: Heavy
   m_TagString: Untagged
@@ -621,6 +622,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.4, z: 1}
   m_Center: {x: 0, y: 0.06, z: 0}
+--- !u!114 &114036267360914378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546952678641166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipOnTouch: {fileID: 0}
+  strengthOnTouch: 0
+  durationOnTouch: 0
+  intervalOnTouch: 0.05
+  clipOnGrab: {fileID: 0}
+  strengthOnGrab: 0
+  durationOnGrab: 0
+  intervalOnGrab: 0.05
+  clipOnUse: {fileID: 0}
+  strengthOnUse: 0.5
+  durationOnUse: 1
+  intervalOnUse: 0.05
 --- !u!114 &114252814827977636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -695,7 +719,10 @@ MonoBehaviour:
   allowedUseControllers: 0
   usingState: 0
   muzzlePoint: {fileID: 1288497179643122}
-  damagePerShot: 8
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  damagePerSecond: 2
 --- !u!120 &120183265025758242
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -785,5 +812,6 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
