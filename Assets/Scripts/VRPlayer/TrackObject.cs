@@ -16,7 +16,7 @@ public class TrackObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Transform currentObject = TrackedObject;
-		if(AlternativeTrackedObject != null && !currentObject.gameObject.active)
+		if(AlternativeTrackedObject != null && !currentObject.gameObject.activeSelf)
 			currentObject = AlternativeTrackedObject;
 		transform.SetPositionAndRotation(TrackedObject.position, TrackedObject.rotation);
 		if(lockRotationX)

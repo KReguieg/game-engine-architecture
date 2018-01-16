@@ -20,7 +20,7 @@ public class MirrorPosition : MonoBehaviour
 	// Update is called once per frame
 	private void Update ()
 	{
-		if(objectToMirror.active) 
+		if(objectToMirror.activeSelf) 
 		{
 			Debug.Log("SteamVR POS= " + objectToMirror.transform.position);
 			transform.position = objectToMirror.transform.position - new Vector3(0, 0, -0.25f);

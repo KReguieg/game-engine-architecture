@@ -18,8 +18,6 @@ public class Gun : VRTK_InteractableObject
     [SerializeField]
     private float damagePerSecond = 8.0f; // <-- Haha Random Number by Moni^^
 
-    float timer = 0;
-
 	protected void Update()
 	{
 		if (IsUsing ()) {	
