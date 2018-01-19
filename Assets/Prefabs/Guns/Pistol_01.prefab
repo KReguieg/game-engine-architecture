@@ -228,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 1761228909850088}
   m_LocalRotation: {x: -0, y: -0, z: 0.71873784, w: 0.6952812}
   m_LocalPosition: {x: -10.155, y: 0.546, z: -12.829966}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4546570748272006}
   - {fileID: 4870532257206048}
@@ -635,7 +635,7 @@ MonoBehaviour:
   touchHighlightColor: {r: 0.43382353, g: 0.20734212, b: 0.20734212, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
-  isGrabbable: 0
+  isGrabbable: 1
   holdButtonToGrab: 0
   stayGrabbedOnTeleport: 1
   validDrop: 1
