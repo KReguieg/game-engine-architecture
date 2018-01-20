@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731792, g: 0.13414803, b: 0.12107901, a: 1}
+  m_IndirectSpecularColor: {r: 0.12732561, g: 0.13415375, b: 0.12107733, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -688,6 +688,48 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &284594229
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4562980780159870, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.32866323
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562980780159870, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562980780159870, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.0048774034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562980780159870, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562980780159870, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562980780159870, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.66410327
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562980780159870, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.74764085
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562980780159870, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 290a7defbd5964a4e9c218e6916dc374, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &343652285
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +804,35 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013731061326, guid: 41c0760bd81dd084283814f0c432b466,
     type: 2}
   m_PrefabInternal: {fileID: 35832353}
+--- !u!1 &434172362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1592745197}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 434172363}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &434172363
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1592745197}
+  m_GameObject: {fileID: 434172362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1431007344}
+  m_Father: {fileID: 648171198}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &526777004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,12 +1320,12 @@ Transform:
   - {fileID: 1061858099}
   - {fileID: 2010777318}
   - {fileID: 110608152}
-  - {fileID: 1431007344}
+  - {fileID: 434172363}
   - {fileID: 584630027}
   - {fileID: 1768600017}
   - {fileID: 664157674}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664157670
 GameObject:
@@ -1307,7 +1378,15 @@ MonoBehaviour:
   allowedUseControllers: 0
   usingState: 0
   muzzlePoint: {fileID: 0}
-  damagePerShot: 8
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  noHitHapticStrength: 0.1
+  hapticStrength: 0.25
+  enemyHitHapticStrength: 1
+  damagePerSecond: 8
+  laserhitAnimation: {fileID: 0}
+  laserBeamAnimation: {fileID: 0}
 --- !u!65 &664157672
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1418,7 +1497,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4123408449866062, guid: d8a2d32f40331471a86bb91d10a31595, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8a2d32f40331471a86bb91d10a31595, type: 2}
@@ -1452,7 +1531,7 @@ Transform:
   - {fileID: 35832355}
   - {fileID: 1420055186}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &886255766
 MonoBehaviour:
@@ -1544,6 +1623,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974203275}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &982433065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 1592745197}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1431007344}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1009483874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1816,15 @@ MonoBehaviour:
   allowedUseControllers: 0
   usingState: 0
   muzzlePoint: {fileID: 0}
-  damagePerShot: 8
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  noHitHapticStrength: 0.1
+  hapticStrength: 0.25
+  enemyHitHapticStrength: 1
+  damagePerSecond: 8
+  laserhitAnimation: {fileID: 0}
+  laserBeamAnimation: {fileID: 0}
 --- !u!114 &1061858101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2818,7 +2920,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 568
+      value: 967
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
@@ -2895,11 +2997,20 @@ MonoBehaviour:
     position: {x: -0.02, y: 0, z: -0.04}
     rotation: {x: -150, y: 0, z: 90}
     scale: {x: 1, y: 1, z: 1}
---- !u!4 &1431007344 stripped
+--- !u!4 &1431007344
 Transform:
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 4949676822980488, guid: 66266dbef78524ae292b42e7aa8651c6,
     type: 2}
   m_PrefabInternal: {fileID: 1592745197}
+  m_GameObject: {fileID: 982433065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 434172363}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1507321177
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,7 +3162,7 @@ Transform:
   m_Children:
   - {fileID: 191165560}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1702212700 stripped
 GameObject:
@@ -3178,7 +3289,15 @@ MonoBehaviour:
   allowedUseControllers: 0
   usingState: 0
   muzzlePoint: {fileID: 0}
-  damagePerShot: 8
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  noHitHapticStrength: 0.1
+  hapticStrength: 0.25
+  enemyHitHapticStrength: 1
+  damagePerSecond: 8
+  laserhitAnimation: {fileID: 0}
+  laserBeamAnimation: {fileID: 0}
 --- !u!65 &1768600015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3421,6 +3540,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1839840859}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1890457530
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436352660127536, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4cd8b95e91b614e728206538b125f079, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1985595246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3555,7 +3716,15 @@ MonoBehaviour:
   allowedUseControllers: 0
   usingState: 0
   muzzlePoint: {fileID: 0}
-  damagePerShot: 8
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
+  noHitHapticStrength: 0.1
+  hapticStrength: 0.25
+  enemyHitHapticStrength: 1
+  damagePerSecond: 8
+  laserhitAnimation: {fileID: 0}
+  laserBeamAnimation: {fileID: 0}
 --- !u!65 &2010777316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3839,7 +4008,7 @@ Transform:
   - {fileID: 229753313}
   - {fileID: 1414492486}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2139478742
 GameObject:

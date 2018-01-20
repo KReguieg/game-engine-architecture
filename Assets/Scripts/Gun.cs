@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
@@ -18,21 +19,30 @@ public class Gun : VRTK_InteractableObject
     [SerializeField]
     private float damagePerSecond = 8.0f; // <-- Haha Random Number by Moni^^
 
-	protected void Update()
+	[SerializeField]
+	private ParticleSystem laserhitAnimation;
+    
+	[SerializeField]
+	private ParticleSystem laserBeamAnimation;
+
+    protected void Update()
 	{
 		if (IsUsing ()) {	
 			FireLaser ();
 		} else {
 			lineRenderer.enabled = false;
+			laserBeamAnimation.GetComponent<Renderer>().enabled = false;
 		}
 	}
 
     private void FireLaser()
     {
+		laserBeamAnimation.GetComponent<Renderer>().enabled = true;
         Ray r = new Ray(muzzlePoint.transform.position, muzzlePoint.transform.forward);
         RaycastHit hit;
 
 		if (Physics.Raycast (r, out hit,50.0f, mask )) {
+			SpawnLaserHit(hit.transform);
 			if (hit.collider.CompareTag ("Enemy")) { // Hit rangechecker of Enemy
 				hit.transform.parent.GetComponent<EnemyBehavior> ().TakeDamage (damagePerSecond * Time.deltaTime);
 				VRTK_ControllerHaptics.TriggerHapticPulse (controllerReference, enemyHitHapticStrength, 0.1f, 0.01f);
@@ -51,7 +61,13 @@ public class Gun : VRTK_InteractableObject
 		}
     }
 
-	public override void Grabbed(VRTK_InteractGrab grabbingObject)
+    private void SpawnLaserHit(Transform hit)
+    {
+		Debug.Log(hit.position);
+		Destroy(Instantiate(laserhitAnimation, hit.position, hit.rotation).transform.gameObject, 0.5f);
+    }
+
+    public override void Grabbed(VRTK_InteractGrab grabbingObject)
 	{
 		base.Grabbed(grabbingObject);
 		controllerReference = VRTK_ControllerReference.GetControllerReference(grabbingObject.controllerEvents.gameObject);
