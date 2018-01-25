@@ -47,7 +47,7 @@ public class Gun : VRTK_InteractableObject
         RaycastHit hit;
 
 		if (Physics.Raycast (r, out hit,50.0f, mask )) {
-			SpawnLaserHit(hit.transform);
+			SpawnLaserHit(hit);
 			if (hit.collider.CompareTag ("Enemy")) { // Hit rangechecker of Enemy
 				hit.transform.parent.GetComponent<EnemyBehavior> ().TakeDamage (damagePerSecond * Time.deltaTime);
 				VRTK_ControllerHaptics.TriggerHapticPulse (controllerReference, enemyHitHapticStrength, 0.1f, 0.01f);
@@ -66,10 +66,9 @@ public class Gun : VRTK_InteractableObject
 		}
     }
 
-    private void SpawnLaserHit(Transform hit)
+    private void SpawnLaserHit(RaycastHit hit)
     {
-		Debug.Log(hit.position);
-		Destroy(Instantiate(laserhitAnimation, hit.position, hit.rotation).transform.gameObject, 0.5f);
+		Destroy(Instantiate(laserhitAnimation, hit.point, Quaternion.Euler(hit.normal)).transform.gameObject, 0.5f);
     }
 
     public override void Grabbed(VRTK_InteractGrab grabbingObject)
