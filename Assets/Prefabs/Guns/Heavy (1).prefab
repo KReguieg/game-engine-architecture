@@ -774,7 +774,7 @@ MonoBehaviour:
   noHitHapticStrength: 0.1
   hapticStrength: 0.25
   enemyHitHapticStrength: 1
-  damagePerSecond: 1
+  damagePerSecond: 10
   laserhitAnimation: {fileID: 198093238047415426, guid: d0b82d528d2534b739d77759da8e421e,
     type: 2}
   laserBeamAnimation: {fileID: 198355266404102338}
@@ -964,7 +964,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 327265965
+  randomSeed: 1908231051
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -1012,7 +1012,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5.32
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1408,7 +1408,7 @@ ParticleSystem:
     serializedVersion: 4
     enabled: 1
     type: 4
-    angle: 0.75
+    angle: 0.7
     length: 5
     boxX: 1
     boxY: 1
