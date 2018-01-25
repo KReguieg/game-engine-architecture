@@ -12,7 +12,11 @@ using System.Collections;
 
         public RawImage rawImage;
         public static RTS_Camera GetInstance{get{return instance;}}
-        public static Camera Camera{get{return instance.GetComponent<Camera>();}}
+        public static Camera Camera{
+            get{
+                if(instance == null)
+                    return null;
+                return instance.GetComponent<Camera>();}}
         #region Foldouts
 
 #if UNITY_EDITOR
