@@ -25,6 +25,9 @@ public class Gun : VRTK_InteractableObject
 	[SerializeField]
 	private ParticleSystem laserBeamAnimation;
 
+    [SerializeField]
+    private Light muzzleLight;
+
     protected void Update()
 	{
 		if (IsUsing ()) {	
@@ -32,12 +35,14 @@ public class Gun : VRTK_InteractableObject
 		} else {
 			lineRenderer.enabled = false;
 			laserBeamAnimation.GetComponent<Renderer>().enabled = false;
+            muzzleLight.enabled = false;
 		}
 	}
 
     private void FireLaser()
     {
 		laserBeamAnimation.GetComponent<Renderer>().enabled = true;
+        muzzleLight.enabled = true;
         Ray r = new Ray(muzzlePoint.transform.position, muzzlePoint.transform.forward);
         RaycastHit hit;
 
