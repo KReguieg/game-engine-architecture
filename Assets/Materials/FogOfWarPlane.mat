@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: FogOfWarPlane
   m_Shader: {fileID: 4800000, guid: cf2d94a29bcdd4e13a2d2e30a62ac702, type: 3}
   m_ShaderKeywords: 
