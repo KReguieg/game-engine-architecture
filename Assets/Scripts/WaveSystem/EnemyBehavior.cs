@@ -21,6 +21,8 @@ public class EnemyBehavior : MonoBehaviour {
 	[SerializeField]
 	private EnemyData enemyData;
 
+	public GameObject selfTarget;
+
 	public void SetEnemyData(EnemyData data){
 		enemyData = data;
 

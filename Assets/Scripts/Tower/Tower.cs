@@ -106,7 +106,7 @@ public class Tower : MonoBehaviour {
 	{
 		
 		foreach(GameObject gun in Guns)
-			gun.GetComponent<LineRenderer>().SetPositions(new Vector3[2]{ target.transform.position , gun.transform.position}); // Shoot interface to implement shotvarients
+			gun.GetComponent<LineRenderer>().SetPositions(new Vector3[2]{ target.GetComponent<EnemyBehavior>().selfTarget.transform.position, gun.transform.position}); // Shoot interface to implement shotvarients
 
 		target.GetComponent<EnemyBehavior>().TakeDamage(damage);
 	}
