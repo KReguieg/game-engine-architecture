@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ClickPassManager : MonoBehaviour
 {
@@ -16,17 +17,11 @@ public class ClickPassManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Ray ray = RTS_Camera.Camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100, collisionMask))
-            {
-                RayClickable objctClickable = hit.collider.GetComponent<RayClickable>();
-                if (objctClickable != null)
-                    objctClickable.Click();
-            }
+            if (Physics.Raycast(ray, out RaycastHit hit, 100, collisionMask))
+                hit.collider.GetComponent<RayClickable>()?.Click();
         }
     }
-
 }

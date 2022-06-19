@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour {
 
@@ -31,7 +32,7 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	IEnumerator DeactivateInOneSecond(Callback callBack){
-		if(pcReady && vrReady || Input.GetKey(KeyCode.P))
+		if(pcReady && vrReady || Keyboard.current.pKey.wasPressedThisFrame)
 			StartingGame();
 		else
 		{

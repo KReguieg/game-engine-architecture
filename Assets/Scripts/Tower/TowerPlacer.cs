@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
+
 using System.Collections.Generic;
-using System;
+
 
 /// <summary>
 /// Describe your class quickly here.
 /// </summary>
 /// <remarks>
-/// Author: Khaled Reguieg E-Mail: Khaled.Reguieg@artcom.de
+/// Author: Khaled Reguieg E-Mail: Khaled.Reguieg@gmail.com
 /// </remarks>
 public class TowerPlacer : MonoBehaviour
 {
@@ -50,7 +52,7 @@ public class TowerPlacer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(newObjectHotkey))
+        if (Keyboard.current.bKey.wasPressedThisFrame)
         {
             HandleNewObjectHotkey();
             buildButtonMenu.ExpandMenu();
@@ -77,18 +79,18 @@ public class TowerPlacer : MonoBehaviour
 
     private void EndBuildingOnRightClick()
     {
-        if (Input.GetMouseButtonDown(1) && inBuildMode)
+        if (Mouse.current.rightButton.wasPressedThisFrame && inBuildMode)
         {
             buildButtonMenu.ExpandMenu();
             HandleNewObjectHotkey();
         }
     }
 
-    void SelectTowerViaKeyboard(){
-		
-		if (Input.GetKeyDown (KeyCode.Alpha1))
+    void SelectTowerViaKeyboard()
+	{	
+		if (Keyboard.current.digit1Key.wasPressedThisFrame)
 			SwitchTower (0);
-		else if(Input.GetKeyDown (KeyCode.Alpha2))
+		else if(Keyboard.current.digit2Key.wasPressedThisFrame)
 			SwitchTower (1);
 	}
     public void HandleNewObjectHotkey()
@@ -123,13 +125,16 @@ public class TowerPlacer : MonoBehaviour
 		bool hitbuildPLane = Physics.Raycast (ray, out hitInfo, 100, buildLayer);
 		Vector3 point = SnapToGrid (hitInfo.point);
 		bool hitOtherTower = Physics.CheckBox (point, col.size / 2, Quaternion.identity, buildBlockLayer);
-		if (hitbuildPLane && !hitOtherTower) {
+		if (hitbuildPLane && !hitOtherTower)
+		{
 			currentPlaceableObject.transform.position = point;
 			currentPlaceableObject.transform.rotation = Quaternion.FromToRotation (Vector3.up, hitInfo.normal);
 
 			SetMaterialStandart();
 			blocked = false;
-		} else {
+		}
+		else
+		{
 			blocked = true;
 			Plane plane = new Plane (Vector3.up, Vector3.zero);
 			Ray r = RTS_Camera.Camera.ScreenPointToRay(Input.mousePosition);
@@ -192,9 +197,11 @@ public class TowerPlacer : MonoBehaviour
         }
     }
 
-	public void SwitchTower(int i){
-		placeableObjectPrefab = TowerPrefabs [i];
-		if (currentPlaceableObject != null) {
+	public void SwitchTower(int i)
+	{
+		this.placeableObjectPrefab = TowerPrefabs[i];
+		if (currentPlaceableObject != null)
+		{
 			Destroy(currentPlaceableObject);
 			currentPlaceableObject = Instantiate (placeableObjectPrefab, towerCollector.transform);
 			transform.parent.GetComponentInChildren<RangeRotator> ().SetToTower (currentPlaceableObject);

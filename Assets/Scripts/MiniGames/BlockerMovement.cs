@@ -1,30 +1,33 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class BlockerMovement : MonoBehaviour {
-	Vector3 startPos;
+public class BlockerMovement : MonoBehaviour
+{
+	private Vector3 startPos;
+
+
 	// Use this for initialization
-	void Start () {
-		startPos = transform.position;
+	void Start ()
+	{
+		this.startPos = transform.position;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if(Input.GetKeyDown(KeyCode.Space)){
-			MoveDirection(Vector3.up * 0.2f);
-		}
-		MoveBack();
+	void Update ()
+	{
+		if (Keyboard.current.spaceKey.wasPressedThisFrame)
+			this.MoveDirection(Vector3.up * 0.2f);
+		this.MoveBack();
 	}
 
     private void MoveBack()
     {
         Vector3 dir = (startPos - transform.position).normalized;
-		MoveDirection(dir * 0.01f);
+		this.MoveDirection(dir * 0.01f);
     }
 
-	void MoveDirection(Vector3 direction){
+	private void MoveDirection(Vector3 direction)
+	{
 		transform.position += direction;
 	}
 }

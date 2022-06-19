@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MetalGameManager : MonoBehaviour {
 
@@ -14,14 +15,13 @@ public class MetalGameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.M))
-			Win();
+		if (Keyboard.current.mKey.wasPressedThisFrame)
+			this.Win();
 	}
 
 	public void Win(){
 	
 		StartCoroutine(SpawnMetal());
-		
 	}
 
 	WaitForSeconds wait = new WaitForSeconds(0.2f);

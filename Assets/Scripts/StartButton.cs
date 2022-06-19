@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using VRTK;
+﻿using UnityEngine;
 
-public class StartButton : VRTK_InteractableObject {
+
+public class StartButton : MonoBehaviour
+{
 	[Header("Button")]
 	public UnityEngine.Events.UnityEvent ButtonUsed;
-	public override void StartUsing(VRTK_InteractUse usingObject)
-    {
-		ButtonUsed.Invoke();
-        base.StartUsing(usingObject);
-		
-    }
+
+    //public override void StartUsing(VRTK_InteractUse usingObject)
+    //{
+    //    ButtonUsed.Invoke();
+    //    base.StartUsing(usingObject);
+    //}
 }

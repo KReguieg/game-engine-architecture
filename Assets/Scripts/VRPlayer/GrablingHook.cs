@@ -2,61 +2,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+//using VRTK;
 
 
 public class GrablingHook : MonoBehaviour {
-	VRTK_ControllerEvents events;
+	//VRTK_ControllerEvents events;
 	public LayerMask mask;
 
 	public GameObject translatedHand;
 
-	public VRTK_DashTeleport linkToDash;
+	//public VRTK_DashTeleport linkToDash;
 	PositionSeeker seeker;
 
-	VRTK_Pointer pointer; 
+	//VRTK_Pointer pointer;
 	Transform target;
 
 	[SerializeField]
 	private float MaxLength = 20;
 
-	// Use this for initialization
-	void Start () {
-		events = GetComponent<VRTK_ControllerEvents>();
-		events.TouchpadTouchStart += TouchStart;
-		events.TouchpadTouchEnd += TouchEnd;
-		events.TouchpadPressed += Pressed;
+	private bool rayCasting;
 
-		seeker = translatedHand.GetComponent<PositionSeeker>();
-		target = transform;
-	}
+	//// Use this for initialization
+	//void Start () {
+	//	events = GetComponent<VRTK_ControllerEvents>();
+	//	events.TouchpadTouchStart += TouchStart;
+	//	events.TouchpadTouchEnd += TouchEnd;
+	//	events.TouchpadPressed += Pressed;
 
-    private void Pressed(object sender, ControllerInteractionEventArgs e)
-    {
-		if(translatedHand.GetComponent<PositionSeeker>().ready)
-			linkToDash.Teleport(CreateDestinationMarker());
-		target = transform;
-    }
+	//	seeker = translatedHand.GetComponent<PositionSeeker>();
+	//	target = transform;
+	//}
 
-    private void TouchEnd(object sender, ControllerInteractionEventArgs e)
-    {
-        rayCasting = false;
-    }
+	//   private void Pressed(object sender, ControllerInteractionEventArgs e)
+	//   {
+	//	if(translatedHand.GetComponent<PositionSeeker>().ready)
+	//		linkToDash.Teleport(CreateDestinationMarker());
+	//	target = transform;
+	//   }
 
-    bool rayCasting;
-    private void TouchStart(object sender, ControllerInteractionEventArgs e)
-	{
-		rayCasting = true;
-    }
+	//   private void TouchEnd(object sender, ControllerInteractionEventArgs e)
+	//   {
+	//       rayCasting = false;
+	//   }
 
-	DestinationMarkerEventArgs CreateDestinationMarker(){
-		DestinationMarkerEventArgs e = new DestinationMarkerEventArgs();
-		e.destinationPosition = seeker.TargetPosition;
-		e.target = target;
-		e.enableTeleport = true;
-		return e;
-	}
-	
+	//   private void TouchStart(object sender, ControllerInteractionEventArgs e)
+	//{
+	//	rayCasting = true;
+	//   }
+
+	//DestinationMarkerEventArgs CreateDestinationMarker(){
+	//	DestinationMarkerEventArgs e = new DestinationMarkerEventArgs();
+	//	e.destinationPosition = seeker.TargetPosition;
+	//	e.target = target;
+	//	e.enableTeleport = true;
+	//	return e;
+	//}
+
 
 
 	Vector3 pos;

@@ -4,7 +4,7 @@
 /// Describe your class quickly here.
 /// </summary>
 /// <remarks>
-/// Author: Khaled Reguieg E-Mail: Khaled.Reguieg@artcom.de
+/// Author: Khaled Reguieg E-Mail: Khaled.Reguieg@gmail.com
 /// </remarks>
 public class PickAPlayerByCrane : MonoBehaviour
 {
