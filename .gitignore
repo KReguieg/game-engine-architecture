@@ -40,3 +40,11 @@ sysinfo.txt
 *.apk
 *.unitypackage
 .vs/
+
+Logs/
+
+.vsconfig
+
+UpgradeLog.htm
+
+UserSettings/
