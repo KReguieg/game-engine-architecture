@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
+
+/// <summary>
+/// Initializes all available characters and presents them in the character selection.
+/// </summary>
 public class InitializeAvailableCharacter : MonoBehaviour
 {
     [SerializeField] private List<GameObject> characterList = new List<GameObject>();
