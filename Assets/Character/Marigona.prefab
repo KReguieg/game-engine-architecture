@@ -2133,6 +2133,11 @@ MonoBehaviour:
   flameDaggerSystem:
   - {fileID: 7239168629031363666}
   - {fileID: 7239168628986128724}
+  daggerAudioSource:
+  - {fileID: 5804505503098124791}
+  - {fileID: 5804505503312180465}
+  daggerStart: {fileID: 8300000, guid: d057ebdf3a6f2b84091b42e46f0b683d, type: 3}
+  daggerIdle: {fileID: 8300000, guid: 5d5e570736e3bb443b697b4820703b36, type: 3}
 --- !u!1 &7935539589386750195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,6 +2518,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 930814485}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &5804505503098124791 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5804505502940242914, guid: 85e78c2c984902f4bb323f892a8e8170,
+    type: 3}
+  m_PrefabInstance: {fileID: 930814485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &7239168628986128724 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7239168628596519745, guid: 85e78c2c984902f4bb323f892a8e8170,
@@ -2601,6 +2612,12 @@ PrefabInstance:
 --- !u!4 &4903564295930370605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4903564295020907838, guid: 85e78c2c984902f4bb323f892a8e8170,
+    type: 3}
+  m_PrefabInstance: {fileID: 976574227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5804505503312180465 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5804505502940242914, guid: 85e78c2c984902f4bb323f892a8e8170,
     type: 3}
   m_PrefabInstance: {fileID: 976574227}
   m_PrefabAsset: {fileID: 0}
